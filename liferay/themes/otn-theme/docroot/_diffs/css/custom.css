@@ -1,0 +1,197 @@
+body {
+  background: #FFF;
+  font: 62.5%/1.4 Arial, Helvetica, Verdana, sans-serif;
+}
+
+
+html {
+    overflow: auto;
+}
+
+.navbar-fixed-top,.navbar-fixed-bottom {
+    z-index: 1000;
+    position: inherit;
+}
+
+.navbar .userinfo {
+    color: #fff;
+    padding: 10px 15px 10px;
+}
+
+.navbar .userinfo a {
+    color: #fff;
+}
+
+label {
+    display: inline;
+}
+
+[class*="span"] {
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.portlet-column {
+    display: inline;
+}
+
+.icon-actions {
+    height: auto;
+    width: auto;
+    background-image: none;
+}
+
+select {
+    width: auto;
+}
+
+/** Customize theme **/
+.navbar-inverse .navbar-inner {
+    background-image: linear-gradient(to bottom, #5f6b35, #3c4812);
+    background-repeat: repeat-x;
+    border-color: #5f6b35;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.navbar-inverse .nav .active>a,.navbar-inverse .nav .active>a:hover,.navbar-inverse .nav .active>a:focus
+    {
+    background-color: #5f6b35;
+    color: #fff;
+}
+
+.navbar-inverse .brand {
+    color: #999;
+    font-size: 23px;
+}
+
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus
+    {
+    background-image: linear-gradient(to bottom, #96a26e, #4f5b25);
+}
+
+.navbar-inverse .brand,.navbar-inverse .nav>li>a {
+    color: #fff;
+    line-height:20px;
+}
+
+.nav>li>a:hover {
+    background-color: #5f6b35 !important;
+}
+
+/** Customize theme **/
+.navbar-inverse .navbar-inner {
+    background-image: linear-gradient(to bottom, #5f6b35, #3c4812);
+    background-repeat: repeat-x;
+    border-color: #5f6b35;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.navbar-inverse .nav .active>a,.navbar-inverse .nav .active>a:hover,.navbar-inverse .nav .active>a:focus
+    {
+    background-color: #5f6b35;
+    color: #fff;
+}
+
+.navbar-inverse .brand {
+    color: #999;
+    font-size: 19px;
+}
+
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus
+    {
+    background-image: linear-gradient(to bottom, #96a26e, #4f5b25)
+        !important;
+}
+
+.navbar-inverse .brand,.navbar-inverse .nav>li>a {
+    color: #fff;
+}
+
+.nav>li>a:hover {
+    background-color: #5f6b35 !important;
+}
+
+.navbar a:hover,navbar a:focus {
+    background-image: linear-gradient(to bottom, #96a26e, #4f5b25)
+        !important;
+}
+
+.navbar-inverse .nav li.dropdown.open>.dropdown-toggle,.navbar-inverse .nav li.dropdown.active>.dropdown-toggle,.navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle
+    {
+    background-color: #5f6b35 !important;
+}
+
+#userprofile a {
+    color: #fff;
+}
+
+#userprofile a:hover {
+    color: #fff;
+}
+/** footer **/
+.eu {
+    width: 50%;
+}
+
+p.eu img {
+    float: left;
+    height: 38px;
+    padding-bottom: 20px;
+    padding-right: 2%;
+    width: 44px;
+}
+
+.container.no-border {
+    width: auto;
+}
+
+.navbar.no-border {
+    margin: 0;
+}
+
+img.olTileImage {
+    max-width: none;
+}
+
+/* bootstrap vs EXT */
+.x-panel {
+    input.x-tree-node-cb {
+        margin-top:0;
+    }
+}
+
+.x4-panel {
+    img {
+        font: 62.5%/1.4 Helvetica,Arial,sans-serif;
+        font-family: Helvetica,Arial,sans-serif;
+        font-size: 62.5%/1.4;
+    }
+    legend {
+        border-color:initial;
+        border-style: none;
+        border-width:initial;
+        font: 62.5%/1.4 Helvetica,Arial,sans-serif;
+        font-family: Helvetica,Arial,sans-serif;
+        font-size: 62.5%/1.4;
+        margin-bottom:0;
+        width:auto;
+    }
+
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input
+    {
+    height: 22px;
+    padding: 5px 1px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    line-height: normal;
+    color: #000;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+}

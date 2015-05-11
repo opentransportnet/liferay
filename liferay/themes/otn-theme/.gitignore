@@ -1,0 +1,6 @@
+docroot/WEB-INF/lib/
+/build
+docroot/css/
+docroot/js/
+docroot/templates/
+docroot/images/

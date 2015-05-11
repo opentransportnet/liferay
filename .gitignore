@@ -1,0 +1,10 @@
+*.class
+*.locak
+*.swp
+*.out
+*sass-cache*
+dist/
+*.settings*
+*.classpath
+*.project
+**/classes/
