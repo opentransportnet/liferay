@@ -42,52 +42,46 @@
     #set ($widthtype = $theme.getSetting("content-full-width"))
     #set ($footer = $theme.getSetting("footer"))
 
+
     $theme.include($top_head_include)
+
+
+
 
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/wwwlibs/ext/resources/css/ext-all.css"></link>
     <link rel="stylesheet" media="screen,projection" type="text/css" href="/wwwlibs/ext/resources/css/xtheme-gray.css"></link>
+
     <script src="$javascript_folder/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-    <script src="$javascript_folder/iframefull.js"></script>
+    <script src="$javascript_folder/iframefull.js" defer="defer"></script>
 </head>
 
 <body class="$css_class">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1570494299876924";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-
-    <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-
 $theme.include($body_top_include)
 
 #if ($is_signed_in)
     #dockbar()
 #end
 
-    #if ($widthtype)
-    <div class="navbar no-border navbar-inverse navbar-fixed-top">
-    #else
-    <div class="navbar navbar-inverse navbar-fixed-top">
-    #end
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <a class="brand" href="$site_default_url">$site_name</a>
-                #if ($has_navigation || $is_signed_in)
-                    #parse ("$full_templates_path/navigation.vm")
-                #end
-            </div>
-        </div>
-    </div>
-
+    #parse ("$full_templates_path/header.vm")
     #if ($widthtype == true)
     <div class="container no-border">
     #else
     <div class="container">
     #end
+
+    $theme.breadcrumb()
 
         #if ($selectable)
             $theme.include($content_include)
@@ -102,17 +96,55 @@ $theme.include($body_top_include)
     #if ($footer == true)
         <footer id="footer" role="contentinfo">
         <hr>
-        <p class="eu"> <img src="$images_folder/eu-flag.png" alt=""> This project has received funding from the European Union's Competitiveness and Innovation Framework Programme under grant agreement no. 620533 </p>
+
+        <div class="span4 footerContent">
+        <div class="footerTitle">About us</div>
+        <div class="eu"> <img src="$images_folder/eu-flag.png" alt=""> </div>
+        <div>This project has received funding from the European Union's Competitiveness and Innovation Framework Programme under grant agreement no. 620533 </div>
+        </div>
+
+         <div class="span4 footerContent">
+          <div class="footerTitle">OTN Tweets</div>
+            <a class="twitter-timeline"  href="https://twitter.com/OpenTnet" data-widget-id="599701796781690880">Tweets by @OpenTnet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+         </div>
+
+         <div class="span4 footerContent">
+          <div class="footerTitle">Like us on Facebook</div>
+         <div class="fb-page" data-href="https://www.facebook.com/OpenTnet" data-height="330" data-hide-cover="true" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/OpenTnet"><a href="https://www.facebook.com/OpenTnet">Open Transport Net</a></blockquote></div></div>
+         </div>
+
+
+        <div style="display:none;float:right;width:22%;">
+         <div style="display:inline-block; float: left; padding-top: 17px;">Follow us:</div>
+            <div style="display:inline-block; margin-left:10px;"><ul class="social-bookmarks" >
+            <li class="twitter">
+            <a target="_new" href="https://twitter.com/OpenTnet"></a>
+            </li>
+            <li class="linkedin">
+            <a target="_blank" href="https://www.facebook.com/OpenTnet/photos_stream"></a>
+            </li>
+            </ul></div>
+         </div>
+
         </footer>
     #end
     </div> <!-- /container -->
 
+
 $theme.include($body_bottom_include)
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="$javascript_folder/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="$javascript_folder/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 
-    <script src="$javascript_folder/vendor/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type='text/javascript'>
+         var $jq = jQuery.noConflict(true);
+     </script>
 </body>
 
 $theme.include($bottom_include)
