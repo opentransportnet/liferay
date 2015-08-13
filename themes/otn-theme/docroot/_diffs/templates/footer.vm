@@ -1,0 +1,34 @@
+<footer id="footer" role="contentinfo">
+    <hr>
+
+    <div class="span4 footerContent">
+    <div class="footerTitle">About us</div>
+    <div class="eu"> <img src="$images_folder/eu-flag.png" alt=""> </div>
+    <div>This project has received funding from the European Union's Competitiveness and Innovation Framework Programme under grant agreement no. 620533 </div>
+    </div>
+
+     <div class="span4 footerContent">
+      <div class="footerTitle">OTN Tweets</div>
+        <a class="twitter-timeline"  href="https://twitter.com/OpenTnet" data-widget-id="599701796781690880">Tweets by @OpenTnet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+     </div>
+
+     <div class="span4 footerContent">
+      <div class="footerTitle">Like us on Facebook</div>
+     <div class="fb-page" data-href="https://www.facebook.com/OpenTnet" data-height="330" data-hide-cover="true" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/OpenTnet"><a href="https://www.facebook.com/OpenTnet">Open Transport Net</a></blockquote></div></div>
+     </div>
+
+
+    <div style="display:none;float:right;width:22%;">
+     <div style="display:inline-block; float: left; padding-top: 17px;">Follow us:</div>
+        <div style="display:inline-block; margin-left:10px;"><ul class="social-bookmarks" >
+        <li class="twitter">
+        <a target="_new" href="https://twitter.com/OpenTnet"></a>
+        </li>
+        <li class="linkedin">
+        <a target="_blank" href="https://www.facebook.com/OpenTnet/photos_stream"></a>
+        </li>
+        </ul></div>
+     </div>
+
+</footer>

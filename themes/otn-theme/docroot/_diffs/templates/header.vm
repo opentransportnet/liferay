@@ -3,27 +3,55 @@
 #set($portalURL = $company.getVirtualHostname())
 
 <header id="header">
+    <div id="topprad">
+        <div class="container">
+            <div class="navbar-form userinfo pull-right">
+                #if($is_signed_in)
+                    <a class="button" href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
+                #else
+                    #set ($create_account_url = $portletURLFactory.create($request, "58", $page.getPlid(), "ACTION_PHASE"))
+                    $create_account_url.setWindowState("maximized")
+                    $create_account_url.setPortletMode("view")
+                    $create_account_url.setParameter("saveLastPath", "0")
+                    $create_account_url.setParameter("struts_action", "/login/create_account")
+
+                    <a class="button" href="$create_account_url">$languageUtil.get($locale, "Register / ")</a>
+                    <a class="button" href="https://$portalURL/cas-server/login?service=http://$portalURL/php/cas.html" rel="nofollow">$sign_in_text</a>
+                #end
+            </div>
+        </div>
+    </div>
 
     <nav role="navigation">
         #if ($widthtype)
-        <div class="navbar no-border navbar-inverse navbar-static-top">
+            <div class="navbar no-border navbar-inverse navbar-static-top">
         #else
-        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar navbar-inverse navbar-static-top">
         #end
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
 
-                <a class="brand" href="$site_default_url">$site_name</a>
+                        <div id="logo">
+                            <a class="brand" href="$site_default_url">
+                                $site_name
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+
 
                 #if ($has_navigation || $is_signed_in)
                     #parse ("$full_templates_path/navigation.vm")
                 #end
             </div>
         </div>
-    </div>
-
+    </nav>
+</header>
