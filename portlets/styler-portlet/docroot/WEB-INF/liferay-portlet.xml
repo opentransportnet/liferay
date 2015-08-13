@@ -8,7 +8,7 @@
 		<header-portlet-css>/css/ux/colorpicker/color-picker.ux.css</header-portlet-css>
 		<header-portlet-css>/css/styler.css</header-portlet-css>
 		<header-portal-javascript>/wwwlibs/ext/adapter/ext/ext-base.js</header-portal-javascript>
-		<header-portal-javascript>/wwwlibs/ext/ext-all-debug.js</header-portal-javascript>
+		<header-portal-javascript>/wwwlibs/ext/ext-all.js</header-portal-javascript>
 		<header-portal-javascript>/wwwlibs/hslayers/OpenLayers.js</header-portal-javascript>
 		<header-portal-javascript>/js/styler/main.js</header-portal-javascript>
 		<header-portlet-javascript>/js/ux/colorpicker/color-picker.ux.js</header-portlet-javascript>
