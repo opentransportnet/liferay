@@ -1,4 +1,4 @@
-<div class="navbar-collapse collapse navbar-responsive-collapse">
+<div class="navbar-collapse navbar-responsive-collapse collapse navbar-bottom">
     <ul id="menu-global-menu" class="nav navbar-nav navbar-right">
         #foreach ($nav_item in $nav_items)
             #if ($nav_item.isSelected())

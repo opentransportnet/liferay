@@ -1,10 +1,18 @@
-body {
-    padding-bottom: 40px;
+html body {
+  nowhitespace: afterproperty;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Oxygen',sans-serif;
+  color: #606060;
+	padding-bottom: 40px;
 }
-
 
 html {
     overflow: auto;
+}
+
+body a {
+	color: #777
 }
 
 label {
@@ -34,22 +42,53 @@ select {
 }
 
 /** Customize theme **/
+#header {
+	height: 140px;
+}
+#header .container-fluid {
+	padding-left:0;
+	padding-right:0;
+}
+
+div.navbar-header {
+	float: left;
+}
+
+div#service.container{
+	padding-right: 45px;
+}
+.userinfo {
+	margin-top: 15px;
+}
+
+ul#menu-global-menu a {
+    background-color: #fff;
+    z-index: 15000;
+}
+
+.navbar-bottom{
+	margin-top:38px
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #000;
+}
+
 .navbar-inverse {
-    background-image: linear-gradient(to bottom, #5f6b35, #3c4812);
-    background-repeat: repeat-x;
     border-color: #5f6b35;
     font-size: 16px;
     padding: 10px;
 }
 
-.navbar .nav>li>a {
+div.navbar-nav li a {
+    color: #777;
     padding: 10px 11px !important;
 }
 
 .navbar-inverse .nav .active>a,.navbar-inverse .nav .active>a:hover,.navbar-inverse .nav .active>a:focus
     {
-    background-color: #5f6b35;
-    color: #fff;
+    font-weight: 700;
+    color: #8c9f4a;
 }
 
 .navbar-inverse .brand {
@@ -68,7 +107,7 @@ select {
 }
 
 .nav>li>a:hover {
-    background-color: #5f6b35 !important;
+    color: #5F6B34;
 }
 
 .navbar a:hover,navbar a:focus {
@@ -78,7 +117,8 @@ select {
 
 .navbar-inverse .nav li.dropdown.open>.dropdown-toggle,.navbar-inverse .nav li.dropdown.active>.dropdown-toggle,.navbar-inverse .nav li.dropdown.open.active>.dropdown-toggle
     {
-    background-color: #5f6b35 !important;
+    color: #5F6B34;
+;
 }
 
 .navbar-fixed-top,.navbar-fixed-bottom {
@@ -86,15 +126,12 @@ select {
     position: inherit;
 }
 
-.navbar .userinfo {
-    color: #fff;
-    /*padding: 10px 15px 10px;*/
+button.navbar-toggle {
+    clear: right;
+    margin-right: -10px;
+    margin-top: 65px;
+	position: relative;
 }
-
-.navbar .userinfo a {
-    color: #fff;
-}
-
 
 #userprofile {
     display: block;
@@ -122,24 +159,13 @@ ul.nav>li:first-child {
     line-height: 1.3;
     margin-bottom: 11px;
 }
-
-
-.footerContent{
-    margin-bottom: 35px;
-    margin-left: 18px;
+.footerContent {
+	text-align: justify;
 }
 
 .eu {
-    width: 20%;
+    width: 25%;
     float: left;
-}
-
-p.eu img {
-    float: left;
-    height: 38px;
-    padding-bottom: 20px;
-    padding-right: 2%;
-    width: 44px;
 }
 
 ul.social-bookmarks {
@@ -179,9 +205,9 @@ ul.social-bookmarks li.linkedin a {
 
 /**** breadcrumb ******/
 .breadcrumbs {
-    margin-bottom:0;
-    padding-bottom:10px;
-    padding-top:15px;
+	background-color: #f5f5f5;
+	margin-bottom:0;
+    padding:8px 15px;
 }
 
 .breadcrumbs a {
