@@ -4,7 +4,6 @@ html body {
   -webkit-text-size-adjust: 100%;
   font-family: 'Oxygen',sans-serif;
   color: #606060;
-	padding-bottom: 40px;
 }
 
 html {
@@ -280,6 +279,10 @@ select,textarea,input[type="text"],input[type="password"],input[type="datetime"]
 }
 
 /*****/
+
+ol.flex-control-nav {
+	bottom: -22px;
+}
 
 label {
     display: inline;

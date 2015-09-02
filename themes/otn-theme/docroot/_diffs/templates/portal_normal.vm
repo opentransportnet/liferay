@@ -75,7 +75,7 @@ $theme.include($body_top_include)
 
     #parse ("$full_templates_path/header.vm")
     #if ($widthtype == true)
-    <div class="container no-border">
+    <div class="container-fluid no-border">
     #else
     <div class="container">
     #end
