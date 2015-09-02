@@ -1,38 +1,47 @@
-/*body {
-overflow-x: hidden;
+body {
+overflow: hidden;
 }
-*/
+
+body {
+overflow: hidden;
+}
+
+div#portalCatClient {
+	padding-left:0;
+	padding-right:0;
+}
+
 li.x-tree-node img.legend {
 height:auto;
 width:auto
 }
 
 table.vypis {
-	border-bottom: 1px solid gray;
-	border-collapse: collapse;
-	width: 100%;
+    border-bottom: 1px solid gray;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 table.vypis td{
-	border: 1px solid #E0E0E0;
-	vertical-align:top;
-	color: #606060;
-	padding: 3px;
+    border: 1px solid #E0E0E0;
+    vertical-align:top;
+    color: #606060;
+    padding: 3px;
 }
 
 table.vypis th{
-	border: 1px solid #E0E0E0;
-	vertical-align:top;
-	padding: 3px;
+    border: 1px solid #E0E0E0;
+    vertical-align:top;
+    padding: 3px;
 }
 
 .metadata-detail th {
-	color:#603000;
-	font-size:12px;
-	font-weight: 600;
-	padding-right:8px;
-	text-align:right;
-	width:130px
+    color:#603000;
+    font-size:12px;
+    font-weight: 600;
+    padding-right:8px;
+    text-align:right;
+    width:130px
 }
 
 img.bbox {border: 2px solid red}
@@ -333,13 +342,13 @@ border-width:1px 0
 }
 
 .pass-yes {
-	background: url('img/pass.png') no-repeat left top;
-	padding-left:18px;
+    background: url('img/pass.png') no-repeat left top;
+    padding-left:18px;
 }
 
 .pass-no {
-	background: url('img/fail.png') no-repeat left top;
-	padding-left:18px;
+    background: url('img/fail.png') no-repeat left top;
+    padding-left:18px;
 }
 
 #wrapper #content-wrapper .lfr-column {

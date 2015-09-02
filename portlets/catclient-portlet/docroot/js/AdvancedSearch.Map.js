@@ -7,15 +7,15 @@ AdvancedSearch.Map = {};
 AdvancedSearch.Map.createMap =  function(id) {
     OpenLayers.Util.onImageLoadErrorColor = "white";
     OpenLayers.Util.onImageLoadError = function() {
-    	this.style.display = "";
-    	this.src = OpenLayers.Util.getImagesLocation()+"blank.gif";
+        this.style.display = "";
+        this.src = OpenLayers.Util.getImagesLocation()+"blank.gif";
     }
 
     var options = {
             projection: new OpenLayers.Projection("epsg:900913"),
             maxExtent: new OpenLayers.Bounds(-20037508.3427892,-20037508.3427892,20037508.3427892,20037508.3427892),
             units: "m",
-	    controls: [],
+        controls: [],
             maxResolution: 156543.0399,
             numZoomLevels: 19
         };

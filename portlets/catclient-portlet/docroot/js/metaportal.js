@@ -163,12 +163,6 @@ app.readStatus.process = function(data) {
             app.sf.setValues(httpGetVars);
             app.sf.search(true);
         }
-        /*
-         * if((httpGetVars['anytext']!=undefined)&&(httpGetVars['type']!=undefined)&&(httpGetVars['menuId']!=undefined)){
-         * SetTypeValue(httpGetVars['type'],httpGetVars['menuId']);
-         * app.search({anytext:httpGetVars['anytext'], hlevel:
-         * httpGetVars['type']}); return; }
-         */
         // TODO - hodnota prisla z formulare , predelat
         else if (document.simpleForm) {
             app.simpleSearch();
@@ -325,7 +319,7 @@ function init() {
     app.catClient = new CatalogueClient(app.config);
     app.catClient.resultContainer.doLayout();
 
-    var windowWidth = document.body.parentNode.clientWidth - 1;
+    var windowWidth = Ext.select('.container-fluid').elements[0].clientWidth - 30;
     var windowHeight = document.body.parentNode.clientHeight;
     var headerHeight = 0;
     var westWidth = 0;
@@ -336,16 +330,16 @@ function init() {
         if (Ext.select(northDIV[idiv]).getCount() > 0) {
             headerHeight += Ext.select(northDIV[idiv]).elements[0].clientHeight
         }
-    } 
+    }
     var westDIV = app.config.westDIV;
 
     for (idiv = 0; idiv < westDIV.length; idiv++) {
         if (Ext.select(westDIV[idiv]).getCount() > 0) {
             westWidth += Ext.select(westDIV[idiv]).elements[0].clientWidth
         }
-    } 
+    }
 
-    var catClientHeight = windowHeight - headerHeight - 2;
+    var catClientHeight = windowHeight - headerHeight - 10;
     windowWidth -= westWidth;
 
     // --- jednoduche hledani ---
@@ -359,7 +353,8 @@ function init() {
 
     Ext.EventManager.onWindowResize( function() {
         var westWidth = 0;
-        var windowWidth = document.body.parentNode.clientWidth;
+        var windowWidth = Ext.select('.container-fluid').elements[0].clientWidth -30;
+//        var windowWidth = Ext.select('#portalCatClient').elements[0].parentNode.clientWidth;
         var westDIV = app.config.westDIV;
 
         for (idiv = 0; idiv < westDIV.length; idiv++) {
@@ -381,12 +376,13 @@ function init() {
         }
 
 
-        windowWidth = arguments[0];
+        windowWidth = Ext.select('.container-fluid').elements[0].clientWidth -30;
         windowWidth -= westWidth;
         windowHeight = arguments[1];
-        this.setHeight(windowHeight - headerHeight - 1);
+        this.setHeight(windowHeight - headerHeight - 10);
         this.setWidth(windowWidth);
         this.doLayout();
+        this.items.map.right.map.updateSize();
     }, app.viewport);
 
     app.config.rightPanel.addMap();

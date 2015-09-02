@@ -156,15 +156,6 @@ CatalogueClient = function(config){
         }, this);
 
 
-        /* Pro více formulářů
-         *
-         app.formTabs = new Ext.TabPanel({
-            activeTab: 0,
-            items: [app.sf,
-                    app.sf1
-                    ]
-        });*/
-
         var formTabs = this.sf; //TODO do config
 
     // definice tabpanelu, ktery obsahuje jednotlive klienty
@@ -286,7 +277,4 @@ CatalogueClient = function(config){
     };
 
     this.CLASS_NAME = "CatalogueClient";
-  //CatalogueClient.superclass.constructor.call(this.configOptions);
 };
-
-//Ext.extend(CatalogueClient, Ext.TabPanel, {});

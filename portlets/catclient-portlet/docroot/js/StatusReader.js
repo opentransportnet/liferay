@@ -5,13 +5,6 @@ var HSStatusReader = function(config) {
     this.handler = config.handler;
 
     this.save = function(data){
-        /*Ext.Ajax.request({
-            url: this.url,
-            method: "post",
-            success: function(){alert('OK');},
-            failure: function(){alert(HS.i18n('StatusReader save failure!'));},
-            jsonData: {"project":this.project,"request":"save","data":data}
-        });*/
         var format  = new OpenLayers.Format.JSON();
         var str = format.write({"project":this.project,"request":"save","data":data},true);
 
@@ -26,8 +19,6 @@ var HSStatusReader = function(config) {
         });
         OpenLayers.ProxyHost = proxy;
   	}
-
-
 
     this.load = function(){
         Ext.Ajax.request({
