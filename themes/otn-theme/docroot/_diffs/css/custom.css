@@ -62,7 +62,7 @@ div#service.container{
 
 ul#menu-global-menu a {
     background-color: #fff;
-    z-index: 15000;
+    z-index: 500;
 }
 
 .navbar-bottom{
