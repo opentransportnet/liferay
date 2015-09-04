@@ -18,7 +18,7 @@ require.config({
         geolocation: hsl_path + 'components/geolocation/geolocation',
         measure: hsl_path + 'components/measure/measure',
         legend: hsl_path + 'components/legend/legend',
-        app: '/js/map/app',
+        app: '/tmv-portlet/js/app',
         panoramio: hsl_path + 'components/panoramio/panoramio',
         core: hsl_path + 'components/core/core',
         WfsSource: hsl_path + 'extensions/hs.source.Wfs',
