@@ -171,8 +171,6 @@ CatClientDetail = function(config){
         var url = this.mapToShow.toLowerCase();
         if(url.indexOf('.wmc')>0) mapType = 'wmc';
         else if(url.indexOf('=wms')>0) mapType = 'wms'; // TODO lepe identifikovat
-        else if(url.indexOf('=wfs')>0) mapType = 'wfs';
-        else if(url.indexOf('=wcs')>0) mapType = 'wcs';
         else if(url.indexOf('kml')>0)  mapType = 'kml';
         this.wmsMapHandler(this.cswID, this.mapToShow, mapType);
     }

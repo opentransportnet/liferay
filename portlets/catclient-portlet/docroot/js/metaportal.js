@@ -12,10 +12,6 @@ app.showMap = function(id, url, type) {
         window.location = app.mapViewerPath + "?id=" + id + "&wmc=" + escape(url);
     } else if (type && type == 'wms') {
         window.location = app.mapViewerPath + "?id=" + id + "&wms=" + escape(url);
-    } else if (type && type == 'wfs') {
-        window.location = app.mapViewerPath + "?id=" + id + "&wfs=" + escape(url);
-    } else if (type && type == 'wcs') {
-        window.location = app.mapViewerPath + "?id=" + id + "&wcs=" + escape(url);
     } else if (type && type == 'kml') {
         window.location = app.mapViewerPath + "?id=" + id + "&kml=" + escape(url);
     } else {

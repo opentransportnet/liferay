@@ -43,9 +43,6 @@ CatClientResult = function(config){
         if(record.data.link.toUpperCase().indexOf('SERVICE=WMS')>0){
             s += "<a class='cat-imgsprite mapa' href='#' onclick=\"return app.showMap('"+record.data.id+"','"+record.data.link+"','wms');\"></a>";
         }
-        else if(record.data.link.toUpperCase().indexOf('SERVICE=WFS')>0){
-            s += "<a class='cat-imgsprite mapa' href='#' onclick=\"return app.showMap('"+record.data.id+"','"+record.data.link+"','wfs');\"></a>";
-        }
         else if(record.data.link.toUpperCase().indexOf('.WMC')>0){
             s += "<a class='cat-imgsprite mapa' href='#' onclick=\"return app.showMap('"+record.data.id+"','"+record.data.link+"','wmc');\"></a>";
         }
@@ -269,15 +266,11 @@ Ext.extend(CatClientResult, Ext.grid.GridPanel, {
                 // create configuration object for the template
                 config.class_value = value;
                 config.class_name = record.data.trida.toLowerCase();
-                config.other_link = config.wms = config.wfs = config.mapman = config.link = false;
+                config.other_link = config.wms = config.mapman = config.link = false;
 
         if(record.data.link.toUpperCase().indexOf('WMS')>0) {
                     config.link = record.data.link;
                     config.wms = true;
-                }
-        else if(record.data.link.toUpperCase().indexOf('WFS')>0) {
-                    config.link = record.data.link;
-                    config.wfs = true;
                 }
         else if(record.data.format.toUpperCase().indexOf('MAPMAN')>0) {
                     config.link = record.data.link;
@@ -317,9 +310,6 @@ Ext.extend(CatClientResult, Ext.grid.GridPanel, {
                     '<tpl if="link">'+
                     '    <tpl if="wms">'+
                     '        <a class="mapa" href="javascript:app.showMap(\"wms\",\"{link}\");">map</a>'+
-                    '    </tpl>'+
-                    '    <tpl if="wfs">'+
-                    '        <a class="mapa" href="javascript:app.showMap(\"wfs\",\"{link}\");">map</a>'+
                     '    </tpl>'+
                     '    <tpl if="mapman">'+
                     '        <a class="run" href="{link}" target="_blank">map</a>'+
