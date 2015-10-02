@@ -19,7 +19,6 @@ require.config({
         measure: hsl_path + 'components/measure/measure',
         legend: hsl_path + 'components/legend/legend',
         app: '/mapcomposer-portlet/js/app',
-        panoramio: hsl_path + 'components/panoramio/panoramio',
         core: hsl_path + 'components/core/core',
         WfsSource: hsl_path + 'extensions/hs.source.Wfs',
         datasource_selector: hsl_path + 'components/datasource_selector/datasource_selector',
