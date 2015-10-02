@@ -12,7 +12,7 @@ AdvancedSearch.Map.createMap =  function(id) {
     }
 
     var options = {
-            projection: new OpenLayers.Projection("epsg:900913"),
+            projection: new OpenLayers.Projection("epsg:3857"),
             maxExtent: new OpenLayers.Bounds(-20037508.3427892,-20037508.3427892,20037508.3427892,20037508.3427892),
             units: "m",
         controls: [],

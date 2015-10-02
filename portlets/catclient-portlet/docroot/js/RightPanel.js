@@ -10,7 +10,7 @@ RightPanel = function(config){
     this.mapPanel = new Ext.Panel({
         border: true,
         frame: false,
-        title: HS.i18n("Map"),
+        title: HS.i18n("View on Map"),
         layout: 'fit',
         id: 'mapPanel',
         tbar: [{

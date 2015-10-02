@@ -179,7 +179,7 @@ CatClientDetail = function(config){
     this.detailPanel = new Ext.Panel({
         tbar: new Ext.Toolbar({
             items: ["->",
-            { xtype: 'button', text: HS.i18n('Map'), iconCls: 'cat-imgsprite iconShowMap', scope: this, handler: this.showMap, hidden:true},
+            { xtype: 'button', text: HS.i18n('Add to Map'), iconCls: 'cat-imgsprite iconShowMap', scope: this, handler: this.showMap, hidden:true},
             { xtype: 'button', text: 'PDF', iconCls: "cat-imgsprite iconPdf", scope: this, handler: this.showPDF},
             { xtype: 'button', text: 'XML', iconCls: "cat-imgsprite iconXml", scope: this, handler: this.showXML}
         ]}),
