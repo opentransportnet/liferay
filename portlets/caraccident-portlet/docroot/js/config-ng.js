@@ -23,7 +23,7 @@ require.config({
         geolocation: hsl_path + 'components/geolocation/geolocation',
         measure: hsl_path + 'components/measure/measure',
         legend: hsl_path + 'components/legend/legend',
-        app: '/trafficdensity-portlet/js/app',
+        app: '/caraccident-portlet/js/app',
         xml2json: hsl_path + 'lib/xml2json.min',
         panoramio: hsl_path + 'components/panoramio/panoramio',
         core: hsl_path + 'components/core/core',
@@ -44,9 +44,9 @@ require.config({
         multibrush: jans_path + 'd3.svg.multibrush',
         WGL: jans_path + 'WGL',
         filter: jans_path + 'Filter',
-        dataloader: '/trafficdensity-portlet/js/DataLoader',
+        dataloader: '/caraccident-portlet/js/DataLoader',
         ol: hsl_path + 'lib/ol3/ol-full',
-        wglinit: '/trafficdensity-portlet/js/webglinit',
+        wglinit: '/caraccident-portlet/js/webglinit',
         chart_panel: hsl_path + 'examples/webgl_viz/chart_panel/chart_panel',
 
 

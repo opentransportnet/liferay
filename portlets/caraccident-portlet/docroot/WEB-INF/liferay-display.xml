@@ -4,6 +4,6 @@
 <display>
 
     <category name="Geoportal">
-        <portlet id="trafficdensity"></portlet>
+        <portlet id="caraccident"></portlet>
     </category>
 </display>

@@ -7,4 +7,5 @@ dist/
 *.settings*
 *.classpath
 *.project
+*.tern-project
 **/classes/

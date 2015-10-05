@@ -4,7 +4,7 @@ wglinit = function(that) {
     var ol = that.ol;
 
     var data = new DataLoader(visualize);
-    data.loadPosData("/trafficdensity-portlet/js/acc_snap3k.json");
+    data.loadPosData("/caraccident-portlet/js/acc_snap3k.json");
 
 
 
@@ -12,7 +12,7 @@ wglinit = function(that) {
 
     function visualize(data) {
 
-        WGL = new WGL(data.num, '/trafficdensity-portlet/js/');
+        WGL = new WGL(data.num, '/caraccident-portlet/js/');
 
 
         WGL.addMapDimension(data.pts, 'map');
