@@ -4,7 +4,7 @@
 
     <portlet>
         <portlet-name>caraccident</portlet-name>
-        <display-name>Traffic Density</display-name>
+        <display-name>Car accidents</display-name>
         <portlet-class>
             com.liferay.util.bridges.mvc.MVCPortlet
         </portlet-class>
@@ -17,8 +17,8 @@
             <mime-type>text/html</mime-type>
         </supports>
         <portlet-info>
-            <title>Traffic Density</title>
-            <short-title>Density</short-title>
+            <title>Car accidents</title>
+            <short-title>accidents</short-title>
             <keywords></keywords>
         </portlet-info>
         <security-role-ref>
