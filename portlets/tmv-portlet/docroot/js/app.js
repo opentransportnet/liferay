@@ -50,7 +50,7 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'map', 'query', 'search', 'p
                 zoom: 5,
                 units: "m"
             }),
-            'compositions_catalogue_url', compurl
+            'compositions_catalogue_url': compurl
         });
 
         module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser',
