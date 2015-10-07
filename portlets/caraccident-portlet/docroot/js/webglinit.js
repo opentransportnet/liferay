@@ -2,20 +2,20 @@ wglinit = function(that) {
     var map = that.map;
     var ol = that.ol;
 
-    map.on('change:size', function() {
-        WGL.mcontroller.manager.updateMapSize();
-         WGL.mcontroller.resize();
-         onMove();
-    });
 
     var data = new DataLoader(visualize);
-    data.loadPosData("birmingham_acc.json");
+    data.loadPosData("/caraccident-portlet/js/birmingham_acc.json");
     var tlwgs=[-20037508.34,20037508.34];
 
     function visualize(data) {
 
-        WGL = new WGL(data, '/wwwlibs/hslayers-ng/examples/webgl_viz');
+        WGL = new WGL(data, '/wwwlibs/hslayers-ng/examples/webgl_viz/');
 
+        map.on('change:size', function() {
+            WGL.mcontroller.manager.updateMapSize();
+            WGL.mcontroller.resize();
+            onMove();
+        });
         var charts = [];
 
         WGL.addMapDimension(data.pts, 'map');
