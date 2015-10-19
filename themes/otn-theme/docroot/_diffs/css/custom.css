@@ -1,11 +1,3 @@
-html body {
-  nowhitespace: afterproperty;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  font-family: 'Oxygen',sans-serif;
-  color: #606060;
-}
-
 html {
     overflow: auto;
 }
