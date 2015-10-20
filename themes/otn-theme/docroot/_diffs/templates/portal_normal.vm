@@ -36,6 +36,7 @@
         return "guest";
         #end
         }
+
     </script>
 
     #set ($widthtype = $theme.getSetting("content-full-width"))
@@ -47,12 +48,31 @@
     <link rel='stylesheet' id='googleFonts-css'  href='//fonts.googleapis.com/css?family=Oxygen:400,300,700' type='text/css' media='all' />
 
     <script src="$javascript_folder/iframefull.js" defer="defer"></script>
-    
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="$javascript_folder/vendor/jquery-1.11.3.min.js"><\/script>')</script>
     <link rel="stylesheet" href="//bootswatch.com/paper/bootstrap.min.css">
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    #if ($widthtype == true)
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+          $('.navbar-toggle-map').popover({
+            html : true,
+            placement: "bottom",
+            container: "body",
+            content: function() {
+              return $('.navbar-responsive-collapse').html();
+            }
+          });
+
+        });
+    </script>
+    #end
+
+
 </head>
 
 <body class="$css_class">
@@ -60,14 +80,14 @@
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 #if ($widthtype == false)
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1570494299876924";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1570494299876924";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 #end
 
 $theme.include($body_top_include)
@@ -83,8 +103,9 @@ $theme.include($body_top_include)
     <div class="container">
     #end
 
+    #if ($widthtype == false)
     $theme.breadcrumb()
-
+    #end
         #if ($selectable)
             $theme.include($content_include)
         #else
