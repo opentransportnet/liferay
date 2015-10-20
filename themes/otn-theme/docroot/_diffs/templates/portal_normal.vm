@@ -59,12 +59,12 @@
     <script>
         $(document).ready(function(){
             $('[data-toggle="popover"]').popover();
-          $('.navbar-toggle-map').popover({
+          $('#btn-toggle-map').popover({
             html : true,
             placement: "bottom",
             container: "body",
             content: function() {
-              return $('.navbar-responsive-collapse').html();
+              return $('#menu-global-menu').html();
             }
           });
 
