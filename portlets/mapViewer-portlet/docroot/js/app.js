@@ -26,7 +26,7 @@ define(['ol', 'core', 'api', 'toolbar', 'layermanager', 'map', 'query', 'search'
                         w.bind('resize', function() {
                             var el = $(element[0]);
                             var windowHeight = $(window).height();
-                            var headerHeight = $('.portlet-dockbar').outerHeight() + $('.breadcrumbs').outerHeight() + $('#header').outerHeight() + 10;
+                            var headerHeight = $('.portlet-dockbar').outerHeight();
                             var elementHeight = windowHeight - headerHeight;
                             el.height(elementHeight);
                             $("#map").height(elementHeight);

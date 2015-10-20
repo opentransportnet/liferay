@@ -9,3 +9,8 @@ div.ol-control button{
 div.ng-scope #toolbar button:hover {
     background-image:none;
 }
+
+div.ol-zoom {
+	bottom: 62px;
+	top: auto;
+}
