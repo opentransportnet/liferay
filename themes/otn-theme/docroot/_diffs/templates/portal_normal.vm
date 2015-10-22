@@ -8,7 +8,7 @@
 
 <head>
     <title>$the_title - $company_name</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <script src="/wwwlibs/hslayers/HS.js" type="text/javascript"></script>
 
     <script type="text/javascript">
@@ -104,17 +104,17 @@ $theme.include($body_top_include)
     #end
 
     #if ($widthtype == false)
-    $theme.breadcrumb()
+        $theme.breadcrumb()
     #end
-        #if ($selectable)
-            $theme.include($content_include)
-        #else
-            $portletDisplay.recycle()
+    #if ($selectable)
+        $theme.include($content_include)
+    #else
+        $portletDisplay.recycle()
 
-            $portletDisplay.setTitle($the_title)
+        $portletDisplay.setTitle($the_title)
 
-            $theme.wrapPortlet("portlet.vm", $content_include)
-        #end
+        $theme.wrapPortlet("portlet.vm", $content_include)
+    #end
 
     </div> <!-- /container -->
     #if ($footer == true)

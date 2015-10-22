@@ -31,13 +31,16 @@
         </div>
     </header>
 
-#else
 
+
+
+
+#else
     <header id="header">
-        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="btn btn-success btn-mobile navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"  aria-expanded="false">
+                    <button type="button" class="btn btn-mobile navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse"  aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -49,32 +52,50 @@
                         <img id="logo_micro" src="$images_folder/otn-logo_micro.png" alt="$site_name" />
                     </a>
                 </div>
-                    
+
                 <div class="navbar-collapse navbar-responsive-collapse collapse">
                      #if ($has_navigation || $is_signed_in)
                         #parse ("$full_templates_path/navigation.vm")
                     #end
 
-                    <ul id="service" class="navbar-nav nav navbar-right">
-                        #if($is_signed_in)
-                        	<li>
-                            	<a class="btn btn-success btn-mobile" href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
-                        	</li>
-                        #else
-                            #set ($create_account_url = $portletURLFactory.create($request, "58", $page.getPlid(), "ACTION_PHASE"))
-                            $create_account_url.setWindowState("maximized")
-                            $create_account_url.setPortletMode("view")
-                            $create_account_url.setParameter("saveLastPath", "0")
-                            $create_account_url.setParameter("struts_action", "/login/create_account")
-							<li>
-                            <a href="$create_account_url">$languageUtil.get($locale, "Register")</a>
-							</li>
-							<li>
-                            <a href="https://$portalURL/cas-server/login?service=http://$portalURL/php/cas.html" rel="nofollow">$sign_in_text</a>
-							</li>
-                        #end
-                    </ul>
-
+                    <div>
+                        <div class="row">
+                            <ul id="service" class="navbar-nav nav navbar-right">
+                                #if($is_signed_in)
+                                    <li>
+                                        <a href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
+                                    </li>
+                                #else
+                                    #set ($create_account_url = $portletURLFactory.create($request, "58", $page.getPlid(), "ACTION_PHASE"))
+                                    $create_account_url.setWindowState("maximized")
+                                    $create_account_url.setPortletMode("view")
+                                    $create_account_url.setParameter("saveLastPath", "0")
+                                    $create_account_url.setParameter("struts_action", "/login/create_account")
+                                    <li>
+                                    <a href="$create_account_url">$languageUtil.get($locale, "Register")</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://$portalURL/cas-server/login?service=http://$portalURL/php/cas.html" rel="nofollow">$sign_in_text</a>
+                                    </li>
+                                #end
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <div class="dropdown pull-right">
+                              <a class="btn btn-link dropdown-toggle" id="city-hub" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                City Hubs
+                                <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="city-hub">
+                                <li><a href="/">MAIN HUB</a></li>
+                                <li><a href="/web/antwerp">Antwerp</a></li>
+                                <li><a href="/web/birmingham">Birmingham</a></li>
+                                <li><a href="/web/liberec">Liberec</a></li>
+                                <li><a href="/web/issy">Issy-Les-Moulineaux</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
           </div>
     </header>
