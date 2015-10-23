@@ -9,11 +9,11 @@ window.addEventListener ? window.addEventListener('load', init, false) : window.
 // ---------------------------------------------------------------------------------
 app.showMap = function(id, url, type) {
     if (type && type == 'wmc') {
-        window.location = app.mapViewerPath + "?id=" + id + "&wmc=" + escape(url);
+        window.location = app.mapViewerPath + "?id=" + id + "&composition=" + escape(url);
     } else if (type && type == 'wms') {
-        window.location = app.mapViewerPath + "?id=" + id + "&wms=" + escape(url);
+        window.location = app.mapViewerPath + "?id=" + id + "&wms_to_connect=" + escape(url);
     } else if (type && type == 'kml') {
-        window.location = app.mapViewerPath + "?id=" + id + "&kml=" + escape(url);
+        window.location = app.mapViewerPath + "?id=" + id + "&kml_to_connect=" + escape(url);
     } else {
         window.location = app.mapViewerPath + "?id=" + id + "&ows=" + escape(url);
     }
@@ -315,7 +315,7 @@ function init() {
     app.catClient = new CatalogueClient(app.config);
     app.catClient.resultContainer.doLayout();
 
-    var windowWidth = Ext.select('.container-fluid').elements[0].clientWidth - 30;
+    var windowWidth = Ext.select('.container').elements[0].clientWidth - 30;
     var windowHeight = document.body.parentNode.clientHeight;
     var headerHeight = 0;
     var westWidth = 0;
@@ -349,7 +349,7 @@ function init() {
 
     Ext.EventManager.onWindowResize( function() {
         var westWidth = 0;
-        var windowWidth = Ext.select('.container-fluid').elements[0].clientWidth -30;
+        var windowWidth = Ext.select('.container').elements[0].clientWidth -30;
 //        var windowWidth = Ext.select('#portalCatClient').elements[0].parentNode.clientWidth;
         var westDIV = app.config.westDIV;
 
@@ -372,7 +372,7 @@ function init() {
         }
 
 
-        windowWidth = Ext.select('.container-fluid').elements[0].clientWidth -30;
+        windowWidth = Ext.select('.container').elements[0].clientWidth -30;
         windowWidth -= westWidth;
         windowHeight = arguments[1];
         this.setHeight(windowHeight - headerHeight - 10);

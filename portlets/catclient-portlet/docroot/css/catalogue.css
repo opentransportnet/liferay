@@ -7,8 +7,8 @@ overflow: hidden;
 }
 
 div#portalCatClient {
-	padding-left:0;
-	padding-right:0;
+    padding-left:0;
+    padding-right:0;
 }
 
 li.x-tree-node img.legend {
@@ -355,3 +355,26 @@ border-width:1px 0
     border-right: 0px solid #E1E1E1;
 }
 
+div.x-panel {
+    ol,ul {
+        list-style:none;
+        margin-left:0;
+        margin-right:0;
+        margin-top:0;
+        margin-bottom:0;
+    }
+    .x-form-field {
+        font-size:12px;
+    }
+    .x-form-text, textarea.x-form-field {
+        border: 1px solid;
+        border-color: #c1c1c1;
+    }
+
+    textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+        box-shadow: none;
+    }
+    * {
+        box-sizing: content-box;
+    }
+}

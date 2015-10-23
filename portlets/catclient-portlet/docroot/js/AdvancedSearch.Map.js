@@ -35,8 +35,7 @@ AdvancedSearch.Map.createMap =  function(id) {
     }
 
     map.addLayer(osm);
-    map.zoomToMaxExtent();
-    map.zoomTo(AdvancedSearch.Map.defaultZoom);
+    map.zoomToExtent(new OpenLayers.Bounds(-2661231.576, 3933143.727, 4931105.568, 12229924.524));
 
     return map;
 }

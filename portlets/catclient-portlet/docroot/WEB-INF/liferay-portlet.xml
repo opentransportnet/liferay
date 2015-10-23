@@ -15,7 +15,9 @@
         <header-portal-javascript>/wwwlibs/ext/adapter/ext/ext-base.js</header-portal-javascript>
         <header-portal-javascript>/wwwlibs/ext/ext-all.js</header-portal-javascript>
         <header-portal-javascript>/wwwlibs/hslayers/OpenLayers.js</header-portal-javascript>
-        <header-portal-javascript>/wwwlibs/proj4js/proj4js-compressed.js</header-portal-javascript>
+        <header-portal-javascript>/wwwlibs/proj4js/proj4js.js</header-portal-javascript>
+        <header-portal-javascript>/wwwlibs/proj4js/projCode/merc.js</header-portal-javascript>
+        <header-portal-javascript>/wwwlibs/proj4js/defs/EPSG3857.js</header-portal-javascript>
         <header-portal-javascript>/php/catalogue/libs/keywords/InspireServiceReader.js</header-portal-javascript>
         <header-portal-javascript>/php/catalogue/libs/gemetclient/thesaur.js</header-portal-javascript>
         <header-portal-javascript>/php/catalogue/cfg/config.js</header-portal-javascript>

@@ -197,10 +197,6 @@ AdvancedSearch.SearchForm = function(config, resultContainer){
     var s = s.findParent('div').parentNode.parentNode;
     s.style.display = 'none';
 
-    var sc = this.comboServiceClass.getEl();
-    var sc = sc.findParent('div').parentNode.parentNode;
-    sc.style.display = 'none';
-
     var d = this.comboTopicCategory.getEl();
     var d = d.findParent('div').parentNode.parentNode;
     d.style.display = 'none';
@@ -292,23 +288,6 @@ AdvancedSearch.SearchForm = function(config, resultContainer){
         mode:'local'
     });
 
-    this.comboServiceClass = new Ext.form.ComboBox({
-        xtype: 'combo',
-        fieldLabel: HS.i18n('Service Classification'),
-        //id: 'service-class',
-        hideParent: true,
-        displayField:'label',
-        width: 300,
-        valueField: 'name',
-        hiddenName: 'serviceClass',
-        //tpl: '<tpl for="."><div style="height:300px"><div id="tree1"></div></div></tpl>',
-        typeAhead: true,
-        store: serviceClassStore,
-        triggerAction: 'all',
-        editable: false,
-        mode:'local'
-    });
-
     this.comboTopicCategory = new Ext.form.ComboBox({
         xtype: 'combo',
         width: 300,
@@ -393,33 +372,6 @@ AdvancedSearch.SearchForm = function(config, resultContainer){
             typeAhead: true,
             triggerAction: 'all',
             minChars: 3
-        },{
-            xtype: 'panel',
-            layout: 'column',
-            items:[{
-                layout: "form",
-                items:[{
-                    hiddenName: 'role',
-                    xtype: 'combo',
-                    fieldLabel: HS.i18n('Party Role'),
-                    displayField: 'label',
-                    valueField: 'name',
-                    store: roleStore,
-                    triggerAction: 'all',
-                    typeAhead: true,
-                    //editable: false,
-                    emptyText: HS.i18n("Metadata contact"),
-                    mode:'local'
-                }]
-            },{
-                labelWidth: 1,
-                layout: 'form',
-                items:[{
-                    xtype: 'checkbox',
-                    boxLabel: HS.i18n('Party name part search'),
-                    name: 'partySub'
-                }]
-            }]
         },
         this.comboServiceType,
         this.comboTopicCategory,
@@ -450,61 +402,10 @@ AdvancedSearch.SearchForm = function(config, resultContainer){
                 width: 220,
                 layout: 'form',
                 items:[{
-                    xtype: 'combo',
-                    store: scaleList,
-                    displayField: 'label',
-                    lazyRender: true,
-                    fieldLabel: HS.i18n('Scale')+":  1",
-                    width: 90,
-                    name: 'scale1',
-                    triggerAction: 'all',
-                    mode:'local'
-                },{
-                    xtype: 'datefield',
-                    format: 'd.m.Y',
-                    fieldLabel: HS.i18n('Temporal extent'),
-                    name: 'tempFrom',
-                    emptyText: HS.i18n("from"),
-                    width: 90
-                }]
-            },{
-                labelWidth: 1,
-                layout: 'form',
-                items:[{
-                    xtype: 'combo',
-                    store: scaleList,
-                    displayField: 'label',
-                    width: 90,
-                    name: 'scale2',
-                    triggerAction: 'all',
-                    mode:'local'
-                },{
-                    xtype: 'datefield',
-                    format: 'd.m.Y',
-                    name: 'tempTo',
-                    emptyText: HS.i18n("to"),
-                    width: 90
-                }]
-            }]
-        },{
-            xtype: 'panel',
-            layout: 'column',
-            width: '100%',
-            items:[{
-                width: 220,
-                layout: 'form',
-                items:[{
                     xtype: 'datefield',
                     format: 'd.m.Y',
                     fieldLabel: HS.i18n('Date'),
                     name: 'dateFrom',
-                    emptyText: HS.i18n("from"),
-                    width: 90
-                },{
-                    xtype: 'datefield',
-                    format: 'd.m.Y',
-                    fieldLabel: HS.i18n('Date')+ " - " +HS.i18n('Metadata'),
-                    name: 'modifiedFrom',
                     emptyText: HS.i18n("from"),
                     width: 90
                 }]
@@ -516,12 +417,6 @@ AdvancedSearch.SearchForm = function(config, resultContainer){
                 xtype: 'datefield',
                 format: 'd.m.Y',
                 name: 'dateTo',
-                emptyText: HS.i18n("to"),
-                width: 90
-            },{
-                xtype: 'datefield',
-                format: 'd.m.Y',
-                name: 'modifiedTo',
                 emptyText: HS.i18n("to"),
                 width: 90
             }]
@@ -541,61 +436,6 @@ AdvancedSearch.SearchForm = function(config, resultContainer){
                 value: "revision",
                 hiddenName: 'dateType'
                 }]
-        }]
-    },{
-        xtype: 'combo',
-        fieldLabel: HS.i18n("Metadata language"),
-        width: 150,
-        hiddenName: 'language',
-        displayField: 'label',
-        valueField: 'name',
-        forceSelection: true,
-        typeAhead: true,
-        store: langStore,
-        allowBlank: true,
-        triggerAction: 'all',
-        emptyText: HS.i18n(""),
-        mode:'local',
-    },{
-        xtype: 'fieldset',
-        title: 'INSPIRE',
-        width: '96%',
-        defaultType: 'textfield',
-        autoHeight: true,
-        collapsible: true,
-        collapsed: false,
-        defaults: {width: 300},
-        items: [{
-            xtype: 'combo',
-            fieldLabel:HS.i18n('INSPIRE Theme'),
-            displayField:'label',
-            width: 300,
-            valueField: 'name',
-            forceSelection: true,
-            hiddenName: 'inspireKeyword',
-            typeAhead: true,
-            store: inspireStore,
-            triggerAction: 'all',
-            mode:'local'
-        },
-        this.comboServiceClass,
-        {
-            xtype: 'checkbox',
-            fieldLabel: HS.i18n('Compliant'),
-            name: 'compliant'
-        },{
-            xtype: 'combo',
-            name: 'ConditionApplyingToAccessAndUse',
-            store: [[HS.i18n('no conditions apply'),HS.i18n('no conditions apply')], [HS.i18n('conditions unknown'),HS.i18n('conditions unknown')]],
-            fieldLabel: HS.i18n('Use limitation'),
-            mode:'local'
-        },{
-            xtype: 'combo',
-            hiddenName: 'otherConstraints',
-            store: aConstrStore,
-            fieldLabel: HS.i18n('Limitation on public access'),
-            store: [[HS.i18n('No limitations'),HS.i18n('No limitations')]],
-            mode: 'local'
         }]
     },{
         xtype: 'combo',
