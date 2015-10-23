@@ -79,7 +79,7 @@
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-#if ($widthtype == false)
+#if ($footer)
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -122,9 +122,6 @@ $theme.include($body_top_include)
     #end
 
 $theme.include($body_bottom_include)
-
-
-
 </body>
 
 $theme.include($bottom_include)
