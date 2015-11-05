@@ -7,8 +7,11 @@
         #else
             <li>
         #end
+		#if ($nav_item.getLayout().getIconImage())
+		#set ($img_url = "/image/layout_icon?img_id=$nav_item.getLayout().getIconImageId()")
+		#end
         #if ($nav_item.hasChildren())
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">$nav_item.getName() <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="$img_url"></img>$nav_item.getName() <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 #foreach ($nav_child in $nav_item.getChildren())
                     #if ($nav_child.isSelected())
@@ -21,7 +24,7 @@
                 #end
             </ul>
         #else
-            <a href="$nav_item.getURL()" $nav_item.getTarget()>$nav_item.getName()</a>
+            <a href="$nav_item.getURL()" $nav_item.getTarget()><img src="$img_url"></img> $nav_item.getName()</a>
         #end
     </li>
     #end
