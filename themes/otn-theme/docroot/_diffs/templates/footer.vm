@@ -1,34 +1,23 @@
 <footer id="footer" role="contentinfo">
 	<div class="container">
-    <hr>
-	    <div class="col-xs-12 col-md-4 footerContent">
-		    <div class="footerTitle">About us</div>
-		    <div class="eu"> <img src="$images_folder/eu-flag.png" alt=""> </div>
-	    	<div>This project has received funding from the European Union's Competitiveness and Innovation Framework Programme under grant agreement no. 620533 </div>
-	    </div>
-	
-	     <div class="col-xs-12 col-md-4 footerContent">
-	      	<div class="footerTitle">OTN Tweets</div>
-	        <a class="twitter-timeline"  href="https://twitter.com/OpenTnet" data-widget-id="599701796781690880">Tweets by @OpenTnet</a>
-	        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	     </div>
-	
-	     <div class="col-xs-12 col-md-4 footerContent">
-	      	<div class="footerTitle">Like us on Facebook</div>
-	     	<div class="fb-page" data-href="https://www.facebook.com/OpenTnet" data-height="330" data-hide-cover="true" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/OpenTnet"><a href="https://www.facebook.com/OpenTnet">Open Transport Net</a></blockquote></div></div>
-	     </div>
+    <div class="col-md-7" style="line-height:16px">
+	<div style="float: left;">
+		<img alt="eu" src="http://otn-dev.intrasoft-intl.com/documents/10279/25949/eu-flag.PNG/27a15c16-2636-434c-a138-7e8cd668c9a7?t=1446734016858" style="width: 44px; height: 29px; float: left;padding-right: 6px;" />
+		<div>
+			This project has received funding from the European Union's Competitiveness and Innovation Framework Programme under grant agreement no. 620533</div>
 	</div>
+</div>
+<div class="col-md-2">
+	&nbsp;</div>
+<div class="col-md-3" style="float: right;">
+	<!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-563a22298a546110" async="async"></script><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+	<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+		<a class="addthis_button_facebook addthis_button_preferred_1 at300b" href="#" title="Facebook"><span class="at4-icon-right at4-icon aticon-facebook" style="background-color: rgb(48, 88, 145);"><span class="at_a11y">Share on facebook</span> </span> </a> <a class="addthis_button_twitter addthis_button_preferred_2 at300b" href="#" title="Tweet"> <span class="at4-icon-right at4-icon aticon-twitter" style="background-color: rgb(44, 168, 210);"> </span></a> <a class="addthis_button_email addthis_button_preferred_3 at300b" href="#" target="_blank" title="Email"> <span class="at4-icon-right at4-icon aticon-email" style="background-color: rgb(115, 138, 141);"> <span class="at_a11y">Share on email</span> </span> </a> <a class="addthis_button_compact at300m" href="#"> <span class="at4-icon-right at4-icon aticon-compact" style="background-color: rgb(252, 109, 76);"> <span class="at_a11y">More Sharing Services</span> </span> </a>
+		<div class="atclear" tabindex="1000">
+			&nbsp;</div>
+	</div>
+</div>
 
-    <div style="display:none;float:right;width:22%;">
-     <div style="display:inline-block; float: left; padding-top: 17px;">Follow us:</div>
-        <div style="display:inline-block; margin-left:10px;"><ul class="social-bookmarks" >
-        <li class="twitter">
-        <a target="_new" href="https://twitter.com/OpenTnet"></a>
-        </li>
-        <li class="linkedin">
-        <a target="_blank" href="https://www.facebook.com/OpenTnet/photos_stream"></a>
-        </li>
-        </ul></div>
      </div>
 
 </footer>
