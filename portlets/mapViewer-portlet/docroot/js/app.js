@@ -1,6 +1,6 @@
 'use strict';
 
-define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'map', 'query', 'search', 'permalink', 'measure', 'datasource_selector', 'ows', 'WfsSource', 'angular-gettext', 'translations', 'compositions', 'status_creator', 'customhtml'],
+define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'map', 'query', 'search', 'permalink', 'measure', 'datasource_selector', 'angular-gettext', 'translations', 'compositions'],
 
     function(angular, ol, toolbar, layermanager, WfsSource) {
         var module = angular.module('hs', [
@@ -9,15 +9,12 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
             'hs.layermanager',
             'hs.map',
             'hs.query',
-            'hs.search', 'hs.permalink', 'hs.measure',
+            'hs.search',
+            'hs.permalink',
             'hs.core',
-            'hs.datasource_selector',
-            'hs.status_creator',
             'hs.api',
-            'hs.ows',
             'gettext',
-            'hs.compositions',
-            'hs.customhtml'
+            'hs.compositions'
         ]);
 
         module.directive('hs', ['hs.map.service', 'Core', function(OlMap, Core) {
@@ -75,14 +72,6 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
             'catalogue_url': caturl,
             'compositions_catalogue_url': caturl,
             status_manager_url: '/wwwlibs/statusmanager2/index.php',
-            createExtraMenu: function($compile, $scope, element) {
-                $scope.uploadClicked = function() {
-                    alert("UPLOAD!")
-                }
-                var el = angular.element("<li class=\"sidebar-item\" ng-click=\"uploadClicked()\" ><a href=\"#\"><span class=\"menu-icon fa fa-cloud-upload\"></span><span class=\"sidebar-item-title\">Upload</span></a></li>");
-                element.find('ul').append(el);
-                $compile(el)($scope);
-            }
         });
 
         module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser',
