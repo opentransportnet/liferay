@@ -239,7 +239,9 @@ div.logo {
     }
 }
 
-
+.no-border .portlet-borderless-bar {
+    margin-top: 50px;
+}
 
 /* navbars */
 
