@@ -1,0 +1,16 @@
+div.ol-control button{
+    background: initial;
+    background-image: none;
+    background-color: #7b98bc;
+    background-color: rgba(0,60,136,.5);
+    text-shadow: none;
+}
+
+div.ng-scope #toolbar button:hover {
+    background-image:none;
+}
+
+div.ol-zoom {
+	bottom: 62px;
+	top: auto;
+}
