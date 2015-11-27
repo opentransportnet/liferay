@@ -30,11 +30,6 @@
             #end
         </div>
     </header>
-
-
-
-
-
 #else
     <header id="header">
         <nav class="navbar navbar-default" role="navigation">
@@ -54,20 +49,16 @@
                 </div>
 
                 <div class="navbar-collapse navbar-responsive-collapse collapse">
-
-					
-					#if ($has_navigation || $is_signed_in)
+                    #if ($has_navigation || $is_signed_in)
                         #parse ("$full_templates_path/navigation.vm")
                     #end
-					
-                   <!-- <div>
-                        <div class="row"> -->
+
                             <ul id="service" class="navbar-nav nav navbar-right">
                                 #if($is_signed_in)
                                     <li>
                                         <a href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
                                     </li>
-									<li>
+                                    <li>
                                         <a href="/my-contributions-info" id="mycontribution" >My Data</a>
                                     </li>
                                 #else
@@ -83,23 +74,6 @@
                                     <a href="https://$portalURL/cas-server/login?service=http://$portalURL/php/cas.html" rel="nofollow">$sign_in_text</a>
                                     </li>
                                 #end
-                      <!--      </ul>
-                        </div> -->
-                        <!--<div class="row">
-                            <div class="dropdown pull-right">
-                              <a class="btn btn-link dropdown-toggle" id="city-hub" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                City Hubs
-                                <span class="caret"></span>
-                              </a>
-                              <ul class="dropdown-menu" aria-labelledby="city-hub">
-                                <li><a href="/">MAIN HUB</a></li>
-                                <li><a href="/web/antwerp">Antwerp</a></li>
-                                <li><a href="/web/birmingham">Birmingham</a></li>
-                                <li><a href="/web/liberec">Liberec</a></li>
-                                <li><a href="/web/issy">Issy-Les-Moulineaux</a></li>
-                              </ul>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
           </div>
