@@ -59,12 +59,12 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
                 units: "m"
             }),
             datasources: [{
-                   title: "CKAN",
+                   title: "Datasets",
                    url: "/otnServices-1.0/platform/ckanservices/datasets",
                    language: 'eng',
                    type: "ckan"
                }, {
-                   title: "Micka",
+                   title: "WEB Services",
                    url: "/php/metadata/csw/",
                    language: 'eng',
                    type: "micka",
