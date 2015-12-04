@@ -39,4 +39,7 @@
     }
 
     String caturl = preferences.getValue("caturl", StringPool.BLANK);
+    String centerX = preferences.getValue("centerX", StringPool.BLANK);
+    String centerY = preferences.getValue("centerY", StringPool.BLANK);
+    String zoom = preferences.getValue("zoom", StringPool.BLANK);
 %>

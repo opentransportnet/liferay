@@ -52,8 +52,8 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
             ],
             project_name: 'otn/map',
             default_view: new ol.View({
-                center: ol.proj.transform([17.474129, 52.574000], 'EPSG:4326', 'EPSG:3857'), //Latitude longitude    to Spherical Mercator
-                zoom: 5,
+                center: ol.proj.transform([OTNcenterX, OTNcenterY], 'EPSG:4326', 'EPSG:3857'), //Latitude longitude    to Spherical Mercator
+                zoom: OTNzoom,
                 units: "m"
             }),
             datasources: [{

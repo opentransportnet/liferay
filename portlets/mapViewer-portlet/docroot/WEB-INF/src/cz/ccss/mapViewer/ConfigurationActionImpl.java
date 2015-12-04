@@ -25,6 +25,9 @@ public class ConfigurationActionImpl implements ConfigurationAction {
         }
 
         String caturl = ParamUtil.getString(actionRequest, "caturl");
+        String centerX = ParamUtil.getString(actionRequest, "centerX");
+        String centerY = ParamUtil.getString(actionRequest, "centerY");
+        String zoom = ParamUtil.getString(actionRequest, "zoom");
 
         String portletResource = ParamUtil.getString(actionRequest,
                 "portletResource");
@@ -32,6 +35,9 @@ public class ConfigurationActionImpl implements ConfigurationAction {
                 .getPortletSetup(actionRequest, portletResource);
 
         preferences.setValue("caturl", caturl);
+        preferences.setValue("centerX", centerX);
+        preferences.setValue("centerY", centerY);
+        preferences.setValue("zoom", zoom);
 
         preferences.store();
 
