@@ -55,13 +55,15 @@ define(['angular', 'ol', 'core', 'api', 'layermanager', 'sidebar', 'toolbar', 'm
                 zoom: 5,
                 units: "m"
             }),
+            datasource_selector: {allow_add: false},
             datasources: [{
-                   title: "Data",
+                   title: "Datasets",
                    url: "/otnServices-1.0/platform/ckanservices/datasets",
                    language: 'eng',
-                   type: "ckan"
+                   type: "ckan",
+                   download: true
                }, {
-                   title: "Metadata",
+                   title: "Services",
                    url: "/php/metadata/csw/",
                    language: 'eng',
                    type: "micka",
