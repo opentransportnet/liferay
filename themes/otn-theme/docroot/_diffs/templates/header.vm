@@ -14,7 +14,7 @@
         #end
 
         <div id="service" class="pull-right">
-            <button id="btn-toggle-map" class="btn btn-default btn-mobile glyphicon glyphicon-th" title="HUB Nav"></button>
+            <button id="btn-toggle-map" class="btn btn-default btn-mobile glyphicon glyphicon-th" title="HUB Navigation"></button>
 
             #if($is_signed_in)
                 <a class="btn btn-success btn-mobile" href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
