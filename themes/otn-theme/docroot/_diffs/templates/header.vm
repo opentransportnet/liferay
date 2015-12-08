@@ -55,11 +55,11 @@
 
                             <ul id="service" class="navbar-nav nav navbar-right">
                                 #if($is_signed_in)
-                                    <li>
+                                    <!--<li>
                                         <a href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
-                                    </li>
+                                    </li>-->
                                     <li>
-                                        <a href="/my-contributions-info" id="mycontribution" >My Data</a>
+                                        <a href="/my-contributions-info" id="mycontribution" >My Contributions</a>
                                     </li>
                                 #else
                                     #set ($create_account_url = $portletURLFactory.create($request, "58", $page.getPlid(), "ACTION_PHASE"))
