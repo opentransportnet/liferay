@@ -1,27 +1,27 @@
 'use strict';
 
 define(['ol',
-        'toolbar',
         'layermanager',
-        'WfsSource', 'query',
-        'search',
-        'print',
+        'sidebar',
+        'poly2tri',
+        'toolbar',
         'permalink',
-        'measure',
-        'geolocation',
+        'search',
         'api',
-        'glutils', 'WGL', 'wglinit', 'manager', 'mapcontroller', 'dataloader', 'd3', 'dimension',
-        'heatmapdimension','heatmaprenderer', 'heatmaplegend', 'maxcalculator', 'chart_panel', 'stackedbarchart', 'histogramdimension', 'mapdimension', 'floatreaderhistogram',
-        'floatrasterreader', 'linearfilter', 'filter', 'bootstrap', 'multibrush','extentfilter','mappolyfilter'
+        'glutils', 'WGL', 'wglinit', 'mapConf', 'manager', 'mapcontroller', 'dataloader', 'd3', 'dimension',
+        'heatmapdimension', 'heatmaprenderer', 'heatmaplegend', 'maxcalculator', 'chart_panel', 'stackedbarchart', 'histogramdimension', 'mapdimension', 'floatreaderhistogram',
+        'floatrasterreader', 'linearfilter', 'filter', 'bootstrap', 'multibrush', 'extentfilter', 'mappolyfilter'
     ],
 
-    function(ol, toolbar, layermanager, WfsSource) {
+    function(ol, layermanager, sidebar, poly2tri) {
+        window.poly2tri = poly2tri; //shim export didn't work for some reason.
         var module = angular.module('hs', [
+            'hs.sidebar',
             'hs.toolbar',
             'hs.layermanager',
-            'hs.query',
-            'hs.search', 'hs.print', 'hs.permalink',
-            'hs.geolocation', 'hs.widgets.chart_panel'
+            'hs.permalink',
+            'hs.search',
+            'hs.widgets.chart_panel'
         ]);
 
         module.directive('hs', ['hs.map.service', 'Core', '$compile', 'webgl_viz', function(OlMap, Core, $compile, webgl_viz) {
@@ -39,15 +39,8 @@ define(['ol',
                         OlMap.map.updateSize();
                     });
                     w.resize();
-                    $("#right-pane", element).append($compile('<div chartpanel ng-controller="ChartPanel"></div>')(scope));
-                    $("#right-pane", element).css({
-                        'width': '560px',
-                        'padding-top': "40px",
-                        'padding-left': '33px'
-                    });
-                    $(".search-container").removeClass('col-md-4').addClass('col-md-3');
-                    //webgl_viz.webgl_el = $compile('<canvas id="webglayer"></canvas>')(scope);
-                    //element.append(webgl_viz.webgl_el);
+                    $(".panelspace", element).append($compile('<div chartpanel ng-controller="ChartPanel"></div>')(scope));
+                    $(".panelspace-wrapper").hide();
                     webgl_viz.init();
                 }
             };
@@ -74,14 +67,17 @@ define(['ol',
         module.value('config', {
             default_layers: [
                 new ol.layer.Tile({
-                    source: new ol.source.OSM(),
-                    title: "Base layer",
-                    box_id: 'osm',
-                    base: true
+                    source: new ol.source.XYZ({
+                        url: 'http://{a-z}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+                        attributions: [new ol.Attribution({
+                            html: ['&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>']
+                        })]
+                    }),
+                    title: 'BaseMap'
                 })
             ],
             default_view: new ol.View({
-                center: ol.proj.transform([-1.9,52.5], 'EPSG:4326', 'EPSG:3857'), //Latitude longitude    to Spherical Mercator
+                center: ol.proj.transform([-1.9, 52.5], 'EPSG:4326', 'EPSG:3857'), //Latitude longitude    to Spherical Mercator
                 zoom: 11,
                 units: "m"
             })
@@ -92,7 +88,8 @@ define(['ol',
                 if (console) console.log("Main called");
                 $scope.hsl_path = hsl_path; //Get this from hslayers.js file
                 $scope.Core = Core;
-
+                Core.sidebarButtons = false;
+                Core.sidebarRight = false;
                 var map = OlMap.map;
                 $scope.$on('infopanel.updated', function(event) {});
 
