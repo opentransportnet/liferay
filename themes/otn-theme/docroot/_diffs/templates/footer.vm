@@ -1,4 +1,15 @@
 <footer id="footer" role="contentinfo">
+	<p style="text-align: center;">
+	&nbsp;</p>
+<p style="text-align: center;">
+	&nbsp;</p>
+<p style="text-align: center;">
+	<span style="font-size: 28pt;
+    color: #686868;">The App evolution is a Map revolution!</span></p>
+<p style="text-align: center;">
+	<img alt="" src="http://otn-dev.intrasoft-intl.com/documents/10279/48395/footer_big.png/ba92d9f0-cee3-4992-989a-83c5081a346a?t=1451471326795" style="width:100%;" /></p>
+	
+	
 	<div class="container">
     <div class="col-md-7" style="line-height:16px">
 	<div style="float: left;">
@@ -21,3 +32,4 @@
      </div>
 
 </footer>
+
