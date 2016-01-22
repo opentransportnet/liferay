@@ -14,7 +14,7 @@
         #end
 
         <div id="service" class="pull-right">
-            <button id="btn-toggle-map" class="btn btn-default btn-mobile glyphicon glyphicon-th" title="HUB Navigation"></button>
+            <button id="btn-toggle-map" class="btn btn-default btn-mobile glyphicon glyphicon-th" title="HUB Nav"></button>
 
             #if($is_signed_in)
                 <a class="btn btn-success btn-mobile" href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
@@ -30,6 +30,11 @@
             #end
         </div>
     </header>
+
+
+
+
+
 #else
     <header id="header">
         <nav class="navbar navbar-default" role="navigation">
@@ -41,26 +46,46 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://$portalURL/" title="$site_name" rel="home">
+                    <a id="logo_otn" class="navbar-brand" href="http://$portalURL:9080" title="$site_name" rel="home">
                         <img id="logo_normal" src="$images_folder/otn-logo.png" alt="$site_name" />
                         <img id="logo_small" src="$images_folder/otn-logo_sm.png" alt="$site_name" />
                         <img id="logo_micro" src="$images_folder/otn-logo_micro.png" alt="$site_name" />
                     </a>
+					<a id="logo_liberec" class="navbar-brand" href="http://$portalURL:9080/web/liberec" title="$site_name" rel="home">
+                        <img id="logo_normal" src="$images_folder/liberec_logo.png" alt="$site_name" />
+                        <img id="logo_small" src="$images_folder/liberec_logo.png" alt="$site_name" />
+                        <img id="logo_micro" src="$images_folder/liberec_logo.png" alt="$site_name" />
+                    </a>
+                    <a id="logo_antwerp" class="navbar-brand" href="http://$portalURL:9080/web/antwerp" title="$site_name" rel="home">
+                        <img id="logo_normal" src="$images_folder/antwerp-logo.PNG" alt="$site_name" />
+                        <img id="logo_small" src="$images_folder/antwerp-logo.PNG" alt="$site_name" />
+                        <img id="logo_micro" src="$images_folder/antwerp-logo.PNG" alt="$site_name" />
+                    </a>
+                    <a id="logo_issy" class="navbar-brand" href="http://$portalURL:9080/web/issy" title="$site_name" rel="home">
+                        <img id="logo_normal" src="$images_folder/issy_logo.png" alt="$site_name" />
+                        <img id="logo_small" src="$images_folder/issy_logo.png" alt="$site_name" />
+                        <img id="logo_micro" src="$images_folder/issy_logo.png" alt="$site_name" />
+                    </a>
+                    <a id="logo_birmingham" class="navbar-brand" href="http://$portalURL:9080/web/birmingham" title="$site_name" rel="home">
+                        <img id="logo_normal" src="$images_folder/birmingham-logo.png" alt="$site_name" />
+                        <img id="logo_small" src="$images_folder/birmingham-logo.png" alt="$site_name" />
+                        <img id="logo_micro" src="$images_folder/birmingham-logo.png" alt="$site_name" />
+                    </a>
+				
                 </div>
 
                 <div class="navbar-collapse navbar-responsive-collapse collapse">
-                    #if ($has_navigation || $is_signed_in)
+                     #if ($has_navigation || $is_signed_in)
                         #parse ("$full_templates_path/navigation.vm")
                     #end
 
-                            <ul id="service" class="navbar-nav nav navbar-right">
+                    <div>
+                        <div class="row">
+                            <ul id="service">
                                 #if($is_signed_in)
-                                    <!--<li>
+                                    <!-- <li>
                                         <a href="$sign_out_url" id="sign-out" rel="nofollow">$sign_out_text</a>
-                                    </li>-->
-                                    <li>
-                                        <a href="/my-contributions-info" id="mycontribution" >My Contributions</a>
-                                    </li>
+                                    </li> -->
                                 #else
                                     #set ($create_account_url = $portletURLFactory.create($request, "58", $page.getPlid(), "ACTION_PHASE"))
                                     $create_account_url.setWindowState("maximized")
@@ -74,6 +99,23 @@
                                     <a href="https://$portalURL/cas-server/login?service=http://$portalURL/php/cas.html" rel="nofollow">$sign_in_text</a>
                                     </li>
                                 #end
+                            </ul>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="dropdown pull-right">
+                              <a class="btn btn-link dropdown-toggle" id="city-hub" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                City Hubs
+                                <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="city-hub">
+                                <li><a href="/">MAIN HUB</a></li>
+                                <li><a href="/web/antwerp">Antwerp</a></li>
+                                <li><a href="/web/birmingham">Birmingham</a></li>
+                                <li><a href="/web/liberec">Liberec</a></li>
+                                <li><a href="/web/issy">Issy-Les-Moulineaux</a></li>
+                              </ul>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
           </div>
