@@ -12,7 +12,7 @@ var lm;
 
 HSRS.IMAGE_LOCATION = "<%=layliburl%>/imgs/";
 HSRS.STYLERURL = "<%=stylerurl%>/?wms=<%=geosurl%>/{workspace}/ows/{workspace}&wmslayer={layerData.name}";
-HSRS.VIEWURL = "<%=viewerurl%>/?wms=<%=geosurl%>/{workspace}/ows/{workspace}&wmslayers={layerData.name}";
+HSRS.VIEWURL = "<%=viewerurl%>/?wms_to_connect=<%=geosurl%>/{workspace}/ows/{workspace}";
 
 
 var init = function() {
