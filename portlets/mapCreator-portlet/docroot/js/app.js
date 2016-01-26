@@ -1,7 +1,6 @@
 'use strict';
 
-define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'map', 'query', 'search', 'permalink', 'measure', 'datasource_selector', 'ows', 'WfsSource', 'angular-gettext', 'translations', 'compositions', 'status_creator'],
-
+define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'query', 'search', 'permalink', 'measure', 'legend', 'bootstrap', 'geolocation', 'core', 'datasource_selector', 'api', 'angular-gettext', 'translations', 'compositions', 'status_creator'],
     function(angular, ol, toolbar, layermanager, WfsSource) {
         var module = angular.module('hs', [
             'hs.sidebar',
@@ -10,18 +9,18 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
             'hs.map',
             'hs.query',
             'hs.search', 'hs.permalink', 'hs.measure',
-            'hs.core',
+            'hs.geolocation', 'hs.core',
             'hs.datasource_selector',
             'hs.status_creator',
             'hs.api',
             'hs.ows',
             'gettext',
-            'hs.compositions',
+            'hs.compositions'
         ]);
 
         module.directive('hs', ['hs.map.service', 'Core', function(OlMap, Core) {
             return {
-                templateUrl: hsl_path + '/hslayers.html',
+                templateUrl: '/mapCreator-portlet/html/hslayers.html',
                 link: function(scope, element) {
                     var w = angular.element($(window));
                     w.bind('resize', function() {
@@ -59,16 +58,10 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
                 units: "m"
             }),
             datasources: [{
-                   title: "Datasets",
-                   url: "/otnServices-1.0/platform/ckanservices/datasets",
+                   title: "Hub layers",
+                   url: "http://otn-dev.intrasoft-intl.com/otnServices-1.0/platform/ckanservices/datasets",
                    language: 'eng',
                    type: "ckan"
-               }, {
-                   title: "Services",
-                   url: "/php/metadata/csw/",
-                   language: 'eng',
-                   type: "micka",
-                   code_list_url: '/php/metadata/util/codelists.php?_dc=1440156028103&language=eng&page=1&start=0&limit=25&filter=%5B%7B%22property%22%3A%22label%22%7D%5D'
                }
             ],
             'catalogue_url': caturl,
@@ -76,12 +69,14 @@ define(['angular', 'ol', 'core', 'api', 'sidebar', 'toolbar', 'layermanager', 'm
             status_manager_url: '/wwwlibs/statusmanager2/index.php',
         });
 
-        module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser',
-            function($scope, Core, InfoPanelService, composition_parser) {
+        module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser', 'config',
+            function($scope, Core, InfoPanelService, composition_parser, config) {
                 if (console) console.log("Main called");
                 $scope.hsl_path = hsl_path; //Get this from hslayers.js file
                 $scope.Core = Core;
                 Core.sidebarRight=false;
+                Core.singleDatasources = true;
+                Core.embededEnabled = false;
                 $scope.$on('infopanel.updated', function(event) {
                     if (console) console.log('Attributes', InfoPanelService.attributes, 'Groups', InfoPanelService.groups);
                 });
