@@ -14,3 +14,16 @@ div.ol-zoom {
 	bottom: 62px;
 	top: auto;
 }
+
+ol, ul, dl {
+    margin-left: initial;
+}
+
+blockquote, ul, ol, dl {
+    margin: initial;
+}
+
+input#search_address {    
+    background-color: white;
+    padding-left: 10px;
+}
