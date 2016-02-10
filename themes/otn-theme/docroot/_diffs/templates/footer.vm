@@ -21,14 +21,12 @@
 <div class="col-md-2">
 	&nbsp;</div>
 <div class="col-md-3" style="float: right;">
-	<!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-563a22298a546110" async="async"></script><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-563a22298a546110" async="async"></script>
 	<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-		<a class="addthis_button_facebook addthis_button_preferred_1 at300b" href="#" title="Facebook"><span class="at4-icon-right at4-icon aticon-facebook" style="background-color: rgb(48, 88, 145);"><span class="at_a11y">Share on facebook</span> </span> </a> <a class="addthis_button_twitter addthis_button_preferred_2 at300b" href="#" title="Tweet"> <span class="at4-icon-right at4-icon aticon-twitter" style="background-color: rgb(44, 168, 210);"> </span></a> <a class="addthis_button_email addthis_button_preferred_3 at300b" href="#" target="_blank" title="Email"> <span class="at4-icon-right at4-icon aticon-email" style="background-color: rgb(115, 138, 141);"> <span class="at_a11y">Share on email</span> </span> </a> <a class="addthis_button_compact at300m" href="#"> <span class="at4-icon-right at4-icon aticon-compact" style="background-color: rgb(252, 109, 76);"> <span class="at_a11y">More Sharing Services</span> </span> </a>
-		<div class="atclear" tabindex="1000">
-			&nbsp;</div>
-	</div>
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<div class="addthis_sharing_toolbox"></div>
 </div>
-
      </div>
 
 </footer>
