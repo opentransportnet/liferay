@@ -1,4 +1,5 @@
 docroot/WEB-INF/lib/
+docroot/META-INF/
 /build
 docroot/css/
 docroot/js/
