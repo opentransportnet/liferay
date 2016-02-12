@@ -1,15 +1,15 @@
 'use strict';
 
 define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'query', 'search', 'permalink', 'measure', 'legend', 'bootstrap', 'geolocation', 'core', 'datasource_selector', 'api', 'angular-gettext', 'translations', 'compositions', 'status_creator'],
-    function(angular, ol, toolbar, layermanager, WfsSource) {
+    function(angular, ol, toolbar, layermanager) {
         var module = angular.module('hs', [
             'hs.sidebar',
             'hs.toolbar',
             'hs.layermanager',
             'hs.map',
             'hs.query',
-            'hs.search', 'hs.permalink', 'hs.measure',
-            'hs.geolocation', 'hs.core',
+            'hs.search', 'hs.permalink',
+            'hs.core',
             'hs.datasource_selector',
             'hs.status_creator',
             'hs.api',
@@ -49,6 +49,14 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                     title: "Base layer",
                     base: true,
                     removable: false
+                }),
+                new ol.layer.Tile({
+                    title: "Satellite",
+                    base: true,
+                    visible: false,
+                    source: new ol.source.XYZ({
+                        url: 'http://api.tiles.mapbox.com/v4/mapbox.streets-satellite/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicmFpdGlzYmUiLCJhIjoiY2lrNzRtbGZnMDA2bXZya3Nsb2Z4ZGZ2MiJ9.g1T5zK-bukSbJsOypONL9g'
+                    })
                 })
             ],
             project_name: 'otn/map',
@@ -58,15 +66,15 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                 units: "m"
             }),
             datasources: [{
-                   title: "Hub layers",
-                   url: "http://otn-dev.intrasoft-intl.com/otnServices-1.0/platform/ckanservices/datasets",
-                   language: 'eng',
-                   type: "ckan"
-               }
-            ],
+                title: "Hub layers",
+                url: "/php/metadata/csw/",
+                language: 'eng',
+                type: "micka",
+                code_list_url: '/php/metadata/util/codelists.php?_dc=1440156028103&language=eng&page=1&start=0&limit=25&filter=%5B%7B%22property%22%3A%22label%22%7D%5D'
+            }],
             'catalogue_url': caturl,
             'compositions_catalogue_url': caturl,
-            status_manager_url: '/wwwlibs/statusmanager2/index.php',
+            status_manager_url: '/wwwlibs/statusmanager2/index.php'
         });
 
         module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser', 'config',
@@ -74,7 +82,7 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                 if (console) console.log("Main called");
                 $scope.hsl_path = hsl_path; //Get this from hslayers.js file
                 $scope.Core = Core;
-                Core.sidebarRight=false;
+                Core.sidebarRight = false;
                 Core.singleDatasources = true;
                 Core.embededEnabled = false;
                 $scope.$on('infopanel.updated', function(event) {
