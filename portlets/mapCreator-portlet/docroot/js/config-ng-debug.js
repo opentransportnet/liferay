@@ -6,6 +6,7 @@ require.config({
         sidebar: hsl_path + 'components/sidebar/sidebar',
         toolbar: hsl_path + 'components/toolbar/toolbar',
         layermanager: hsl_path + 'components/layermanager/layermanager',
+        ol: hsl_path + 'node_modules/openlayers/dist/ol-debug',
         ows: hsl_path + 'components/ows/ows',
         'ows.wms': hsl_path + 'components/ows/ows_wms',
         'ows.nonwms': hsl_path + 'components/ows/ows_nonwms',

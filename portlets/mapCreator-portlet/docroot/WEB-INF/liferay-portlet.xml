@@ -14,6 +14,17 @@
         <footer-portal-javascript>/wwwlibs/hslayers-ng/bower_components/requirejs/require.js</footer-portal-javascript>
         <footer-portlet-javascript>/js/config-ng.js</footer-portlet-javascript>
     </portlet>
+    <portlet>
+        <portlet-name>mapCreator-debug</portlet-name>
+        <icon>/icon.png</icon>
+        <configuration-action-class>
+            cz.ccss.mapCreator.ConfigurationActionImpl
+        </configuration-action-class>
+        <instanceable>false</instanceable>
+        <footer-portlet-css>/css/main.css</footer-portlet-css>
+        <footer-portal-javascript>/wwwlibs/hslayers-ng/bower_components/requirejs/require.js</footer-portal-javascript>
+        <footer-portlet-javascript>/js/config-ng-debug.js</footer-portlet-javascript>
+    </portlet>
     <role-mapper>
         <role-name>administrator</role-name>
         <role-link>Administrator</role-link>

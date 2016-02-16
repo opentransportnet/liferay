@@ -30,3 +30,7 @@ input#search_address {
     background-color: white;
     padding-left: 10px;
 }
+
+.portlet-borderless-bar {
+    margin-top: 50px;
+}
