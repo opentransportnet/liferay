@@ -46,27 +46,27 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="logo_otn" class="navbar-brand" href="http://$portalURL:9080" title="$site_name" rel="home">
+                    <a id="logo_otn" class="navbar-brand" href="http://$portalURL" title="$site_name" rel="home">
                         <img id="logo_normal" src="$images_folder/otn-logo.png" alt="$site_name" />
                         <img id="logo_small" src="$images_folder/otn-logo_sm.png" alt="$site_name" />
                         <img id="logo_micro" src="$images_folder/otn-logo_micro.png" alt="$site_name" />
                     </a>
-					<a id="logo_liberec" class="navbar-brand" href="http://$portalURL:9080/web/liberec" title="$site_name" rel="home">
+					<a id="logo_liberec" class="navbar-brand" href="http://$portalURL/web/liberec" title="$site_name" rel="home">
                         <img id="logo_normal" src="$images_folder/liberec_logo.png" alt="$site_name" />
                         <img id="logo_small" src="$images_folder/liberec_logo.png" alt="$site_name" />
                         <img id="logo_micro" src="$images_folder/liberec_logo.png" alt="$site_name" />
                     </a>
-                    <a id="logo_antwerp" class="navbar-brand" href="http://$portalURL:9080/web/antwerp" title="$site_name" rel="home">
+                    <a id="logo_antwerp" class="navbar-brand" href="http://$portalURL/web/antwerp" title="$site_name" rel="home">
                         <img id="logo_normal" src="$images_folder/antwerp-logo.PNG" alt="$site_name" />
                         <img id="logo_small" src="$images_folder/antwerp-logo.PNG" alt="$site_name" />
                         <img id="logo_micro" src="$images_folder/antwerp-logo.PNG" alt="$site_name" />
                     </a>
-                    <a id="logo_issy" class="navbar-brand" href="http://$portalURL:9080/web/issy" title="$site_name" rel="home">
+                    <a id="logo_issy" class="navbar-brand" href="http://$portalURL/web/issy" title="$site_name" rel="home">
                         <img id="logo_normal" src="$images_folder/issy_logo.png" alt="$site_name" />
                         <img id="logo_small" src="$images_folder/issy_logo.png" alt="$site_name" />
                         <img id="logo_micro" src="$images_folder/issy_logo.png" alt="$site_name" />
                     </a>
-                    <a id="logo_birmingham" class="navbar-brand" href="http://$portalURL:9080/web/birmingham" title="$site_name" rel="home">
+                    <a id="logo_birmingham" class="navbar-brand" href="http://$portalURL/web/birmingham" title="$site_name" rel="home">
                         <img id="logo_normal" src="$images_folder/birmingham-logo.png" alt="$site_name" />
                         <img id="logo_small" src="$images_folder/birmingham-logo.png" alt="$site_name" />
                         <img id="logo_micro" src="$images_folder/birmingham-logo.png" alt="$site_name" />
