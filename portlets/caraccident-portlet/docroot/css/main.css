@@ -9,3 +9,28 @@ div.ol-control button{
 div.ng-scope #toolbar button:hover {
     background-image:none;
 }
+
+div.ol-zoom {
+	bottom: 115px;
+	top: auto;
+}
+
+div.locate {
+    bottom: 160px;
+}
+ol, ul, dl {
+    margin-left: initial;
+}
+
+blockquote, ul, ol, dl {
+    margin: initial;
+}
+
+input#search_address {    
+    background-color: white;
+    padding-left: 10px;
+}
+
+.portlet-borderless-bar {
+    margin-top: 50px;
+}
