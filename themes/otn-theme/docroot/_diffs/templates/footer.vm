@@ -1,14 +1,16 @@
-<footer id="footer" role="contentinfo">
-	<p style="text-align: center;">
+<div class="hidden-xs"><p style="text-align: center;">
 	&nbsp;</p>
 <p style="text-align: center;">
 	&nbsp;</p>
 <p style="text-align: center;">
-	<span style="font-size: 28pt;
+	<span style="font-size: 24pt;
     color: #686868;">The App evolution is a Map revolution!</span></p>
-<p style="text-align: center;">
-	<img alt="" src="http://otn-dev.intrasoft-intl.com/documents/10279/48395/footer_big.png/ba92d9f0-cee3-4992-989a-83c5081a346a?t=1451471326795" style="width:100%;" /></p>
+<div style="text-align: center;">
+	<img alt="" src="http://otn-dev.intrasoft-intl.com/documents/10279/48395/footer_big.png/ba92d9f0-cee3-4992-989a-83c5081a346a?t=1451471326795" style="width:100%;" /></div>
+</div>	
 	
+
+<footer id="footer" role="contentinfo">
 	
 	<div class="container">
     <div class="col-md-7" style="line-height:16px">
@@ -21,13 +23,14 @@
 <div class="col-md-2">
 	&nbsp;</div>
 <div class="col-md-3" style="float: right;">
-	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-563a22298a546110" async="async"></script>
 	<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
 		<div class="addthis_sharing_toolbox"></div>
+	</div>
 </div>
+
      </div>
 
 </footer>
-
