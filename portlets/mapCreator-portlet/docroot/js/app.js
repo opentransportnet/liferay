@@ -1,6 +1,6 @@
 'use strict';
 
-define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'query', 'search', 'permalink', 'measure', 'legend', 'bootstrap', 'geolocation', 'core', 'datasource_selector', 'api', 'angular-gettext', 'translations', 'compositions', 'status_creator'],
+define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'query', 'search', 'permalink', 'measure', 'legend', 'bootstrap', 'geolocation', 'core', 'datasource_selector', 'api', 'angular-gettext', 'translations', 'compositions', 'status_creator', 'ngcookies'],
     function(angular, ol, toolbar, layermanager) {
         var module = angular.module('hs', [
             'hs.sidebar',
@@ -15,7 +15,8 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
             'hs.api',
             'hs.ows',
             'gettext',
-            'hs.compositions'
+            'hs.compositions',
+            'ngCookies'
         ]);
 
         module.directive('hs', ['hs.map.service', 'Core', function(OlMap, Core) {
@@ -46,8 +47,9 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                     source: new ol.source.OSM({
                         wrapX: false
                     }),
-                    title: "Base layer",
+                    title: "Topographic",
                     base: true,
+                    visible: true,
                     removable: false
                 }),
                 new ol.layer.Tile({
@@ -77,14 +79,15 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
             status_manager_url: '/wwwlibs/statusmanager2/index.php'
         });
 
-        module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser', 'config',
-            function($scope, Core, InfoPanelService, composition_parser, config) {
+        module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser', 'config', '$cookies',
+            function($scope, Core, InfoPanelService, composition_parser, config, $cookies) {
                 if (console) console.log("Main called");
                 $scope.hsl_path = hsl_path; //Get this from hslayers.js file
                 $scope.Core = Core;
                 Core.sidebarRight = false;
                 Core.singleDatasources = true;
                 Core.embededEnabled = false;
+                hslayers_api.gui.setLanguage($cookies.get('GUEST_LANGUAGE_ID'));
                 $scope.$on('infopanel.updated', function(event) {
                     if (console) console.log('Attributes', InfoPanelService.attributes, 'Groups', InfoPanelService.groups);
                 });
