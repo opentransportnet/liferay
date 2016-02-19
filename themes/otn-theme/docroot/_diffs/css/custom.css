@@ -265,6 +265,14 @@ div.logo {
     margin: 0 !important;
 }
 
+.aui-label-required {
+	display: none !important;
+}
+
+.my-sites {
+	display: none !important;
+}
+
 .no-border {
     .portlet-column-content {
         padding-top:0
