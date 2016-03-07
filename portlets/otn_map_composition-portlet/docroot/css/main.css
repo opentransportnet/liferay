@@ -1,0 +1,22 @@
+.map-compositions-widget-portlet{
+ float:left; 
+ width:33%;
+ padding:0 5px 20px;
+}
+
+.map-compositions-widget-portlet .container1{
+	 overflow-y:auto;
+    
+}
+
+.white{
+	background-color:#fff;
+}
+
+.map-compositions-widget-portlet a, label a{
+	color:#8c9f4a;
+}
+
+.map-compositions-widget-portlet h5 {
+	font-size:16px;
+}
