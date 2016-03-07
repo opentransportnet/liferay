@@ -1,0 +1,166 @@
+.bs-wizard{
+	font-size:16px;
+}
+
+
+.select2-results ul {
+	margin:0px;
+}
+
+.form-group label a{
+	color:#8c9f4a;
+}
+
+.select2-selection__rendered li {
+	font-size:12px !important;
+}
+
+.white{
+	background-color:#fff;	
+}
+
+.error label,.error{
+	border-color:#E9322D !important;
+	color:#E9322D !important;
+}
+
+.error span, .error input{
+	border-color:#E9322D !important;
+}
+
+.valid span, .valid input{
+	border-color:green !important;
+}
+
+.valid input{
+	color:green !important;
+}
+
+	
+.inputText{
+	height: 30px;
+	width:100%;
+	border-color: #a8a8a8 !important;
+	border-radius: 3px !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+}
+
+.inputTextArea {
+	width:100%;
+	border-color: #a8a8a8 !important;
+	border-radius: 3px !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+}
+
+.bootstrap-tagsinput{
+		width:100%;
+	}
+
+.registrationLegend {
+	padding-right: 10px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.asteriskCentral::after {
+	content: " *";
+	color: #2196f3;
+}
+
+.noCapitals {
+	text-transform: capitalize !important;	
+}
+
+.fullWidth {
+	width:100%;
+}
+
+.centralSubmissionButton {
+	background-color: #1FBBA6;
+	width: 100%;
+	color: #fff;
+}
+
+.centralSeeAllButton {
+	background-color: #1FBBA6;
+	color: #fff;
+}
+
+.centralSubmissionButton:hover {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+	color: #fff !important;
+}
+
+.centralSubmissionButton:active {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+	color: #fff !important;
+}
+
+.centralSeeAllButton:hover {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+	color: #fff !important;
+}
+
+.rightNoteRegistration {
+	margin-top: 50px;
+	border-top:#1FBBA6 solid 3px;
+	border-bottom : #a8a8a8 solid 1px;
+	border-right : #a8a8a8 solid 1px;
+	border-left : #a8a8a8 solid 1px;
+}
+
+/*
+@media (min-width: 310px) {
+	
+	.select2.select2-container {
+		
+		width: 250px !important;
+		
+	}
+	.select2-dropdown {
+		width:250px;
+	}
+	
+	.select2-results {
+		
+		width: 250px;	
+	}
+	
+	.input-group input {
+		width:250px;
+	}
+	
+	.input-group textarea {
+		width:250px;
+	}
+	
+	.bootstrap-tagsinput{
+		width:250px;
+	}
+	
+	.bootstrap-tagsinput input{
+		border:none !important;
+		background-image:none !important;
+	}
+
+}*/
+
+@media (max-width: 309px) {
+	
+	.select2.select2-container {
+		
+		width: 170px !important;
+		
+	}
+	.select2-dropdown {
+		width:170px;
+	}
+	
+	.select2-results {
+		
+		width: 170px;	
+	}
+
+}
