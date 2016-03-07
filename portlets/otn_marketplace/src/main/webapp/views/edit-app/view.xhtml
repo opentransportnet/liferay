@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<LINK href="/otn_marketplace/css/service.css" rel="stylesheet"
+			type="text/css"></LINK>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>	
+			 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+         		
+         		 var renderbean = ${editAppBean.renderView};
+    			 if (renderbean == false) {
+    			 	window.location.href = 'apps';
+    			 }
+     		</script>
+	</h:head>
+	<h:body>
+		<h:form acceptcharset="UTF-8" enctype="application/form-data" id="appRegistrationForm"
+			prependId="false">
+			<div id="apps">
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+				<div class="row">
+		  			
+		  <div class="col-sm-12">			
+			<div class="row">		
+				<div class="col-sm-2">				
+					<h:outputText 
+						value="#{msg['app-title']}" styleClass="asteriskCentral registrationLegend"/></div>
+					</div>
+				<div class="row">		
+				<div class="col-sm-8">		
+					<p:inputText id="appTitle" styleClass="inputText"
+						value="#{editAppBean.app.title}" required="true"/>
+					<p:message for="appTitle" />
+			</div></div>
+		</div>	
+					
+		<div class="col-sm-12">			
+			<div class="row">		
+				<div class="col-sm-2">	
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['app-abstract']}" />
+						</div>
+					</div>	
+					<div class="row">
+				<div class="col-sm-8">		
+					<h:inputTextarea cols="3" style="width:100%" id="abstract"
+						value="#{editAppBean.app.appAbstract}" required="true"/>
+					<p:message for="abstract" />	
+				</div></div>
+			</div>
+				
+			<div class="col-sm-12">			
+				<div class="row">		
+				  <div class="col-sm-2">	
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['city']}" />
+					</div>
+				</div>	
+				<div class="row">
+				<div class="col-sm-8">		
+					<p:selectOneMenu id="cityList" style="width:100%"
+						value="#{editAppBean.app.city.id}">
+						<f:ajax event="change"
+							listener="#{editAppBean.onCitySelected}" />
+						<f:selectItems value="#{editAppBean.cities}" var="city"
+							itemLabel="#{city.name}" itemValue="#{city.id}" />
+					</p:selectOneMenu>
+				</div></div>
+			</div>	
+			
+			<div class="col-sm-12">			
+				<div class="row">		
+				  <div class="col-sm-2">		
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['app-on-otn']}" />
+						</div>
+				</div>	
+				<div class="row">
+				<div class="col-sm-8">
+					<p:inputText id="otn-app" styleClass="inputText"
+						value="#{editAppBean.app.otnUrl}" />			
+				</div></div>
+			</div>	
+				
+			<div class="col-sm-12">			
+				<div class="row">		
+				  <div class="col-sm-2">		
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['app-google-play']}" />
+					</div>
+				</div>
+				<div class="row">	
+				<div class="col-sm-8">	
+					<p:inputText id="app-google" styleClass="inputText"
+						value="#{editAppBean.app.googleUrl}" />
+				</div></div>
+			</div>
+			
+			<div class="col-sm-12">			
+				<div class="row">		
+				  <div class="col-sm-2">		
+					<h:outputText 
+						value="#{msg['app-apple-store']}" styleClass="registrationLegend"/>
+						</div>
+				</div>
+				<div class="row">	
+				<div class="col-sm-8">
+						<p:inputText id="app-store" styleClass="inputText"
+						value="#{editAppBean.app.appleUrl}" />
+				</div></div>
+			</div>			
+					
+			<div class="col-sm-12">			
+				<div class="row">		
+				  <div class="col-sm-2">	
+					<h:outputText 
+						value="#{msg['app-windows-store']}" styleClass="registrationLegend"/>
+						</div>
+					</div>
+				<div class="row">			
+				<div class="col-sm-8">
+					<p:inputText id="app-windows" styleClass="inputText"
+						value="#{editAppBean.app.windowsUrl}" />
+						</div>
+					</div>	
+				</div>
+				<div class="col-sm-12">
+				<div class="row">
+				<div class="col-sm-2">
+					<h:outputText 
+						 value="#{msg['app-update-pic-legend']}" styleClass="registrationLegend" />
+				</div>	</div> </div>
+					<ui:fragment rendered="${editAppBean.app.pictureUrl != null}">
+					<img style="    margin-left: 10px;" 
+						 src="#{editAppBean.app.pictureUrl}" class="appsLogo"/>
+					</ui:fragment>
+					
+					<ui:fragment rendered="${editAppBean.app.pictureUrl == null}">
+					<h:outputText style="    margin-left: 10px;" 
+						 value="#{msg['app-no-pic']}"/>
+					</ui:fragment>
+				
+				<br/> <br/>
+				<div class="col-sm-12">
+				<div class="row">
+				<div class="col-sm-5">
+					<h:outputText 
+						value="#{msg['update-app-picture']}" styleClass="registrationLegend"/>
+				</div>	</div> </div>
+					<p:fileUpload 
+						fileUploadListener="#{editAppBean.upload}"
+						mode="advanced" dragDropSupport="false" multiple="false" 
+						update="messages" sizeLimit="2000000" fileLimit="3"
+						allowTypes="/(\.|\/)(gif|jpe?g|png)$/">
+					</p:fileUpload>
+
+					
+				<br/><br/>					
+				
+				<p:commandButton value="#{msg['update']}" styleClass="btn btn-default btnCentral"
+						actionListener="#{editAppBean.onSubmit}" ajax="false"
+						update="messages" style="padding: 5px;    margin-right: 6px;" />
+					
+										
+				<p:commandButton value="#{msg['delete']}" styleClass="btn btn-default btnCentral"
+						actionListener="#{editAppBean.onDelete}" ajax="false"
+						style="padding: 5px;    margin-right: 6px;" />		
+						
+				<p:commandButton value="#{msg['cancel']}" styleClass="btn btn-default btnCentral"
+						actionListener="#{editAppBean.onCancel}" ajax="false"
+						style="padding: 5px;    margin-right: 6px;" />	
+			</div>
+			</div>	
+				
+		</h:form>
+		
+	</h:body>
+</f:view>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<LINK href="/otn_marketplace/css/service.css" rel="stylesheet"
+			type="text/css"></LINK>
+		
+		 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>	
+			
+	</h:head>
+
+	<h:body>
+
+		<h:form acceptcharset="UTF-8" enctype="application/form-data" id="appsForm" prependId="false">
+
+		<c:forEach items="#{appsBean.appsList}" var="appHolder"
+						varStatus="status">
+
+			
+						<p></p>
+						<div id="apps">
+						<p:dataGrid var="app" value="#{appHolder.apps}"
+							columns="4" layout="grid">
+
+							<h:panelGrid columns="1" styleClass="appsGrid">
+							<h:panelGrid columns="5">
+
+								<img src="#{app.pictureUrl}" class="appsLogo"></img>
+
+								<ui:fragment rendered="${app.otnUrl != null}">	
+								<a href="#{app.otnUrl}" target="_blank"><img src="/otn_marketplace/images/OTN-logo.png"></img></a>
+								</ui:fragment>
+								
+								
+								<ui:fragment rendered="${app.googleUrl != null}">
+								<a href="#{app.googleUrl}" target="_blank"><img src="/otn_marketplace/images/google.png"></img></a>
+								</ui:fragment>
+								
+								<ui:fragment rendered="${app.appleUrl != null}">
+								<a href="#{app.appleUrl}" target="_blank"><img src="/otn_marketplace/images/apple.png"></img></a>
+								</ui:fragment>
+								
+								<ui:fragment rendered="${app.windowsUrl != null}">
+								<a href="#{app.windowsUrl}" target="_blank"><img src="/otn_marketplace/images/windows.png"></img></a>
+								</ui:fragment>
+								
+								</h:panelGrid>
+								
+								<h:panelGrid columns="1">
+
+								<h:outputText value="#{app.title}"
+							styleClass="appsName"></h:outputText>
+
+								<div class="appsAbstract">#{app.appAbstract}</div>
+								</h:panelGrid>
+								
+								<h:panelGrid columns="2">
+								
+								<ui:fragment rendered="${appsBean.isAdmin}">
+								<p:commandLink action="#{appsBean.onEdit}">
+								<img style="margin-right: 10px;
+								" src="/otn_marketplace/images/Edit-icon.png"></img>
+									<f:setPropertyActionListener value="#{app}"
+									target="#{appsBean.selectedApp}" />								
+								</p:commandLink>
+								</ui:fragment>
+								
+								<ui:fragment rendered="${appsBean.isAdmin}">
+								<p:commandLink action="#{appsBean.onDelete}">
+								<img src="/otn_marketplace/images/delete-icon.png"></img>
+									<f:setPropertyActionListener value="#{app}"
+									target="#{appsBean.selectedApp}" />	
+									<p:confirm header="Confirm deletion" message="#{msg['delete-app']}" icon="ui-icon-alert" />							
+								</p:commandLink>
+								</ui:fragment>
+									
+							</h:panelGrid>
+							</h:panelGrid>
+
+						</p:dataGrid>
+						
+						
+						</div>
+
+			</c:forEach>
+			
+			<p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
+		</h:form>
+
+	</h:body>
+</f:view>

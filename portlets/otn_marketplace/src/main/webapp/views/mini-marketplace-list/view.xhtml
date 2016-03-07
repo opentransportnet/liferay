@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<h:head>		
+		<LINK href="/otn_marketplace/css/service.css" rel="stylesheet" type="text/css"></LINK>		
+	</h:head>
+
+	<h:body>
+
+		<h:form id="miniForm">
+
+			<div class="marketplaceMini">
+
+				<h5>Services</h5>
+				
+				<p:panel id="searchPanel" visible="#{marketplaceBean.renderSearch}">
+
+					<p:dataGrid var="service" value="#{marketplaceBean.services}"
+						columns="2" layout="grid">
+
+						<h:panelGrid columns="2">
+							
+							<h:commandLink action="#{marketplaceBean.onServiceSelected}">
+
+								<f:setPropertyActionListener value="#{service}"
+									target="#{marketplaceBean.selectedService}" />
+
+								<img src="#{service.thumbnail}" class="logo"></img>
+
+							</h:commandLink>
+
+
+							<h:commandLink action="#{marketplaceBean.onServiceSelected}"
+								value="#{service.name}">
+
+								<f:setPropertyActionListener value="#{service}"
+									target="#{marketplaceBean.selectedService}" />
+
+							</h:commandLink>
+
+							<h:outputText value="#{service.category.name}"></h:outputText>
+
+						</h:panelGrid>
+
+					</p:dataGrid>
+
+				</p:panel>
+
+				<p:panel style="width: 350px; height:120px; overflow-y:auto; overflow-x:hidden" id="defPanel" visible="#{marketplaceBean.renderMain}">
+
+
+					<c:forEach items="#{marketplaceBean.servicesList}" var="serHolder"
+						varStatus="status">
+
+
+						<p:dataGrid var="service" value="#{serHolder.services}"
+							columns="1" layout="grid">
+
+							<div id="leftCol" style="width:80px; float: left">
+							<h:commandLink action="#{marketplaceBean.onServiceSelected}">
+
+									<f:setPropertyActionListener value="#{service}"
+										target="#{marketplaceBean.selectedService}" />
+
+									<img src="#{service.thumbnail}" class="logo"></img>
+								</h:commandLink>
+							</div>	
+
+							<div id="rightCol" style="width:200px; float: left">
+							
+							<div style="text-decoration: underline">
+								<h:commandLink action="#{marketplaceBean.onServiceSelected}"
+									value="#{service.name}">
+
+									<f:setPropertyActionListener value="#{service}"
+										target="#{marketplaceBean.selectedService}" />
+								
+								</h:commandLink>
+								</div>
+								
+								<div style="white-space: wrap; overflow-x: hidden; 
+							text-overflow: ellipsis; width: 190px; max-height:
+							 40px; text-align:left;overflow-y:auto">
+								<p>
+							<h:outputText value="#{service.description}"/>
+							
+							</p>
+							</div>
+							
+							</div>	
+
+						</p:dataGrid>
+
+					</c:forEach>
+
+				</p:panel>
+
+			</div>
+
+		</h:form>
+
+	</h:body>
+</f:view>
+
+

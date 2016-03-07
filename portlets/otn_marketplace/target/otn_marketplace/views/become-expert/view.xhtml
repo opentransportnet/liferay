@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+			
+			 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+</h:head>
+	
+		<h:body>
+		
+		<h:form enctype="multipart/form-data" id="expertRegistrationForm"
+			prependId="false">
+
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+
+			  <div class="row">
+
+				<div class="col-sm-7">
+				<div class="row">
+					<h:outputText value="#{msg['expert-name']}" styleClass="asteriskCentral registrationLegend" />
+				</div>
+				<div class="row">	
+					<p:inputText id="name" styleClass="inputText"
+						value="#{expertRegistrationBean.name}"
+						required="true" />
+				<p:message for="name" />		
+				</div>
+							
+				<div class="row">
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['expert-company']}" />
+				</div>
+				<div class="row">		
+					<p:inputText id="companyExpert" styleClass="inputText"
+						value="#{expertRegistrationBean.company}"
+						required="true" />
+					<p:message for="companyExpert"/>	
+				</div>
+				
+					
+				<div class="row">					
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['expert-email']}" />
+				</div>
+				
+				<div class="row">		
+					<p:inputText id="email" styleClass="inputText"
+						value="#{expertRegistrationBean.email}" required="true" />
+				
+					<p:message for="email" />
+				</div>	
+					
+				<div class="row">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['expert-profession']}" />
+				</div>		
+						
+				<div class="row">		
+					<p:inputText id="profession" styleClass="inputText"
+						value="#{expertRegistrationBean.profession}" />
+				</div>
+				
+				<div class="row">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['expert-telephone']}" />
+				</div>		
+				
+				<div class="row">
+					<p:inputText id="telephone" styleClass="inputText"
+						value="#{expertRegistrationBean.telephone}" />
+				</div>	
+				
+				<div class="row">	
+					<div>
+						<b class="registrationLegend"> Add CV</b>
+					</div>	
+				</div>
+				
+				<div class="row">					
+					<p:fileUpload fileUploadListener="#{expertRegistrationBean.upload}" 
+					mode="advanced" dragDropSupport="false"
+                  	multiple="false" update="messages" 
+                 	sizeLimit="200000" fileLimit="3" 
+                 	 allowTypes="/(\.|\/)(doc|docx|pdf|txt|zip)$/" />
+				</div>	
+				
+				<div class="row">		
+					<div>
+						<b class="registrationLegend"> Add picture (200 x 200)</b>
+					</div>
+				</div>
+				
+				<div class="row">		
+						<p:fileUpload fileUploadListener="#{expertRegistrationBean.uploadPicture}"
+						 mode="advanced" dragDropSupport="false"
+                 		 multiple="false" update="messages" sizeLimit="200000" 
+                   		 fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+					
+				</div>
+
+				<div class="row">
+				<p:commandButton value="#{msg['become-expert']}"
+					actionListener="#{expertRegistrationBean.sendEmail}" styleClass="btn btn-primary 
+					centralSubmissionButton" style="float:right; padding:5px; margin:10px" ajax="false"
+					update="messages" />
+				</div>	
+
+			</div>
+			<div class="col-sm-3 col-sm-offset-1 rightNoteRegistration">
+			
+				<h:outputText styleClass="registrationLegend"
+						value="#{msg['mark-experts']}" />
+						<br/><br/>
+					<h:outputText value="#{msg['mark-text-experts']}"/>	
+					<br/><br/>
+					
+					<div style="border-bottom:#fff solid 10px;">
+					<p:commandButton value="#{msg['see-all-experts']}"
+					actionListener="#{expertRegistrationBean.experts}" 
+					styleClass="btn btn-primary noCapitals 
+					centralSeeAllButton" ajax="false" immediate="true"
+					/>
+				</div>
+			</div>
+			
+		</div>	
+		</h:form>
+	</h:body>
+</f:view>

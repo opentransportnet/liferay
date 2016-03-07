@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+			 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+
+	<h:body>
+
+		<h:form id="myChallengesForm" prependId="false">
+			<br /><br />
+			<div id="myChallenges">
+
+			<p:dataTable id="challengeListTable" widgetVar="challengesTable"
+				reflow="true" selectionMode="single"
+				selection="#{myChallengesBean.selectedChallenge}"
+				rowKey="#{challenge.id}" var="challenge"
+				styleClass="myChallengeTable"
+				value="#{myChallengesBean.challengeList}">
+
+
+				<p:ajax event="rowSelect" listener="#{myChallengesBean.onRowSelect}" />
+
+				<p:column id="titleColumn" >	
+									<h:outputText value="#{challenge.title}" class="nameCentral"/>
+									<br/>
+									<div class="scroll"><h:outputText value="#{challenge.description}"/></div>  
+								   	<p:separator style=" margin-bottom: -21px;   margin-left: 30px;"/>
+								   	</p:column>
+
+
+				<!-- <p:column id="cityColumn" sortBy="#{challenge.city.name}"
+					filterBy="#{challenge.city.name}" headerText="#{msg['city']}"
+					filterMatchMode="contains">  			    	
+			            			#{challenge.city.name}
+		            			</p:column>
+
+				<p:column id="categoryColumn" sortBy="#{challenge.category.name}"
+					filterBy="#{challenge.category.name}"
+					headerText="#{msg['category']}" filterMatchMode="contains">  			    	
+			            			#{challenge.category.name}
+		            			</p:column>
+
+				<p:column id="dateColumn" sortBy="#{challenge.dateString}"
+					filterBy="#{challenge.dateString}" headerText="#{msg['posted']}"
+					filterMatchMode="contains">  			    	
+			            			#{challenge.dateString}
+		            			</p:column> -->
+
+				<p:column style="width:3%">
+					<p:commandLink styleClass="ui-icon ui-icon-pencil"
+						action="#{myChallengesBean.updateChallenge}"
+						title="#{msg['update']}">
+						<f:setPropertyActionListener value="#{challenge}"
+							target="#{myChallengesBean.selectedChallenge}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="width:3%">
+					<p:commandLink styleClass="ui-icon ui-icon-trash" process="@this"
+						onclick="delChallenge.show()" title="#{msg['delete']}">
+						<f:setPropertyActionListener value="#{challenge}"
+							target="#{myChallengesBean.selectedChallenge}" />
+					</p:commandLink>
+				</p:column>
+
+
+			</p:dataTable>
+
+
+			<p:confirmDialog id="delChallengeDialog"
+				styleClass="delChallengeDialog"
+				message="#{msg['delete-challenge-msg']}"
+				header="#{msg['delete-challenge']}" severity="alert"
+				widgetVar="delChallenge" hideEffect="explode">
+
+				<p:commandButton id="sconfirm" value="#{msg['yes']}"
+					styleClass="delChallengeDialogBtn"
+					oncomplete="delChallenge.hide()"
+					update=":myChallengesForm:challengeListTable"
+					actionListener="#{myChallengesBean.deleteChallenge}"
+					process="@this" />
+
+
+
+				<p:commandButton id="sdecline" value="#{msg['no']}"
+					styleClass="delChallengeDialogBtn" onclick="delChallenge.hide()" />
+
+			</p:confirmDialog>
+
+			</div>
+		</h:form>
+
+	</h:body>
+</f:view>

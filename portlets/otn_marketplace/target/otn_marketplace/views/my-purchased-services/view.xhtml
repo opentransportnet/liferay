@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+ <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+
+	<h:body>
+
+		<h:form id="myServicesForm" prependId="false">
+			<br />
+			<h4>My Purchased Services</h4>
+			<div>
+						
+				<div id="myServices">	
+					
+				
+				
+				<p:remoteCommand name="updateServiceList"
+					update=":myServicesForm:purchasedServiceListTable" />
+		
+				<div>
+
+ 					<div class="tab-pane" id="profile">
+
+
+						<p:dataTable id="purchasedServiceListTable" reflow="true"
+							selectionMode="single"
+							selection="#{myServicesBean.selectedService}"
+							rowKey="#{purchasedService.id}" var="purchasedService"
+							styleClass="myChallengeTable"
+							value="#{myServicesBean.purchasedServiceList}">
+
+							<p:ajax event="rowSelect"
+								listener="#{myServicesBean.onPurchasedRowSelect}" />
+
+							<p:column id="nameColumn2" sortBy="#{purchasedService.name}"
+								filterBy="#{purchasedService.name}" headerText="#{msg['name']}"
+								filterMatchMode="contains">	
+									#{purchasedService.name} 
+								   	</p:column>
+
+
+							<p:column id="cityColumn2" sortBy="#{purchasedService.city.name}"
+								filterBy="#{purchasedService.city.name}"
+								headerText="#{msg['city']}" filterMatchMode="contains">  			    	
+			            			#{purchasedService.city.name}
+		            			</p:column>
+
+
+							<p:column id="categoryColumn2"
+								sortBy="#{purchasedService.category.name}"
+								filterBy="#{purchasedService.category.name}"
+								headerText="#{msg['category']}" filterMatchMode="contains">  			    	
+			            			#{purchasedService.category.name}
+		            			</p:column>
+
+
+							<p:column id="dateColumn2"
+								sortBy="#{purchasedService.dateString}"
+								filterBy="#{purchasedService.dateString}"
+								headerText="#{msg['posted']}" filterMatchMode="contains">  			    	
+			            			#{purchasedService.dateString}
+		            			</p:column>
+
+						</p:dataTable>
+					</div> 
+					
+					<br/>
+					
+					<h:commandLink action="#{myServicesBean.providedServices}">
+						<div>
+							<h:outputText value="See Provided Services" styleClass="btn btnCentral"></h:outputText>
+						</div>
+					</h:commandLink> 
+
+				</div>
+
+			</div>
+			</div>
+		</h:form>
+
+	</h:body>
+</f:view>

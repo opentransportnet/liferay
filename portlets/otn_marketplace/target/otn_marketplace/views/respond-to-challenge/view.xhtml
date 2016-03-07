@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+	<h:head>
+		
+		<LINK href="/otn_marketplace/css/service.css" rel="stylesheet" type="text/css"></LINK>
+		 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+
+	</h:head>
+
+	<h:body>
+
+		<h:form id="form">
+
+			<div class="challenges">
+
+				<p:panel id="challengesPanel">
+
+					<p></p> 
+
+					<p:dataGrid var="challenge" value="#{respondToChallengesBean.challengeList}"
+						columns="3" layout="grid">
+
+						<h:panelGrid columns="2">
+									<img src="/otn_marketplace/images/chal.png" class="logo"></img>
+									
+									<h:outputText value="#{challenge.title}" styleClass="registrationLegend"></h:outputText>
+									<h:outputText value="" styleClass="challengeDescriptionAlign"></h:outputText>
+									<div class="challengeDescription">#{challenge.description}</div>
+									<h:outputText value="" styleClass="challengeDescriptionAlign"></h:outputText>
+									<h:outputText value="" styleClass="challengeDescriptionAlign"></h:outputText>
+									<h:outputText value="" styleClass="challengeDescriptionAlign"></h:outputText>
+									
+									<h:commandLink action="#{respondToChallengesBean.onRowSelect}">
+
+									<f:setPropertyActionListener value="#{challenge}"
+									target="#{respondToChallengesBean.selectedChallenge}" />
+
+									<h:outputText id="moreInfo" styleClass="challengeMoreInfo glyphicon glyphicon-info-sign" value="more info">more info</h:outputText>
+									
+									</h:commandLink>
+									
+									
+									<h:outputText value=""></h:outputText>
+									
+									<ui:fragment rendered="${challenge.reward == ''}">
+										<div class="challengeReward">#{msg['reward']} : </div ><div> #{msg['no-reward']}</div>
+									</ui:fragment>
+			
+									<ui:fragment rendered="${challenge.reward != ''}">
+										<div class="challengeReward">#{msg['reward']} : </div><div>#{challenge.reward}</div>
+									</ui:fragment>
+										
+										
+									<h:outputText value="" ></h:outputText>
+									<ui:fragment rendered="${challenge.owner.liferayId != respondToChallengesBean.userLiferayId}">
+									<p:panel id="respond" rendered="#{respondToChallengesBean.renderRespondBtn}">
+									
+																		
+										<h:outputText value="" ></h:outputText>
+										<p:commandLink styleClass="challengeSendMail challengeMoreInfo" 
+										id="sendEmailButton" 
+										onclick="emailSender.show()" >
+											<img style="height: 25px; width: 30px;" 
+											src="/otn_marketplace/images/speech-bubble-icon.png"/>
+											<f:setPropertyActionListener value="#{challenge}"
+											target="#{respondToChallengesBean.selectedChallenge}" />
+											
+										</p:commandLink>
+								</p:panel>
+							</ui:fragment>
+												
+								
+						</h:panelGrid>
+
+					</p:dataGrid>
+
+					<p></p>
+
+				</p:panel>
+
+
+
+			</div>
+			
+			<p:dialog style="background-color: white !important" header="#{msg['contact-challenge-owner']}"
+				widgetVar="emailSender">
+
+				<h:form name="calcDistanceform" style="margin:5px; ">
+
+					<h:outputText styleClass="contactMentorLabel"
+						value="#{msg['write-message']}" />
+					<h:inputTextarea styleClass="contactMentorText" cols="10"
+						value="#{respondToChallengesBean.text}" />
+
+
+					<div style="clear: both"></div>
+
+					<p:commandButton
+						style=" float: left; width: 20%; margin:0 20px 0 248px"
+						styleClass="myDiscussionsBtn" id="sconfirm"
+						action="#{respondToChallengesBean.sendEmail}"
+						value="#{msg['send']}" oncomplete="emailSender.hide()" />
+
+					<p:commandButton style="width:20%" styleClass="myDiscussionsBtn"
+						id="sdecline" value="#{msg['cancel']}"
+						onclick="emailSender.hide()" />
+
+				</h:form>
+			</p:dialog>
+			
+			</h:form>
+			
+	</h:body>
+</f:view>

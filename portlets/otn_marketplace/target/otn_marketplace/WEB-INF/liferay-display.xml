@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.1.0//EN" "http://www.liferay.com/dtd/liferay-display_6_1_0.dtd">
+
+<display>
+	<category name="OTN">
+		<portlet id="otn_marketplace" />
+		<portlet id="sell-service"></portlet>
+		<portlet id="post-challenge"></portlet>
+		<portlet id="ServiceDetails"></portlet>
+		<portlet id="my-challenges"></portlet>
+        <portlet id="my-challenges-details"></portlet>
+        <portlet id="edit-development-challenge"></portlet>
+        <portlet id="respond-to-challenge"></portlet>
+        <portlet id="my-services"></portlet>
+        <portlet id="edit-service"></portlet>
+        <portlet id="business-mentors"></portlet>
+        <portlet id="developer-tools"></portlet>
+        <portlet id="faq"></portlet>
+        <portlet id="mini-challenge"></portlet>
+		<portlet id="mini-marketplace-list"></portlet>
+		<portlet id="become-expert"></portlet>
+		<portlet id="register-city"></portlet>
+		<portlet id="register-app"></portlet>
+		<portlet id="apps"></portlet>
+		<portlet id="edit-app"></portlet>
+		<portlet id="my-purchased-services"></portlet>
+	</category>
+</display>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:alloy="http://liferay.com/faces/alloy">
+	<h:head>
+
+		<LINK href="/otn_marketplace/css/service.css" rel="stylesheet"
+			type="text/css"></LINK>
+
+
+		<script>
+			function initCarousel() {
+
+				AUI().use('aui-carousel', function(Y) {
+					new Y.Carousel({
+						contentBox : '#imagesDiv',
+						height : 250,
+						width : 700,
+						intervalTime : 5,
+						animationTime : 3,
+						activeIndex : 0,
+						boundingBox : '#imagesDiv'
+
+					}).render();
+				});
+
+			}//end initCarousel()
+
+			function initImageViewer() {
+
+				AUI().use('aui-image-viewer', function(Z) {
+					new Z.ImageViewer({
+						intervalTime : 2,
+						links : '#imagesDiv .image-viewer-link',
+						zIndex : 1
+					}).render();
+				});
+
+			}//end initimageViewer()	
+
+			initCarousel();
+			//initImageViewer();
+		</script>
+
+	</h:head>
+	<h:body>
+
+		<h:form id="detailsForm" prependId="false">
+
+			<p:growl id="growl" showDetail="true" widgetVar="growl" />
+
+			<p:remoteCommand name="updateBtn" update=":detailsForm:buyBtn" />
+
+			<div id="serviceDetailsDiv">
+
+				<div style="display: flex; display: -webkit-flex;margin: 10px;">
+
+					<div style="margin: 0px 10px 0px 0px">
+						<img src="#{serviceDetailsBean.service.thumbnail}" class="logo"></img>
+					</div>
+
+					<div style="display: block; margin: 0px 0px 0px 10px">
+						<div>
+							<h:outputText value="#{serviceDetailsBean.service.name}"
+								class="serviceDetailsTitle"></h:outputText>
+						</div>
+						<div>
+							<h:outputText value="Uploaded by: #{serviceDetailsBean.service.provider.name}"
+								class="serviceDetailsOwner"></h:outputText>
+						</div>
+
+
+						<ui:fragment rendered="${serviceDetailsBean.service.price == 0.0}">
+							<div class="price">#{msg['free']}</div>
+						</ui:fragment>
+
+						<ui:fragment rendered="${serviceDetailsBean.service.price > 0.0}">
+							<div class="price">#{serviceDetailsBean.service.price}€</div>
+						</ui:fragment>
+
+
+					</div>
+
+				</div>
+
+				<p></p>
+
+				<div style="margin-left: 25px;display: flex; display: -webkit-flex">
+
+					<div id="imagesDiv" class="carousel-item"
+						style="width: 700px; height: 250px;">
+
+						<c:forEach items="#{serviceDetailsBean.service.screenshotList}"
+							var="screenshot" varStatus="status">
+
+							<h:outputLink value="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{screenshot.url}" class="image-viewer-link" target="_blank">
+								<h:graphicImage value="#{facesContext.externalContext.request.scheme}://#{facesContext.externalContext.request.serverName}:#{facesContext.externalContext.request.serverPort}#{screenshot.url}" style="width: 700px; height: 250px;" />
+							</h:outputLink>
+
+						</c:forEach>
+
+					</div>
+
+					<div id="detailsDiv" style="margin: 0px 0px 0px 65px; width: 270px">
+
+
+						<div class="">
+						
+						<div class="serviceDetailsdet serviceDetails">Details</div>
+						
+						<div class="serviceDetails">
+							<span> <b>#{msg['service-url']}: </b> <a href="#{serviceDetailsBean.service.serviceUrl}"
+								target="_blank">#{serviceDetailsBean.service.serviceUrl}</a></span>
+						</div>
+							
+						</div>
+
+						<div class="serviceDetails">
+							<span> <b>Format:</b> #{serviceDetailsBean.service.format}</span>
+						</div>
+
+						<div class="serviceDetails">
+							<span> <b>License: </b>#{serviceDetailsBean.service.license}</span>
+						</div>
+						<br/>
+						
+						<p:commandLink styleClass="serviceDetails"
+								actionListener="#{serviceDetailsBean.goToMyServices}"
+								value="#{msg['go-to-my-services']}">
+							</p:commandLink>
+							
+							<div style="clear: both;"></div>
+							
+							<p:commandLink styleClass="serviceDetails"
+								actionListener="#{serviceDetailsBean.goToServices}"
+								value="#{msg['see-all-services']}">
+							</p:commandLink>
+							
+							
+						<div id="buyServiceDiv">
+
+							<p:panel id="btnPanel" style="background-color: transparent;    margin-left: -13px;">
+
+								<p:commandButton styleClass="myDiscussionsCentralBtn" id="buyBtn"
+									rendered="#{serviceDetailsBean.subscribeBtn and serviceDetailsBean.userSignedIn}"
+									update=":detailsForm:btnPanel :detailsForm:growl"
+									action="#{serviceDetailsBean.buyService}" title="#{msg['buy']}"
+									value="#{msg['buy']}" process="@this">
+								</p:commandButton>
+
+								<p:commandButton disabled="true" styleClass="myDiscussionsCentralBtn"
+									rendered="#{!serviceDetailsBean.subscribeBtn and serviceDetailsBean.userSignedIn}"
+									value="#{msg['purchased']}"></p:commandButton>
+
+							</p:panel>
+							
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<p></p>
+
+			<div id="descriptionDiv">
+				<p>#{serviceDetailsBean.service.description}</p>
+			</div>
+			<br/>
+			<p:panel styleClass="renderBtnPanel"
+								style="float: right; margin-top: -25px;padding:0; margin-bottom:10px;background-color:transparent"
+								rendered="#{serviceDetailsBean.renderBtn}">
+
+								<p:commandButton styleClass="myDiscussionsCentralBtn" value="#{msg['edit']}"
+									actionListener="#{serviceDetailsBean.onEdit}" ajax="false"
+									icon="ui-icon-pencil" />
+
+								<p:commandButton styleClass="myDiscussionsCentralBtn" value="#{msg['delete']}"
+									onclick="delChallenge.show()" icon="ui-icon-trash" />
+
+								<div style="clear: both;"></div>
+
+			</p:panel> 
+			<p:separator />
+
+			<p:confirmDialog id="delChallengeDialog"
+				message="#{msg['delete-service-msg']}"
+				header="#{msg['delete-service']}" severity="alert"
+				widgetVar="delChallenge" hideEffect="explode">
+
+				<p:commandButton id="sconfirm" value="#{msg['yes']}"
+					oncomplete="delChallenge.hide()"
+					actionListener="#{serviceDetailsBean.onDelete}" process="@this" />
+
+
+				<p:commandButton id="sdecline" value="#{msg['no']}"
+					onclick="delChallenge.hide()" />
+
+			</p:confirmDialog>
+
+		</h:form>
+
+	</h:body>
+</f:view>

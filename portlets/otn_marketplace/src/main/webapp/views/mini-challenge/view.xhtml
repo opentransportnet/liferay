@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+			
+			
+	</h:head>
+
+	<h:body>
+
+		<h:form id="allChallengesForm" prependId="false">			
+			<h5>Challenges</h5>
+			<div id="miniChallenge">
+			<p:dataTable id="challengeListTable" widgetVar="challengesTable"
+				reflow="true" selectionMode="single"
+				selection="#{respondToChallengesBean.selectedChallenge}"
+				rowKey="#{challenge.id}" var="challenge"
+				style="width: 350px; height: 130px; overflow: auto"
+				value="#{respondToChallengesBean.challengeList}">
+
+				<p:ajax event="rowSelect"
+					listener="#{respondToChallengesBean.onRowSelect}" />
+
+				<p:column >#{challenge.title}</p:column>			
+
+			</p:dataTable>
+			</div>
+		</h:form>
+	</h:body>
+</f:view>

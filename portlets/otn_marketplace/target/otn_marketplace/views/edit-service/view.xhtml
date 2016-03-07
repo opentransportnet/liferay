@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+			 
+		 <script>
+		 var renderbean = ${editServiceBean.renderView};
+		 if (renderbean == false) {
+		 	window.location.href = 'marketplace';
+		 }
+		 </script>	  
+	
+	</h:head>
+
+	<h:body>
+
+		<h:form enctype="multipart/form-data" id="editServiceForm"
+			prependId="false">
+
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+
+			<ui:fragment rendered="${editServiceBean.renderNoServicesMsg}">
+			<br/><br/><br/><br/><br/><br/><br/>
+			<div style="text-align:center"><b> No service selected. Please click on the service to edit it.</b></div>
+			</ui:fragment>
+
+			<ui:fragment rendered="${editServiceBean.renderUpdatePanel}">
+			<br/><br/><br/><br/><br/>
+			<div style="background-color:#f0f0f0; padding: 20px 55px;margin-top: -38px;">
+
+
+				<div class="row">
+		  			<div class="col-sm-12">			
+					<div class="row">		
+					<div class="col-sm-2">			
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['service-name']}" />
+					</div>	
+					<div class="col-sm-10">
+					<p:inputText id="serviceName" styleClass="inputText"
+						value="#{editServiceBean.service.name}" required="true" />
+						<p:message for="serviceName" />
+					</div></div>
+					
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['service-description']}" />
+					</div>
+					<div class="col-sm-10">
+					<h:inputTextarea id="serviceDescription" rows="3" style="width: 100%"
+						value="#{editServiceBean.service.description}" required="true" />
+						<p:message for="serviceDescription" />
+					</div></div>
+					
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['city']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:selectOneMenu id="cityList" style="width: 100%"
+						value="#{editServiceBean.service.city.id}">
+						<f:ajax event="change"
+							listener="#{editServiceBean.onCitySelected}" />
+						<f:selectItems value="#{editServiceBean.cities}" var="city"
+							itemLabel="#{city.name}" itemValue="#{city.id}" />
+					</p:selectOneMenu>
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">				
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['service-category']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:selectOneMenu value="#{editServiceBean.service.category.id}" 
+						id="categoriesList" style="width: 100%">
+						<f:ajax event="change"
+							listener="#{editServiceBean.onCategorySelected}" />
+						<f:selectItems value="#{editServiceBean.serviceCategories}"
+							var="cat" itemLabel="#{cat.name}" itemValue="#{cat.id}" />
+					</p:selectOneMenu>
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['service-format']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:inputText id="serviceFormat" styleClass="inputText"
+						value="#{editServiceBean.service.format}" required="true" />
+						<p:message for="serviceFormat" />
+					</div></div>
+					
+				
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['service-price']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:inputText id="servicePrice" styleClass="inputText"
+						value="#{editServiceBean.service.price}" />
+					</div></div>
+						
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['service-url']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:inputText id="serviceUrl" styleClass="inputText"
+						value="#{editServiceBean.service.serviceUrl}" required="true" />	
+					<p:message for="serviceUrl" />
+					<p:watermark for="serviceUrl" value="http://" />
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['thumbnail']}" />
+						</div>
+					<div class="col-sm-10">	
+						<img style="width:90px;height:90px" src="#{editServiceBean.service.thumbnail}" />
+					</div></div>
+
+					<div class="row">
+					<div>
+						<div >
+						<h:outputText styleClass="registrationLegend"
+							value="#{msg['update-thumbnail']}" />
+					</div>
+
+					<p:fileUpload fileUploadListener="#{editServiceBean.upload}"
+						mode="advanced" dragDropSupport="false" multiple="false"
+						update="messages" sizeLimit="2000000" fileLimit="3"
+						allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+				</div>
+				</div>
+				
+				<br /> <br />
+				
+					<div class="row">
+					<p:commandButton value="#{msg['update']}" styleClass="btn btnCentral"
+						actionListener="#{editServiceBean.onSubmit}" ajax="false"
+						update="messages" style="padding: 5px; margin: 10px" />
+
+					<p:commandButton value="#{msg['cancel']}" styleClass="btn btn-default"
+						actionListener="#{editServiceBean.onCancel}" ajax="false"
+						style="padding: 5px;" />
+					</div>
+				</div>
+				</div>
+				</div>
+
+			</ui:fragment>	
+		</h:form>
+
+
+	</h:body>
+</f:view>

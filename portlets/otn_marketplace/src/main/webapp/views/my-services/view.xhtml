@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+
+<f:view xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+ <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+
+	<h:body>
+
+		<h:form id="myServicesForm" prependId="false">
+			<br /><br />
+			<div id="myServices">
+			
+				<p:remoteCommand name="updateServiceList"
+					update=":myServicesForm:serviceListTable" />
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+
+					<div class="tab-pane active" id="home">
+
+						<p:dataTable id="serviceListTable" reflow="true"
+							selectionMode="single"
+							selection="#{myServicesBean.selectedService}"
+							rowKey="#{service.id}" var="service"
+							styleClass="myChallengeTable"
+							value="#{myServicesBean.serviceList}">
+
+							<p:ajax event="rowSelect"
+								listener="#{myServicesBean.onRowSelect}" />
+
+							<p:column id="nameColumn" sortBy="#{service.name}"
+								filterBy="#{service.name}" headerText="#{msg['name']}"
+								filterMatchMode="contains">	
+									<h:outputText value="#{service.name}" class="nameCentral"/>
+									<br/>
+									<div class="scroll"><h:outputText value="#{service.description}"/></div>  
+								   	<p:separator style=" margin-bottom: -21px;   margin-left: 30px;"/>
+								   	</p:column>
+
+							<!--<p:column id="cityColumn" sortBy="#{service.city.name}"
+								filterBy="#{service.city.name}" headerText="#{msg['city']}"
+								filterMatchMode="contains">  			    	
+			            			#{service.city.name}
+		            			</p:column>
+
+
+							 <p:column id="categoryColumn" sortBy="#{service.category.name}"
+								filterBy="#{service.category.name}"
+								headerText="#{msg['category']}" filterMatchMode="contains">  			    	
+			            			#{service.category.name}
+		            			</p:column>
+
+
+							<p:column id="dateColumn" sortBy="#{service.dateString}"
+								filterBy="#{service.dateString}" headerText="#{msg['posted']}"
+								filterMatchMode="contains">  			    	
+			            			#{service.dateString}
+		            			</p:column>  -->
+
+							<p:column style="width:3%">
+								<p:commandLink styleClass="ui-icon ui-icon-pencil"
+									action="#{myServicesBean.updateService}"
+									title="#{msg['update']}">
+									<f:setPropertyActionListener value="#{service}"
+										target="#{myServicesBean.selectedService}" />
+								</p:commandLink>
+							</p:column>
+
+
+							<p:column style="width:3%">
+								<p:commandLink styleClass="ui-icon ui-icon-trash"
+									process="@this" onclick="delService.show()"
+									title="#{msg['delete']}">
+									<f:setPropertyActionListener value="#{service}"
+										target="#{myServicesBean.selectedService}" />
+								</p:commandLink>
+							</p:column>
+							
+
+						</p:dataTable>
+
+						<p:confirmDialog id="delServiceDialog" styleClass="delServiceDialog"
+							message="#{msg['delete-service-msg']}"
+							header="#{msg['delete-service']}" severity="alert"
+							widgetVar="delService" hideEffect="explode">
+
+
+							<p:commandButton id="sconfirm" value="#{msg['yes']}"
+								styleClass="delServiceDialogBtn"
+								oncomplete="updateServiceList(); delService.hide()"
+								update=":myServicesForm:serviceListTable"
+								actionListener="#{myServicesBean.deleteService}" process="@this" />
+
+
+							<p:commandButton id="sdecline" value="#{msg['no']}"
+								styleClass="delServiceDialogBtn" onclick="delService.hide()" />
+
+						</p:confirmDialog>
+					</div>
+
+<br/>
+ 					<h:commandLink action="#{myServicesBean.purchasedServices}">
+						<div style="text-align:center">
+							<h:outputText value="See Purchased Services" styleClass="btn btnCentral"></h:outputText>
+						</div>
+					</h:commandLink> 				
+
+				</div>
+
+			</div>
+
+		</h:form>
+
+	</h:body>
+</f:view>

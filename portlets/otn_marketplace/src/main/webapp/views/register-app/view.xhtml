@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<LINK href="/otn_marketplace/css/service.css" rel="stylesheet"
+			type="text/css"></LINK>
+			 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+	<h:body>
+		<h:form acceptcharset="UTF-8" enctype="application/form-data" id="appRegistrationForm"
+			prependId="false">
+
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+				
+				<div class="row">
+				<div class="col-sm-7">
+					<div class="row">
+					<h:outputText 
+						value="#{msg['app-title']}" styleClass="asteriskCentral registrationLegend"/></div>
+						
+						<div class="row">
+						<p:inputText id="appTitle" styleClass="inputText"
+						value="#{appRegistrationBean.appTitle}" required="true"/></div>
+							
+					<div class="row">	
+					<p:message for="appTitle" /></div>
+				
+						<div class="row">
+						<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['app-abstract']}" /></div>
+						
+						<div class="row">
+						<h:inputTextarea rows="3" style="width: 100%" id="abstract"
+						value="#{appRegistrationBean.appAbstract}" required="true"/></div>
+						
+						<div class="row">
+						<p:message for="abstract" /></div>
+						
+						
+				<div class="row">		
+				<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['city']}" /></div>
+					
+					<div class="row">	
+					<p:selectOneMenu id="cityList" style="width: 100%"
+						value="#{appRegistrationBean.selectedCity}">
+						<f:ajax event="change"
+							listener="#{appRegistrationBean.onCitySelected}" />
+						<f:selectItems value="#{appRegistrationBean.cities}"
+							var="city" itemLabel="#{city.name}" itemValue="#{city.id}" />
+					</p:selectOneMenu></div>
+					
+						<div class="row">
+						<h:outputText styleClass="registrationLegend"
+						value="#{msg['app-on-otn']}" /></div>
+						
+						<div class="row">
+						<p:inputText id="otn-app" styleClass="inputText"
+						value="#{appRegistrationBean.appOtnUrl}" /></div>
+											
+						<div class="row">
+						<h:outputText styleClass="registrationLegend"
+						value="#{msg['app-google-play']}" /></div>
+						
+						<div class="row">
+						<p:inputText id="app-google" styleClass="inputText"
+						value="#{appRegistrationBean.appGoogleUrl}" /></div>
+					
+					<div class="row">	
+					<h:outputText 
+						value="#{msg['app-apple-store']}" styleClass="registrationLegend"/></div>
+						
+						<div class="row">
+						<p:inputText id="app-store" styleClass="inputText"
+						value="#{appRegistrationBean.appAppleUrl}" /></div>
+					
+					<div class="row">
+					<h:outputText 
+						value="#{msg['app-windows-store']}" styleClass="registrationLegend"/></div>
+						
+						<div class="row">
+						<p:inputText id="app-windows" styleClass="inputText"
+						value="#{appRegistrationBean.appWindowsUrl}" /></div>
+					
+					
+					<div class="row">
+					<h:outputText 
+						value="#{msg['app-picture']}" styleClass="registrationLegend"/></div>
+					
+					<div class="row">
+					<p:fileUpload 
+						fileUploadListener="#{appRegistrationBean.upload}"
+						mode="advanced" dragDropSupport="false" multiple="false" 
+						update="messages" sizeLimit="2000000" fileLimit="3"
+						allowTypes="/(\.|\/)(gif|jpe?g|png)$/">
+					</p:fileUpload></div>
+
+					
+				
+				<br/><br/>
+				<div class="row">
+				<p:commandButton value="#{msg['add-app']}"
+					actionListener="#{appRegistrationBean.onSubmit}" styleClass="btn btn-primary centralSubmissionButton"
+					ajax="false" /></div>
+
+				</div>
+				
+									
+					<div class="col-sm-3 col-sm-offset-1 rightNoteRegistration">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['reg-apps']}" />
+						<br/><br/>
+					<h:outputText value="#{msg['reg-apps-text']}" />	
+					<br/><br/>
+					
+					<div style="border-bottom:#fff solid 10px;">
+					<p:commandButton value="#{msg['all-apps']}" styleClass="btn btn-primary noCapitals 
+					centralSeeAllButton" actionListener="#{appRegistrationBean.allApps}" immediate="true" 
+					/>
+					</div>
+					</div>	
+				
+			</div>
+		</h:form>
+		
+	</h:body>
+</f:view>

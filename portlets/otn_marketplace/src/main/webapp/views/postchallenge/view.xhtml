@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet" type="text/css"></LINK>
+
+		<LINK href="/otn_marketplace/css/jquery.tagit.css" rel="stylesheet"
+			type="text/css"></LINK>
+         
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('.singleFieldTags2').tagit({
+					allowSpaces : true
+				});
+
+			});
+		</script>
+		<script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+
+	<h:body>
+
+		<h:form enctype="multipart/form-data" id="challengeRegistrationForm"
+			prependId="false">
+
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+
+				<br />
+					<div class="row">
+					<div class="col-sm-7">
+					<div class="row"><h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['title']}" />
+					</div>
+					
+					
+					<div class="row"><p:inputText id="title" styleClass="inputText"
+						value="#{challengeRegistrationBean.challengeTitle}"
+						required="true" />	</div> 
+																			
+					<div class="row"><p:message for="title" /></div>
+														
+					<div class="row">	
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['city']}" />	</div>
+						<div class="row"></div>
+					<div class="row">	
+					<p:selectOneMenu  style="width: 100%" id="cityList" widgetVar="cityList" 
+						value="#{challengeRegistrationBean.selectedCity}">
+						<f:ajax event="change"
+							listener="#{challengeRegistrationBean.onCitySelected}" />
+						<f:selectItems value="#{challengeRegistrationBean.cities}"
+							var="city" itemLabel="#{city.name}" itemValue="#{city.id}" styleClass="selectMenuRegistration"/>
+					</p:selectOneMenu>
+					</div>
+					
+					
+					<div class="row">
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['category']}" />	</div>
+						
+						
+					<div class="row">	
+					<p:selectOneMenu style="width: 100%"
+						value="#{challengeRegistrationBean.selectedCategory}"
+						id="categoriesList" widgetVar="categoriesList">
+						<f:ajax event="change"
+							listener="#{challengeRegistrationBean.onCategorySelected}" />
+						<f:selectItems
+							value="#{challengeRegistrationBean.challengeCategories}"
+							var="cat" itemLabel="#{cat.name}" itemValue="#{cat.id}" />
+					</p:selectOneMenu>
+					</div>
+					
+										<div class="row">			
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['description']}" />
+					</div>
+					<div class="row">	
+					<h:inputTextarea id="description" rows="3" style="width:100%"
+						value="#{challengeRegistrationBean.challengeDescription}"
+						required="true" />
+					</div>
+					
+					<div class="row">
+					<p:message for="description" />
+				</div>
+					
+					<div class="row">
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['skills']}" />
+						</div>
+					
+					<div class="row" style="    margin-left: -8px;    margin-right: -8px;">		
+					<p:inputText id="skills" styleClass="singleFieldTags2" 
+						value="#{challengeRegistrationBean.skills}" required="true" />
+					</div>
+					
+					<div class="row">
+					<p:message for="skills" /></div>
+					
+					<div class="row">
+					<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['output']}" /></div>
+					<div class="row">		
+					<p:inputText id="output" styleClass="inputText"
+						value="#{challengeRegistrationBean.output}" required="true" /></div>
+						
+					<div class="row">
+					<p:message for="output" /></div>
+									
+					<div class="row">				
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['url']}" /></div>
+					
+					<div class="row">	
+					<p:inputText id="url" styleClass="inputText"
+						value="#{challengeRegistrationBean.url}" /></div>
+					
+					<div class="row">	
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['reward']}" /></div>
+					
+					<div class="row">	
+					<p:inputText id="reward" styleClass="inputText"
+						value="#{challengeRegistrationBean.reward}" />
+					</div>
+					
+					<div class="row">	
+					<p:message for="reward" />	
+					</div>	
+				
+					
+					<div class="row">
+					<div class="registrationLegend">
+						<b> Document with extra information</b>
+					</div></div>
+					
+					<div class="row">
+					<p:fileUpload fileUploadListener="#{challengeRegistrationBean.upload}"
+										mode="advanced" multiple="true" dragDropSupport="false"
+										sizeLimit="2000000" fileLimit="3" update="messages"
+										allowTypes="/(\.|\/)(doc|docx|pdf|txt|zip)$/" 
+										/>	</div>
+																					
+				<br />
+				
+				<div class="row">
+				<p:commandButton value="#{msg['post-challenge']}"
+					actionListener="#{challengeRegistrationBean.onSubmit}" styleClass="btn btn-primary centralFormBtn"
+					ajax="false" /></div>
+				
+			</div>
+			
+					<div class="col-sm-3 col-sm-offset-1 rightNoteRegistration">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['dev-challenges']}" />
+						<br/><br/>
+					<h:outputText value="#{msg['dev-challenges-text']}"  />	
+					<br/><br/>
+					
+					<div style="border-bottom:#fff solid 10px;">
+					<p:commandButton value="#{msg['see-challenges']}" styleClass="btn btn-primary 
+					noCapitals centralSeeAllButton"
+					actionListener ="#{challengeRegistrationBean.allChallenges}" immediate="true"
+					ajax="false" />
+					</div>
+					</div>
+		  </div>
+		</h:form>
+
+
+	</h:body>
+</f:view>

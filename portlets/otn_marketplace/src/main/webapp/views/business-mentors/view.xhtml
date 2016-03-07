@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+		
+		 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>	
+			
+	</h:head>
+
+	<h:body>
+
+		<h:form id="businessMentoringForm" prependId="false">
+
+			<div id="mentors">
+              <div class="row">
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/julia.png" />
+					</div>
+					<div >
+					<div class="business-mentor-name">Julia Glidden </div>
+					<div class="business-mentor-expertise">Open Data Specialist – Strategy</div>
+					<div class="business-mentor-description">(21c)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="julia@21cConsultancy.com"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+					</div>
+				</div>
+
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/dieter.jpg" />
+					</div>
+					<div class="business-mentor-name">Dieter de Paepe </div>
+					
+					<div class="business-mentor-expertise">Open Data Specialist - Technical</div>
+					<div class="business-mentor-description">(iMinds)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email" >
+						<f:setPropertyActionListener value="dieter.depaepe@ugent.be"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/stott.png" />
+					</div>
+					<div class="business-mentor-name">Andrew Stott </div>
+					<div class="business-mentor-expertise">Open Data Specialist - Licencing </div>
+					<div class="business-mentor-description">(Former UK Gov Director of Transparency)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="andrew.stott@dirdigeng.com"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+
+
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/cross.png" />
+					</div>
+					<div class="business-mentor-name">Steve Cross</div>
+					<div class="business-mentor-expertise">Smart Mobility Specialist</div>
+					<div class="business-mentor-description">(CEN Group)</div>
+					
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="scross@atmsglobal.com"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+				</div>
+				<div class="row">
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/geert.png" />
+					</div>
+					<div class="business-mentor-name">Geert Mareels </div>
+					<div class="business-mentor-expertise">Public Sector Expert</div>
+					<div class="business-mentor-description">(Flemish eGov Authority)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="geert.mareels@bz.vlaanderen.be"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/leo.png" />
+					</div>
+					<div class="business-mentor-name">Leonidas Kallipolitis </div>
+					<div class="business-mentor-expertise">Software Specialist</div>
+					<div class="business-mentor-description">(Athens Technology Centre)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="l.kallipolitis@atc.gr"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/dimitri.png" />
+					</div>
+					<div class="business-mentor-name">Dimitri Kozuch</div>
+					<div class="business-mentor-expertise">GIS Expert </div>
+					<div class="business-mentor-description">(Help Services Remote Sensing)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="dmitrii@seznam.cz"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+				
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/martolos.png" />
+					</div>
+					<div class="business-mentor-name">Jan Martolos </div>
+					<div class="business-mentor-expertise">Traffic engineering expert</div>
+					<div class="business-mentor-description">(EDIP)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="martolos@edip.cz"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+</div>
+<div class="row">
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/hugo.png" />
+					</div>
+					<div class="business-mentor-name">Hugo Kerschot </div>
+					<div class="business-mentor-expertise">Smart Mobility expert</div>
+					<div class="business-mentor-description">(IS-Practice)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="hugo.kerschot@is-practice.eu"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+				
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/susie.png" />
+					</div>
+					<div class="business-mentor-name">Susie Ruston McAleer </div>
+					<div class="business-mentor-expertise">eParticipation Expert</div>
+					<div class="business-mentor-description">(21c)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="susie@21cConsultancy.com"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+				
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/irene.jpg" />
+					</div>
+					<div class="business-mentor-name">Irene Matzakou </div>
+					<div class="business-mentor-expertise">ICT consultant</div>
+					<div class="business-mentor-description">(Intrasoft)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="irene.matzakou@intrasoft-intl.com"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+				
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<img src="/otn_marketplace/images/premysl.png" />
+					</div>
+					<div class="business-mentor-name">Premysl Vohnout</div>
+					<div class="business-mentor-expertise">GIS Expert</div>
+					<div class="business-mentor-description">(Help Services Remote Sensing)</div>
+					<p:commandLink onclick="emailSender.show()"
+						styleClass="business-mentor-email">
+						<f:setPropertyActionListener value="wohnout@ccss.cz"
+							target="#{businessMentorsBean.receiver}" />
+					</p:commandLink>
+				</div>
+				
+				
+				<div class="business-mentor col-sm-3">
+					<div class="business-mentor-photo">
+						<p:commandLink action="#{businessMentorsBean.becomeExpert}">
+						<img src="/otn_marketplace/images/we-need-you.png" />
+						</p:commandLink>
+					</div>
+					<div class="business-mentor-name">We Need You!</div>
+					<div class="business-mentor-expertise">Smart Mobility Specialist</div>
+					<div class="business-mentor-description">Leveraging our collecting experience, we create extraordinary elegant solutions</div>
+				</div>				
+				</div>
+		</div>
+
+			<p:dialog header="#{msg['contact-bussiness-mentor']}"
+				widgetVar="emailSender">
+				
+				<h:form name="calcDistanceform" style="margin:5px; ">
+					
+						<h:outputText styleClass="contactMentorLabel"
+							value="#{msg['write-message']}" />
+						<h:inputTextarea styleClass="contactMentorText"
+							cols="10" value="#{businessMentorsBean.text}" />
+			
+
+					<div style="clear: both"></div>
+					
+					<p:commandButton style=" float: left; width: 20%; margin:0 20px 0 248px"
+						styleClass="myDiscussionsBtn" id="sconfirm"
+						action="#{businessMentorsBean.sendEmail}" value="#{msg['send']}"
+						oncomplete="emailSender.hide()" />
+
+					<p:commandButton style="width:20%"
+						styleClass="myDiscussionsBtn" id="sdecline"
+						value="#{msg['cancel']}" onclick="emailSender.hide()" />
+
+				</h:form>
+			</p:dialog>
+
+		</h:form>
+
+	</h:body>
+</f:view>

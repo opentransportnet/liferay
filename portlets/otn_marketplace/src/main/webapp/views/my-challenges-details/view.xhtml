@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+			 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+	
+	<p:layout rendered="#{myChallengesDetailsBean.isnew}" style="width:750px;position:relative;" >
+	<p:layoutUnit id="centerLayout" position="center">
+	<div class="portlet-msg-success">
+		<h:outputText value="#{msg['challenge-created']}" />
+	    <br />
+	    <h:outputText  value="#{msg['challenge-contact']}" />
+	</div>
+	</p:layoutUnit>
+	</p:layout>
+	<h:body>
+		<h:form id="myChallengesDetailsForm" styleClass="challengeDetailsForm"
+			prependId="false">
+			<br />
+			
+			<div class="leftDetailsPanel">
+				
+				<h3>
+					<h:outputText value="#{myChallengesDetailsBean.challenge.title}" />
+				</h3>
+
+				<br />
+
+				<div style="clear: both"></div>
+
+
+				<div class="challengeDetails">
+					<h:outputText
+						value="Posted on #{myChallengesDetailsBean.challenge.dateString} by " />
+
+					<b><h:outputText
+							value="#{myChallengesDetailsBean.challenge.owner.name}" /></b>
+				</div>
+				
+				<div class="detailsCategory">
+					<b><h:outputText value="#{msg['category']}: " /></b>
+					<h:outputText
+						value="#{myChallengesDetailsBean.challenge.category.name}" />
+				</div>
+
+				<div>
+					<div class="challengeDetailsDescription">#{myChallengesDetailsBean.challenge.description}</div>
+				</div>
+
+			<ui:fragment rendered="${myChallengesDetailsBean.renderFile}">
+											<p:separator/>
+											<div style="display: inline-block;">
+												<h:outputText value="#{msg['file']}: " styleClass="registrationLegend"/>
+												<a href="#{myChallengesDetailsBean.challenge.documentUrl}"> <img
+													src="#{myChallengesDetailsBean.imageFileUrl}" />
+												</a>
+											</div>
+										</ui:fragment>
+										<br/><br/>
+										
+										<ui:fragment rendered="${myChallengesDetailsBean.renderUrl}">
+											<div style="display: inline-block;">
+												<h:outputText styleClass="registrationLegend" value="#{msg['url-update']}: " />
+												<h:outputText value="#{myChallengesDetailsBean.challenge.url}"/> 
+												
+											</div>
+			</ui:fragment>
+
+			<p:panel rendered="#{myChallengesDetailsBean.renderRespondBtn}">
+					<p:commandButton styleClass="myDiscussionsCentralBtn"
+						value="#{msg['respond']}" onclick="emailSender.show()" />
+				</p:panel>	
+			
+			</div>
+
+			<div class="rightDetailsPanel">
+
+				<div style="clear: both; margin: 20px 0"></div>
+
+				<div class="challengeDetails" style="margin-top: 20px">
+					<b><h:outputText value="#{msg['output']}: " /></b>
+					<h:outputText value="#{myChallengesDetailsBean.challenge.output}" />
+				</div>
+
+				<ui:fragment rendered="${myChallengesDetailsBean.renderReward}">
+				<div class="challengeDetails">
+					<b><h:outputText value="#{msg['reward']}: " /></b>
+					<h:outputText value="#{myChallengesDetailsBean.challenge.reward}" />
+					
+				</div>
+				</ui:fragment>
+
+				<div class="challengeDetails">
+					<b><h:outputText value="#{msg['skills']}: "
+							style="margin-bottom: 10px;" /></b>
+					<h:outputText value="#{myChallengesDetailsBean.skillsView}"
+						var="skill">
+       				    #{skill}
+                    </h:outputText>
+                    
+              <div style="clear: both; margin-bottom: 50px;"></div>
+                    
+				<p:commandLink
+					actionListener="#{myChallengesDetailsBean.goToChallenges}"
+					value="#{msg['see-all-challenges']}">
+				</p:commandLink>
+				
+				
+				<p:panel styleClass="renderBtnPanel"
+					style="padding:0; margin-bottom:10px"
+					rendered="#{myChallengesDetailsBean.renderBtn}">
+
+					<p:commandLink style="color: #08c"
+						actionListener="#{myChallengesDetailsBean.goToMyChallenges}"
+						value="#{msg['go-to-my-challenges']}">
+					</p:commandLink>
+					<br/><br/><br/><br/><br/>
+
+					<p:commandButton value="#{msg['edit']}"
+						styleClass="myDiscussionsCentralBtn"
+						actionListener="#{myChallengesDetailsBean.onEdit}" ajax="false"
+						icon="ui-icon-pencil" />
+
+					<p:commandButton value="#{msg['delete']}"
+						styleClass="myDiscussionsCentralBtn" onclick="delChallenge.show()"
+						icon="ui-icon-trash" />
+
+					<div style="clear: both; margin: 20px 0"></div>
+
+					
+
+				</p:panel>
+
+					<p:confirmDialog id="delChallengeDialog"
+						styleClass="delChallengeDialog"
+						message="#{msg['delete-challenge-msg']}"
+						header="#{msg['delete-challenge']}" severity="alert"
+						widgetVar="delChallenge" hideEffect="explode">
+
+						<p:commandButton id="sconfirm" value="#{msg['yes']}"
+							styleClass="delChallengeDialogBtn"
+							oncomplete="delChallenge.hide()"
+							actionListener="#{myChallengesDetailsBean.onDelete}"
+							process="@this" />
+
+
+						<p:commandButton id="sdecline" value="#{msg['no']}"
+							styleClass="delChallengeDialogBtn" onclick="delChallenge.hide()" />
+
+					</p:confirmDialog>
+				</div>
+
+
+
+			</div>
+
+			<p:dialog header="#{msg['contact-challenge-owner']}"
+				widgetVar="emailSender">
+
+				<h:form name="calcDistanceform" style="margin:5px; ">
+
+					<h:outputText styleClass="contactMentorLabel"
+						value="#{msg['write-message']}" />
+					<h:inputTextarea styleClass="contactMentorText" cols="10"
+						value="#{myChallengesDetailsBean.text}" />
+
+
+					<div style="clear: both"></div>
+
+					<p:commandButton
+						style=" float: left; width: 20%; margin:0 20px 0 248px"
+						styleClass="myDiscussionsBtn" id="sconfirm"
+						action="#{myChallengesDetailsBean.sendEmail}"
+						value="#{msg['send']}" oncomplete="emailSender.hide()" />
+
+					<p:commandButton style="width:20%" styleClass="myDiscussionsBtn"
+						id="sdecline" value="#{msg['cancel']}"
+						onclick="emailSender.hide()" />
+
+				</h:form>
+			</p:dialog>
+
+
+		</h:form>
+
+	</h:body>
+</f:view>

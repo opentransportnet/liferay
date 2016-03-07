@@ -1,0 +1,448 @@
+ 
+body {
+	/*background: #fff !important;*/
+}
+
+.portlet-body {
+   /* background-color: #fff;*/
+}
+
+.noCapitals {
+	text-transform: capitalize;
+}
+
+.centralSeeAllButton {
+	background-color: #1FBBA6;
+}
+
+.centralSeeAllButton:hover {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+}
+
+.centralSubmissionButton {
+	background-color: #1FBBA6;
+	width: 100%;
+}
+
+.centralSubmissionButton:hover {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+}
+
+/*div {
+	backgound: inherit !important;
+}*/
+
+/* Marketplace customizations */
+
+.marketplace {
+/* 	font: 100 15px/1.5 myriad-pro, Arial, Helvetica, sans-serif; */
+	font-size: 13px !important;
+	width:100%;	
+	background-color: #d8d8d8;
+}
+
+.marketplace a {
+	color: #1085A0;
+	font-weight: bold;
+}
+
+.logo{
+	width:85px; 
+	height:85px;
+}
+
+.serviceCategory {
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: 15px !important;	
+}
+
+.appsName {
+	font-weight: bold;
+	font-size: 15px !important;	
+}
+
+.serviceOwner {
+	font-style: italic;
+	font-size: 14px !important;	
+}
+
+.serviceDetailsOwner {
+	font-style: italic;
+	font-size: 16px !important;	
+}
+
+.serviceTitle {
+	font-size: 26px;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.serviceDetailsTitle {
+	font-size: 24px;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0;	
+}
+
+
+#serviceDetailsDiv {
+    padding-bottom: 21px;
+}
+
+.serviceDetailsdet {
+	color: #21252b;
+	overflow: hidden;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 10px;
+	}
+
+.searchField {
+	
+	border-color: #AAA;
+    border-width: 0 0 2px 0 !important;
+    /* font-size: 1.5em; */
+    padding: 0 0 0 25px !important;
+}
+
+.searchButton {
+	
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	cursor:pointer;
+
+	text-decoration:none;	
+}
+
+.myDiscussionsCentralBtn {
+	background: none repeat scroll 0 0 #fff !important;
+	color: #1FBBA6 !important;
+	display: inline-block !important;
+	font-weight: normal !important;
+	height: auto !important;
+	line-height: 1.5em !important;
+	padding: 5px 10px !important;
+	text-align: center !important;
+	vertical-align: top !important;
+	border: 1px solid #1FBBA6 !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
+}
+
+.myDiscussionsCentralBtn:hover {
+	background: none repeat scroll 0 0 #1FBBA6 !important;
+	color: #fff !important;
+	border-color: #1FBBA6 !important;
+	text-shadow: none !important;
+}
+
+
+.price {
+	font-size: .7em;
+	padding: 1px 5px;
+	border:1px solid #939598;
+	color: #939598;
+	/* cursor:pointer; */
+	text-decoration:none;
+	border-radius:5px;
+	text-align:center;
+	vertical-align:top;
+	height:auto;
+	display:inline-block;
+	margin-bottom: 34px;
+	
+}
+
+.carousel-item {
+	width:700px; 
+	height:250px;	
+}
+
+hr {
+	height:1px;
+}
+
+.appsGrid {
+	background-color: whitesmoke;
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 8px;	
+}
+
+/* End marketplace */
+  
+/* primefaces components customization that applies to the primefaces theme  */
+
+.ui-corner-all {
+	/*border-radius: 10px !important;  
+	webkit-border-radius: 10px !important;*/
+}
+
+.ui-dialog-title {
+	margin: 0px 16px 2px 0px !important;
+}
+
+ .ui-widget {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.ui-widget-header{
+	/*background: #4c9fd6 !important;*/
+	text-shadow:none !important;
+}
+
+.ui-widget-content {
+	border:0;
+}
+
+.marketplace .ui-datagrid-column table {
+	background-color: whitesmoke;
+	width: 215px;
+    height: 215px;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 15px;
+}
+
+.ui-datatable table {
+	border-collapse:collapse;
+    width: 100%;
+   
+    background:transparent;
+    	padding: 0;
+  	outline: 0;
+  	border-radius: 3px;
+}
+
+.ui-datatable thead th {
+	border:0;
+	background:#2aaae6;
+	text-shadow: none;
+}
+
+.ui-datatable-data tbody {
+	border:0;
+}
+
+.ui-datatable .ui-datatable-data td, .ui-datatable .ui-datatable-data-empty td{
+	border:0;
+	text-align: center;
+}
+
+
+.ui-datatable .ui-sortable-column-icon {
+	display: inline-block;
+	margin: -3px 0px -3px 2px;
+	position: relative;
+}
+
+.ui-datatable-data .ui-state-hover {
+	background: #ccffcc;
+	border: 0px;
+}
+
+.ui-widget-content .ui-state-highlight {
+	border:0px;
+	color:inherit;
+	text-shadow:none;
+}
+
+.hide-column-names table thead tr {
+    display: none;
+}
+
+.ui-tooltip {
+	background: yellow;
+	left:10px;
+}
+
+
+.ui-datagrid-column {
+	width:20%;
+}
+
+
+/********************* Services Details************************/
+#btnPanel.ui-panel .ui-panel-content{
+	padding:0;
+	margin-top:10px;
+}
+
+.serviceDetails{
+   padding: 0em 0em
+}
+
+#descriptionDiv {
+	width: 1115px;
+	overflow: auto;
+	margin-left: 10px;
+}
+
+/********************* Marketplace/Services ************************/
+.marketplace .ui-inputfield {
+    margin-bottom: 0;
+    margin-top: 24px;
+}
+.searchServicesBtn {
+	padding: 4px 10px !important;
+	margin-left: 29px !important;
+	background: none repeat scroll 0 0 #fff !important;
+	color: #f49b45 !important;
+	display: inline-block !important;
+	font-weight: normal !important;
+	height: auto !important;
+	line-height: 1.5em !important;
+	text-align: center !important;
+	vertical-align: top !important;
+	border: 1px solid #f49b45 !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
+}
+
+.searchServicesBtn:hover {
+	background: none repeat scroll 0 0 #f49b45 !important;
+	color: #fff !important;
+	border-color: #f49b45 !important;
+	text-shadow: none !important;
+}
+
+.serviceDetailsBtn {
+	background: none repeat scroll 0 0 #fff !important;
+	color: #f49b45 !important;
+	display: inline-block !important;
+	font-weight: normal !important;
+	height: auto !important;
+	line-height: 1.5em !important;
+	padding: 5px 3px !important;
+	text-align: center !important;
+	vertical-align: top !important;
+	border: 1px solid #f49b45 !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
+}
+
+.serviceDetailsBtn:hover {
+	background: none repeat scroll 0 0 #f49b45 !important;
+	color: #fff !important;
+	border-color: #f49b45 !important;
+	text-shadow: none !important;
+}
+
+/******Delete challenges/services dialogs********/
+.ui-dialog .ui-dialog-titlebar {
+	background-color: #2e79a2;
+	color: #fff;
+}
+
+.delChallengeDialog,.delServiceDialog {
+	width: 250px !important;
+	height: 200px !important;
+}
+
+.delChallengeDialogBtn,.delServiceDialogBtn {
+	float: left;
+	width: 40%;
+	margin-top: 30px !important;
+	margin-left: 10px !important;
+}
+
+/******Cities********/
+#cities .ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    width: 200%;
+}
+
+
+/******Challenges list********/
+.challengeDescriptionAlign {
+	width: 5px;
+	float:left;
+}
+
+.challengesGrid {
+	min-width: 250px;
+	height: 270px;
+}
+
+.challengeSendMail {
+	text-decoration: none;
+	 font-weight: bold; 
+	 color:black !important;
+}
+
+.challengeReward {
+	color:#1FBBA6;
+	float:left;
+}
+
+.challengeMoreInfo {
+	color:#1FBBA6;
+	float:right;
+	word-spacing: -9px;
+    font-size: 14px;
+}
+
+.challengeDescription {
+	height: 85px;
+    overflow: auto;
+    width: 245px;
+}
+
+.challenges .ui-datagrid-column > table {
+    width: 20%;
+    background-color: white !important;
+    border-style: solid !important;
+    border-color: white !important;
+    border-width: 6px;
+    height: 272px;
+}
+
+.challenges .ui-widget-content .ui-icon {
+    background-color: #1FBBA6;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.challenges .glyphicon-info-sign:before {
+    content: "" !important;
+}
+
+.challenges .glyphicon-info-sign:after {
+    content: "\e086";
+    top: 3px;
+    position: relative;
+    left: 3px;
+}
+/******Apps********/
+
+   .appTextArea{   
+    width: 340px;
+    height: 130px;
+   }
+   
+   	
+.appsLogo{
+	width:75px; 
+	height:75px;
+    margin-right: 25px;
+}
+
+.appsAbstract {
+	width: 260px;
+	overflow: auto;
+	height: 90px;
+}
+
+#apps .ui-datagrid-column{
+	border-style: solid;
+	border-color: transparent;
+	border-width: 10px;
+}
+

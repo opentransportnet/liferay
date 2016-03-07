@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+			 <script type='text/javascript'>
+         		var $jq = jQuery.noConflict(true);
+     		</script>
+	</h:head>
+	<h:body>
+		<h:form enctype="multipart/form-data" id="serviceRegistrationForm"
+			prependId="false">
+
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+			
+			<div class="row">
+			<div class="col-sm-7">		
+				<br /> 
+				<div class="row">
+					<h:outputText 
+						value="#{msg['city-name']}" styleClass="asteriskCentral registrationLegend"/></div>
+				<div class="row">		
+						<p:inputText id="cityName" styleClass="inputText"
+						value="#{cityRegistrationBean.cityName}" required="true"/>
+					
+					<p:message for="cityName" />
+				</div>	
+						
+				<div class="row">					
+						<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['city-country']}" /></div>
+				<div class="row">		
+						<p:inputText id="country" styleClass="inputText"
+						value="#{cityRegistrationBean.country}" required="true"/>
+						<p:message for="country" /></div>
+						
+				<div class="row">
+						<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['city-email']}" /></div>
+						
+				<div class="row">		
+						<p:inputText id="cityEmail" styleClass="inputText"
+						value="#{cityRegistrationBean.cityEmail}" required="true"/>
+						<p:message for="cityEmail" /></div>
+				
+				<div class="row">
+						<h:outputText styleClass="asteriskCentral registrationLegend"
+						value="#{msg['city-website']}" /></div>
+						
+				<div class="row">		
+						<p:inputText id="cityWebsite" styleClass="inputText"
+						value="#{cityRegistrationBean.cityWebsite}" required="true"/>
+						<p:message for="cityWebsite" /></div>
+				
+								
+								<br/>
+				<div class="row">
+					<h:outputText 
+						value="#{msg['city-register-person']}" styleClass="asteriskCentral registrationLegend"/>
+				</div>
+				
+				<div class="row">	
+						<p:inputText id="personName" styleClass="inputText"
+						value="#{cityRegistrationBean.name}" required="true"/>
+					<p:message for="personName" /></div>
+					
+					<div class="row">
+					<h:outputText 
+						value="#{msg['city-register-email']}" styleClass="asteriskCentral registrationLegend"/></div>
+						
+					<div class="row">	
+						<p:inputText id="personEmail" styleClass="inputText"
+						value="#{cityRegistrationBean.email}" required="true"/>
+					<p:message for="personEmail" /></div>
+					
+					<div class="row">
+					<h:outputText 
+						value="#{msg['city-register-telephone']}" styleClass="asteriskCentral registrationLegend"/></div>
+						
+					<div class="row">	
+						<p:inputText id="personTelephone" styleClass="inputText"
+						value="#{cityRegistrationBean.telephone}" required="true"/>
+					<p:message for="personTelephone" /></div>
+					
+					<div class="row">
+					<h:outputText 
+						value="#{msg['city-register-function']}" styleClass="asteriskCentral registrationLegend"/></div>
+						
+					<div class="row">	
+						<p:inputText id="personFunction" styleClass="inputText"
+						value="#{cityRegistrationBean.function}" required="true"/>
+					<p:message for="personFunction" /></div>
+					
+				<br/><br/>
+				
+				<div class="row">
+				<p:commandButton value="#{msg['become-city-hub']}"
+					actionListener="#{cityRegistrationBean.sendEmail}" styleClass="btn btn-primary centralSubmissionButton"
+					 ajax="false" style="width:100%" update="messages" /></div>
+
+			</div>
+			
+			<div class="row">			
+					<div class="col-sm-3 col-sm-offset-1 rightNoteRegistration">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['mark-hubs']}" />
+						<br/><br/>
+					<h:outputText value="#{msg['mark-hubs-text']}"/>	
+					<br/><br/>
+					
+					<div style="border-bottom:#fff solid 10px;">
+					<p:commandButton value="#{msg['all-hubs']}"
+					actionListener="#{cityRegistrationBean.hubs}" 
+					styleClass="btn btn-primary noCapitals 
+					centralSeeAllButton" ajax="false" immediate="true"
+					/>
+					</div>
+					</div>
+			</div>		
+			
+			</div>
+
+		</h:form>
+		
+	</h:body>
+</f:view>

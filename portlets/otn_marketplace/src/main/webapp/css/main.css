@@ -1,0 +1,684 @@
+/* input {
+	border-radius: 10px !important;
+	webkit-border-radius: 10px !important;
+}
+*/
+body {
+	/*background: #eef0f2 !important;*/
+	/*background: #fff !important;*/
+}
+
+/*.portlet-body {
+	background-color: #fff;
+}*/
+
+.ui-corner-all {
+	/*border-radius: 10px !important;
+	webkit-border-radius: 10px !important;*/
+}
+
+.ui-dialog-title {
+	margin: 0px 16px 2px 0px !important;
+}
+
+.ui-widget {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.ui-panelgrid.ui-widget .ui-widget-content {
+	background: none !important;
+}
+
+.ui-widget-header {
+	/*background: #4c9fd6 !important;
+	text-shadow: none !important;*/
+	
+}
+
+.ui-widget-content {
+	border: 0;
+}
+
+.ui-datatable table {
+	border-collapse: collapse;
+	width: 100%;
+	background: transparent;
+	padding: 0;
+	outline: 0;
+	border-radius: 3px;
+}
+
+.ui-datatable thead th {
+	/*border: 0;
+	background: #87935D;
+	text-shadow: none;
+	color: #fff;*/
+	display: none;
+}
+
+.ui-datatable-data tbody {
+	border: 0;
+}
+
+.ui-datatable .ui-datatable-data td,.ui-datatable .ui-datatable-data-empty td
+	{
+	border: 0;
+	text-align: center;
+	padding: 20px 0;
+}
+
+.ui-datatable .ui-sortable-column-icon {
+	display: inline-block;
+	margin: -3px 0px -3px 2px;
+	position: relative;
+}
+
+.ui-datatable-data .ui-state-hover {
+	background: #D3D3D3;
+	border: 0px;
+}
+
+.ui-widget-content .ui-state-highlight {
+	border: 0px;
+	text-shadow: none;
+    background-color: #D3D3D3;
+    color: black;
+}
+
+.ui-selectonemenu-list .ui-state-hover {
+	
+}
+
+.hide-column-names table thead tr {
+	display: none;
+}
+
+.ui-tooltip {
+	background: yellow;
+	left: 10px;
+}
+
+/********************* fileuploader component ************************/
+.ui-fileupload-content {
+	border: 0 none !important;
+	background: none;
+}
+
+.ui-fileupload-buttonbar .ui-corner-top {
+	border-top-left-radius: none !important;
+	border-top-right-radius: none !important;
+}
+
+.ui-fileupload .ui-widget-header {
+	border: 0 none !important;
+	background: none repeat scroll 0 0 !important;
+}
+
+.ui-fileupload.ui-widget {
+	background: none;
+}
+
+/*input[type="text"], textarea, .textarea*/
+input[type="text"],input[type="password"],input[type="file"],input[type="submit"],input[type="button"],input[type="reset"],select,textarea,.textarea,button,.aui-field-input-text
+	{
+	background-image: none !important;
+	/*box-shadow: 0 2px 2px #8f8f8f inset !important;
+	border: 1px solid #a8a8a8 !important;*/
+}
+
+textarea,.textarea {
+	/*box-shadow: 0 2px 2px #8f8f8f inset !important;*/
+	border: 1px solid #a8a8a8 !important;
+	border-radius: 3px !important;
+}
+
+textarea.focus {
+	/*box-shadow: 0 0 5px #85b2cb, 0 2px 2px #8f8f8f inset !important;*/
+	background: none repeat scroll 0 0 #fff !important;
+}
+
+/********************* Service Registration Form ************************/
+.registrationLegend {
+	padding-right: 10px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.registrationField {
+	margin-bottom: 30px;
+}
+
+.inputText{
+	height: 30px;
+	width:100%;
+	border-color: #a8a8a8 !important;
+	border-radius: 3px !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	margin-bottom: 10px;
+}
+
+.ui-panelgrid tr,.ui-panelgrid td {
+	border: none !important;
+}
+
+.column1 {
+	width: 15%;
+	height: auto
+}
+
+.column2 {
+	width: 20%;
+	height: auto
+}
+
+.column3 {
+	width: 100%;
+	height: auto
+}
+
+.asterisk::after {
+	content: " *";
+	color: red
+}
+
+.asteriskCentral::after {
+	content: " *";
+	color: #1FBBA6
+}
+
+.rightNoteRegistration {
+	margin-top: 50px;
+	border-top:#1FBBA6 solid 3px;
+	border-bottom : #a8a8a8 solid 1px;
+	border-right : #a8a8a8 solid 1px;
+	border-left : #a8a8a8 solid 1px;
+}
+
+/********************* Marketplace/Services ************************/
+.marketplace .ui-inputfield {
+	margin-bottom: 0;
+}
+
+/********************* Challenge Registration Form ************************/
+ul.tagit {
+	/*margin-left: 10px !important;*/
+	/*box-shadow: 0 2px 2px #8f8f8f inset;*/
+	background: none repeat scroll 0 0 white;
+	border-color: #a8a8a8;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	color: #555;
+	/*padding: 5px !important;*/
+}
+
+.ui-inputfield { box-shadow: none !important; }
+
+.tagit.ui-widget.ui-widget-content {
+	background: none repeat scroll 0 0 #fff !important;
+}
+
+input.tagit-hidden-field {
+	/* display: none !important;*/
+	
+}
+
+/********************* My Challenges ************************/
+.myChallengeTable {
+	padding-top: 30px;
+}
+
+#add_file_icon {
+	float:left;   
+	width:40px;  
+	margin-left: 23px !important;
+}
+
+#add_file_icon_challenge {
+	float:left;   
+	width:40px;  
+	margin-left: 65px !important;
+}
+
+#challengeList.ui-widget-content tr {
+	padding: 20px 0 !important;
+}
+
+#challengeList.ui-panelgrid tr,#challengeList.ui-panelgrid td {
+	border: none !important;
+}
+
+.myDiscussionsBtn {
+	background: none repeat scroll 0 0 #fff !important;
+	color: #f49b45 !important;
+	display: inline-block !important;
+	font-weight: normal !important;
+	height: auto !important;
+	line-height: 1.5em !important;
+	padding: 5px 10px !important;
+	text-align: center !important;
+	vertical-align: top !important;
+	border: 1px solid #f49b45 !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
+}
+
+.myDiscussionsBtn:hover {
+	background: none repeat scroll 0 0 #f49b45 !important;
+	color: #fff !important;
+	border-color: #f49b45 !important;
+	text-shadow: none !important;
+}
+
+.myDiscussionsCentralBtn {
+	background: none repeat scroll 0 0 #fff !important;
+	color: #1FBBA6 !important;
+	display: inline-block !important;
+	font-weight: normal !important;
+	height: auto !important;
+	line-height: 1.5em !important;
+	padding: 5px 10px !important;
+	text-align: center !important;
+	vertical-align: top !important;
+	border: 1px solid #1FBBA6 !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
+	float:right;
+}
+
+.myDiscussionsCentralBtn:hover {
+	background: none repeat scroll 0 0 #1FBBA6 !important;
+	color: #fff !important;
+	border-color: #1FBBA6 !important;
+	text-shadow: none !important;
+}
+
+#myChallenges .ui-widget-content {
+    background-color: #f0f0f0 !important;
+}
+/********************* My Challenges Details************************/
+.challengeDetailsForm {
+	font-size: 15px;
+	line-height: 18px;
+	height: 440px;
+    background-color: white;
+    margin: 13px;
+    border-left-color: white;
+    border-left-style: solid;
+    border-left-width: 20px;
+}
+
+#myChallengesDetails ul.tagit {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.challengeDetailsDescription {
+	width: 758px;
+	overflow: auto;
+}
+
+.challengeDetails {
+	margin-bottom: 15px;
+}
+
+.detailsCategory {
+	padding: 15px 0;
+	margin-bottom: 20px;
+	margin-top: 0px;
+}
+
+.ui-datalist .ui-widget-content {
+	background: none !important;
+	border: 0 none !important;
+	margin-top: 10px;
+}
+
+.leftDetailsPanel {
+	float: left;
+	width: 70%;
+	background: none repeat scroll 0 0 #fff;
+}
+
+.rightDetailsPanel {
+	box-sizing: border-box;
+	float: right;
+	padding-left: 73px;
+	width: 30%;
+	background: none repeat scroll 0 0 #fff;
+	margin-top: 40px;
+}
+
+.renderBtnPanel.ui-panel .ui-panel-content {
+	padding: 0;
+}
+
+.scroll{
+	max-width: 305px;
+    height: 70px;
+    overflow: auto;
+}   
+
+/********************* My Services************************/
+.nav-tabs>li>a,.nav-pills>li>a {
+	color: #5F6B35 !important;
+}
+
+.nav-tabs>li>a:hover,.nav-pills>li>a:hover {
+	color: #fff !important;
+}
+
+ul#myTab>li:first-child {
+	display: block;
+}
+
+#myServices .ui-widget-content {
+    background-color: #f0f0f0 !important;
+}
+
+.nameCentral {
+	    color: #1FBBA6; 
+	    font-size: 20px;
+	    padding-right: 10px;
+	    
+}
+
+/********************* Business Mentors ****************/
+#mentors .business-mentor {
+	
+	height: 345px;
+	padding-top: 10px;
+	border-width: 5px;
+    border-style: solid;
+    border-color: #fff;
+    padding-left: 0px;
+	/*width: 25%;*/
+}
+
+.business-mentor-photo > img, .business-mentor-photo > a > img{
+	width: 210px;
+    height: 210px;
+    border-radius: 121px;
+}
+
+/**#mentors .business-mentor-photo {
+	background-color: #ffffff;
+	border: 4px solid #ffffff;
+	box-shadow: 0 1px 3px #808080;
+	box-sizing: border-box;
+	height: 200px;
+	margin-left: 10px;
+	overflow: hidden;
+	text-align: center;
+}**/
+
+#mentors .business-mentor-description {
+	font-size: 13px;
+	margin-left: 12px;
+	text-align: center;
+}
+
+#mentors .business-mentor-name {
+	font-size: 18px;
+	margin-left: 12px;
+	padding-top: 8px;
+	text-align: center;
+}
+
+#mentors .business-mentor-expertise {
+	margin-left: 12px;
+	color: #1FBBA6;
+	text-align: center;
+}
+
+#mentors .business-mentor-email {
+	/*background-image: url("/otn_marketplace/images/mentor-email.png");*/
+	background: url("/otn_marketplace/images/mentor-email.png") no-repeat
+		scroll left 13px center transparent;
+	padding-left: 152px;
+	/*color: #2e79a2;*/
+	height: 20px;
+    float: right;
+}
+
+#mentors .become-expert {
+	background: url("/otn_marketplace/images/plus-icon.gif") no-repeat
+		scroll 105px center transparent;
+	background-color: whitesmoke;
+	border-width: 5px;
+    border-style: solid;
+    border-color: #fff;
+    height: 345px;	
+}
+
+ #mentors .become-expert-text {
+    font-size: x-large;
+    color: black;
+    position: relative;
+    top: 60%;
+    right: -15%;
+    text-decoration: none;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+	background-color: #F49B45;
+	color: #fff;
+}
+
+#miniChallenge .ui-datatable thead th {
+    padding: 0px !important;
+}
+
+#miniChallenge .ui-datatable tbody td {
+    padding: 1px !important;
+}
+
+#miniChallenge .ui-datatable thead th {
+	background-color: black !important;
+}
+
+.contactMentorLabel {
+	float: left;
+	width: 20%;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.contactMentorText {
+	float: left !important;
+	height: 200px !important;
+	width: 350px !important;
+	margin: 20px 0 20px 20px !important;
+}
+
+/** Developer tools ***/
+.tools_icon1 {
+	background: none repeat scroll 0 0 #4b4b4b;
+	border-radius: 25px;
+	display: block;
+	height: 50px;
+	left: 0;
+	line-height: 50px;
+	position: absolute;
+	text-align: center;
+	top: 40px;
+	transition: background-color 200ms ease-in 0s;
+	width: 50px;
+}
+
+.developerTools .span4 {
+	position: relative;
+}
+
+/***Registration Forms Buttons***/
+.ui-fileupload-buttonbar .ui-button,.formBtn,.ui-dialog .ui-dialog-buttonpane button
+	{
+	background: none repeat scroll 0 0 #fff !important;
+	color: #2e79a2 !important;
+	display: inline-block;
+	font-weight: normal;
+	height: auto;
+	line-height: 1.5em;
+	padding: 5px 10px;
+	text-align: center;
+	vertical-align: top;
+	border: 1px solid #2e79a2 !important;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 0 !important;
+}
+
+.btnCentral, .btnCentral:active {
+	background-color: #1FBBA6 ; 
+	color:#ffffff !important;
+}
+
+.colorCentral {
+	color: #1FBBA6; 
+}
+
+.btnCentral:hover {
+	background-color: #0DC1C0; 
+	color:#ffffff !important;
+}
+
+.centralSubmissionButton {
+	background-color: #1FBBA6;
+	width: 100%;
+}
+
+.centralSeeAllButton {
+	background-color: #1FBBA6;
+}
+
+.centralSubmissionButton:hover {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+}
+
+.centralSeeAllButton:hover {
+	background: none repeat scroll 0 0 #0DC1C0 ;
+}
+
+.centralFormBtn
+	{
+	background: none repeat scroll 0 0 #1FBBA6 !important;
+	color: #fff !important;
+	display: inline-block;
+	font-weight: normal;
+	height: auto;
+	line-height: 1.5em;
+	padding: 5px 10px;
+	text-align: center;
+	vertical-align: top;
+	border: 1px solid #1FBBA6 !important;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 0 !important;
+	width:100%;
+}
+
+.noCapitals {
+	text-transform: capitalize;
+}
+
+.centralFormBtn:hover
+	{
+	background: none repeat scroll 0 0 #1FBBA6 !important;
+	color: #fff !important;
+	border-color: #1FBBA6 !important;
+	text-shadow: none;
+}
+
+.ui-fileupload-buttonbar .ui-button:hover,.formBtn:hover,.ui-dialog .ui-dialog-buttonpane button:hover
+	{
+	color: #fff !important;
+	border-color: #2e79a2 !important;
+	text-shadow: none;
+	background:#1FBBA6 !important;
+}
+
+.ui-fileupload-buttonbar-central .ui-button:hover,.ui-fileupload-buttonbar-central button:hover {
+	background:#1FBBA6 !important;
+	color: #fff !important;
+	border-color: #1FBBA6 !important;
+	text-shadow: none;
+}
+
+.ui-fileupload-buttonbar-central .ui-button,.ui-fileupload-buttonbar-central button{
+	background:#fff !important;
+	color: #1FBBA6 !important;
+	border-color: #1FBBA6 !important;
+	text-shadow: none;
+}
+
+/******Delete challenges/services dialogs********/
+.ui-dialog .ui-dialog-titlebar {
+	background-color: #2e79a2;
+	color: #fff;
+}
+
+.delChallengeDialog,.delServiceDialog {
+	width: 250px !important;
+	height: 200px !important;
+}
+
+.delChallengeDialogBtn,.delServiceDialogBtn {
+	float: left;
+	width: 40%;
+	margin-top: 30px !important;
+	margin-left: 10px !important;
+}
+
+.searchServicesBtn {
+	padding: 4px 10px !important;
+	margin-left: 29px !important;
+	background: none repeat scroll 0 0 #fff !important;
+	color: #f49b45 !important;
+	display: inline-block !important;
+	font-weight: normal !important;
+	height: auto !important;
+	line-height: 1.5em !important;
+	text-align: center !important;
+	vertical-align: top !important;
+	border: 1px solid #f49b45 !important;
+	cursor: pointer !important;
+	text-decoration: none !important;
+	border-radius: 0 !important;
+}
+ .searchServicesBtn:hover {
+	background: none repeat scroll 0 0 #f49b45 !important;
+	color: #fff !important;
+	border-color: #f49b45 !important;
+	text-shadow: none !important;
+}
+
+.appregister .ui-panelgrid td{
+	border:none;
+}
+
+/**********  f.a.q. **************/
+.panel.panel-default {
+    margin-bottom: 12px;
+}
+
+.succesmsg{
+	border:1px solid #63AB14;
+	background: #CEEF8C;
+	padding:10px;
+	font-style: italic;	
+}
+
+.mini-challenge-portlet, .mini-marketplace-list-portlet{
+	  float:left;
+	  width:33%;
+	  padding:0 5px;
+}
+
+.mini-marketplace-list-portlet .logo{
+	width:45px;
+	height:45px;
+}

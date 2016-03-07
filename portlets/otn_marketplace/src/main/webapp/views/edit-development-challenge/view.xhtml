@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:head>
+		<LINK href="/otn_marketplace/css/main.css" rel="stylesheet"
+			type="text/css"></LINK>
+
+		<LINK href="/otn_marketplace/css/jquery.tagit.css" rel="stylesheet"
+			type="text/css"></LINK>
+			
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('.singleFieldTags2').tagit({
+					allowSpaces : true
+				});
+
+			});
+			
+			 var renderbean = ${editChallengeBean.renderView};
+			 if (renderbean == false) {
+			 	window.location.href = 'challenges';
+			 }
+		</script>
+	</h:head>
+
+	<h:body>
+
+		<h:form enctype="multipart/form-data" id="editChallenge"
+			prependId="false">
+			<div id="myChallengesDetails">
+			<p:growl id="messages" showDetail="true" globalOnly="true" />
+			
+			<ui:fragment rendered="${editChallengeBean.renderNoServicesMsg}">
+			<br/><br/><br/><br/><br/>
+			<div style="text-align:center"><b> No development challenge selected. Please click on a challenge to edit it.</b></div>
+			</ui:fragment>
+			
+			<ui:fragment rendered="${editChallengeBean.renderUpdatePanel}">
+			<br/><br/><br/>
+			<div style="background-color: #f0f0f0; padding: 20px 55px;    margin-top: 3px;">
+
+				<div class="row">
+		  			<div class="col-sm-12">			
+					<div class="row">
+					<div class="col-sm-2">					
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['title']}" />
+					</div>
+					
+					<div class="col-sm-10">	
+					<p:inputText id="title" styleClass="inputText"
+						value="#{editChallengeBean.challenge.title}" required="true" />
+						<p:message for="title" />
+					</div></div>
+
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['description']}" />
+					</div>
+					<div class="col-sm-10">
+					<h:inputTextarea id="description" rows="3" style="width: 100%"
+						value="#{editChallengeBean.challenge.description}" required="true" />
+						<p:message for="description" />
+					</div></div>
+					
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['city']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:selectOneMenu id="cityList" style="width: 100%"
+						value="#{editChallengeBean.challenge.city.id}">
+						<f:ajax event="change"
+							listener="#{editChallengeBean.onCitySelected}" />
+						<f:selectItems value="#{editChallengeBean.cities}" var="city"
+							itemLabel="#{city.name}" itemValue="#{city.id}" />
+					</p:selectOneMenu>
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['category']}" />
+					</div>
+					<div class="col-sm-10">	
+					<p:selectOneMenu value="#{editChallengeBean.challenge.category.id}"
+						id="categoriesList" style="width: 100%">
+						<f:ajax event="change"
+							listener="#{editChallengeBean.onCategorySelected}" />
+						<f:selectItems value="#{editChallengeBean.challengeCategories}"
+							var="cat" itemLabel="#{cat.name}" itemValue="#{cat.id}" />
+					</p:selectOneMenu>
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['skills']}" />
+					</div>	
+					<div class="col-sm-10">
+					<p:inputText id="skills" styleClass="singleFieldTags2" style="width: 100%"
+						value="#{editChallengeBean.skillsView}" required="true" />
+						<p:message for="skills" />
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['output']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:inputText id="output" styleClass="inputText"
+						value="#{editChallengeBean.challenge.output}" required="true" />
+						<p:message for="output" />
+					</div></div>
+					
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['reward']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:inputText id="reward" styleClass="inputText"
+						value="#{editChallengeBean.challenge.reward}" />
+					</div></div>
+						
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['url-update']}" />
+					</div>
+					<div class="col-sm-10">
+					<p:inputText id="url" styleClass="inputText"
+						value="#{editChallengeBean.challenge.url}" />
+					</div></div>	
+					
+					<br/>		
+					<div class="row">
+					<div class="col-sm-2">
+					<h:outputText styleClass="registrationLegend"
+						value="#{msg['file']}" style="    font-size: 16px;" />
+					</div>
+					<div class="col-sm-10">	
+					<h:outputText value="#{editChallengeBean.oldfileName}" styleClass="colorCentral"/>
+					</div>	</div>
+					
+				<div class="row">
+				<div style="padding-top: 30px;">
+					<div>
+						<b style="    font-size: 16px;">#{msg['update-file']} </b>
+					</div></div>
+				<div class="row">
+					<p:fileUpload fileUploadListener="#{editChallengeBean.upload}"
+						mode="advanced" dragDropSupport="false" multiple="false"
+						update="messages" sizeLimit="2000000" fileLimit="3"
+						allowTypes="/(\.|\/)(doc|docx|pdf|txt|zip)$/" style="    margin-left: 11px;"/>
+				</div></div>
+
+
+				<br /> <br />
+
+				<div class="row">
+					<p:commandButton value="#{msg['update']}" styleClass="btn btnCentral"
+						actionListener="#{editChallengeBean.onSubmit}" ajax="false"
+						update="messages" style="padding: 5px; margin: 10px" />
+
+					<p:commandButton value="#{msg['cancel']}" styleClass="btn btn-default"
+						actionListener="#{editChallengeBean.onCancel}" ajax="false"
+						style="padding: 5px;" />
+
+				</div>
+				
+			</div>
+			</div>
+			</div>
+			</ui:fragment>
+		  </div>	
+		</h:form>
+
+
+	</h:body>
+</f:view>
