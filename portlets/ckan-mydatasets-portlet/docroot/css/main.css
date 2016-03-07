@@ -1,0 +1,198 @@
+.dataTitle{
+	color:#1FBBA6;
+}
+
+.deleteDataset {
+	background-color: transparent ;
+    border: none;
+    color: darkgreen;
+    font-weight: bold !important;
+}
+
+.dlink{
+	padding-top:15px;
+	color:#1FBBA6;
+}
+
+.all-datasets-portlet .my-datasets-portlet{
+ float:left; 
+ width:33%;
+ padding:0 5px 20px;
+}
+
+#dstitle, #source, #author, #notes {
+	width: 480px;
+}
+
+#notes {
+    border-style: ridge;
+}
+
+span.tag{
+	padding:3px 10px;
+	background-color:#1FBBA6;
+	color:#fff;
+	border-radius:10px;
+	float:left;
+	margin-right:10px;
+}
+
+.all-datasets-portlet a{
+	color:#1FBBA6;
+}
+
+.all-datasets-portlet h5{
+	margin-top:5px;
+	margin-bottom:5px;
+	font-size:16px;
+}
+
+.all-datasets-portlet .container1{
+	 overflow-y:auto;
+     overflow-x:hidden;
+     height:300px;
+}
+
+.datasetDetails,.datasetList, .container1{
+	font-size:16px;
+	background-color:#F0F0F0;
+	}
+	
+.datasetList {
+	width:30%;
+	float: left;
+	border-style: solid;
+    border-width: 20px;
+    border-color: white;
+}
+
+.datasetsFound {
+	color: #1FBBA6;
+	text-align: center;
+}
+
+.separator {
+	border-top: 1px solid gainsboro !important;
+}
+
+.colorCentral {
+	color: #1FBBA6;
+}
+
+.btnCentral, .btnCentral:active {
+	background-color: #1FBBA6; 
+	color:#ffffff !important;
+}
+
+ #myDatasets li:active, .activeDataset {
+    background-color: #DCDCDC;
+    border-left-style: solid;
+    border-left-color: #DCDCDC;
+    border-left-width: 15px;
+    margin-left: -16px;
+}
+    
+#orgDatasets li:active, .activeDataset {
+    background-color: #DCDCDC;
+    border-left-style: solid;
+    border-left-color: #DCDCDC;
+    border-left-width: 15px;
+    margin-left: -16px;
+}    
+
+.btnCentral:hover {
+	background-color: #0DC1C0; 
+	color:#ffffff !important;
+}
+
+.datasetDescription {
+	width: 260px;
+	overflow: auto;
+    max-height: 95px;
+    padding-bottom: 0px;
+   
+}
+
+.datasetNotes {
+	width: 680px;
+    overflow: auto;
+}
+
+.noDatasetSelected {
+	top: 100px;
+    position: relative;
+    left: 500px;
+    font-weight: bold;
+}
+
+.datasetDetailsDelete {
+	width: 67%;
+    float: right;
+    border-left-color: #f0f0f0;
+    border-left-style: solid;
+    border-left-width: 20px;
+    margin-top: 20px;
+    background-color: #f0f0f0;
+}
+
+.datasetDetails {
+	width: 67%;
+    float: right;
+    border-left-color: #f0f0f0;
+    border-left-style: solid;
+    border-left-width: 20px;
+    margin-top: 20px;
+}
+
+
+.datasetDetailsEdit {
+	width: 67%;
+    float: right;
+    border-left-color: #f0f0f0;
+    border-left-style: solid;
+    border-left-width: 20px;
+    border-bottom-color: #f0f0f0;
+    border-bottom-style: solid;
+    border-bottom-width: 20px;
+    margin-top: 24px;
+    background-color: #f0f0f0;
+}
+
+.pagination li {
+  display:inline-block;
+  padding:5px;
+  
+}
+
+.pagination {
+    margin-left: 20px !important;
+    max-width: 310px;
+    overflow: hidden;
+    max-height: 45px;
+}
+
+
+li {
+	list-style: none;
+}
+
+.search {
+	margin-left: 75px;
+    margin-top: 25px;
+}
+	
+.editData {
+    font-weight: bold;
+    color: #1FBBA6;	
+    font-family: 'Glyphicons Halflings';  
+	}
+	
+.editDelete {
+	float: right;
+}	
+	
+.white{
+	background-color:#fff;
+	}
+}
+

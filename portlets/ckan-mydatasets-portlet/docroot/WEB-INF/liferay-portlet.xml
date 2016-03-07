@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.1.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_1_0.dtd">
+
+<liferay-portlet-app>
+	
+	<portlet>
+		<portlet-name>my-datasets</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		
+		<css-class-wrapper>my-datasets-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>all-datasets</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		
+		<css-class-wrapper>all-datasets-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>dataset-details</portlet-name>
+		<icon>/icon.png</icon>
+		<ajaxable>true</ajaxable>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/select2.css</header-portlet-css>
+		<header-portlet-css>/css/bootstrap-tagsinput.css</header-portlet-css>
+		
+		<footer-portlet-javascript>/js/jquery-1.11.2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/bootstrap-tagsinput.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/validation/jquery.validate.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/select2.js</footer-portlet-javascript>
+		<css-class-wrapper>dataset-details-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>delete-dataset</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		
+		<css-class-wrapper>delete-dataset-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>organization-dataset</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<footer-portlet-javascript>	/js/list.js</footer-portlet-javascript>
+		<footer-portlet-javascript>	/js/list.pagination.js</footer-portlet-javascript>
+		<footer-portlet-javascript>	/js/jquery-1.11.2.js</footer-portlet-javascript>
+		<css-class-wrapper>
+			organization-dataset-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>delete-organization-dataset</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		
+		<css-class-wrapper>
+			delete-organization-dataset-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>organization-dataset-details</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/select2.css</header-portlet-css>
+		<header-portlet-css>/css/bootstrap-tagsinput.css</header-portlet-css>
+		
+		<footer-portlet-javascript>/js/jquery-1.11.2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/bootstrap-tagsinput.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/validation/jquery.validate.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/select2.js</footer-portlet-javascript>
+		<css-class-wrapper>
+			organization-dataset-details-portlet
+		</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>marketplace2</portlet-name>
+		<icon>/icon.png</icon>
+		<control-panel-entry-category>my</control-panel-entry-category>
+		<control-panel-entry-weight>1.5</control-panel-entry-weight>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/select2.css</header-portlet-css>
+		<header-portlet-css>/css/bootstrap-tagsinput.css</header-portlet-css>
+		<header-portlet-css>/css/global.css</header-portlet-css>
+		<header-portlet-css>/css/bootstrap.min.css</header-portlet-css>
+		<header-portlet-css>/css/colorbox.css</header-portlet-css>
+		<header-portlet-css>/css/typo.css</header-portlet-css>
+		<header-portlet-css>/css/tooltips.css</header-portlet-css>
+		<header-portlet-css>/css/portfolio.css</header-portlet-css>
+		<header-portlet-css>/css/page-nav.css</header-portlet-css>
+		<header-portlet-css>/css/social.css</header-portlet-css>
+		
+		<footer-portlet-javascript>/js/jquery-1.11.2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/bootstrap-tagsinput.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/validation/jquery.validate.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/select2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/bootstrap.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/isotope.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.colorbox-min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/requestAnimationFramePolyfill.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.placeholder.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.tooltip.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.init.tooltip.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.easing.1.3.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.scrollTo.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.global.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.init.isotope.js</footer-portlet-javascript>
+		
+		<css-class-wrapper>marketplace2-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>apps2</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/select2.css</header-portlet-css>
+		<header-portlet-css>/css/bootstrap-tagsinput.css</header-portlet-css>
+		<header-portlet-css>/css/global.css</header-portlet-css>
+		<header-portlet-css>/css/bootstrap.min.css</header-portlet-css>
+		<header-portlet-css>/css/colorbox.css</header-portlet-css>
+		<header-portlet-css>/css/typo.css</header-portlet-css>
+		<header-portlet-css>/css/tooltips.css</header-portlet-css>
+		<header-portlet-css>/css/portfolio.css</header-portlet-css>
+		<header-portlet-css>/css/page-nav.css</header-portlet-css>
+		<header-portlet-css>/css/social.css</header-portlet-css>
+		
+		<footer-portlet-javascript>/js/jquery-1.11.2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/bootstrap-tagsinput.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/validation/jquery.validate.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/select2.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/bootstrap.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/isotope.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.colorbox-min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/requestAnimationFramePolyfill.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.placeholder.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.tooltip.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.init.tooltip.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.easing.1.3.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/jquery.scrollTo.min.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.global.js</footer-portlet-javascript>
+		<footer-portlet-javascript>/js/pi.init.isotope.js</footer-portlet-javascript>
+		
+		<css-class-wrapper>apps2-portlet</css-class-wrapper>
+	</portlet>
+	<role-mapper>
+		<role-name>administrator</role-name>
+		<role-link>Administrator</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>guest</role-name>
+		<role-link>Guest</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>power-user</role-name>
+		<role-link>Power User</role-link>
+	</role-mapper>
+	<role-mapper>
+		<role-name>user</role-name>
+		<role-link>User</role-link>
+	</role-mapper>
+</liferay-portlet-app>

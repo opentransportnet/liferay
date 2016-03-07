@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.1.0//EN" "http://www.liferay.com/dtd/liferay-display_6_1_0.dtd">
+
+<display>
+	
+	<category name="OTN">
+		<portlet id="my-datasets"></portlet>
+		<portlet id="all-datasets"></portlet>
+		<portlet id="dataset-details"></portlet>
+		<portlet id="delete-dataset"></portlet>
+		<portlet id="organization-dataset"></portlet>
+		<portlet id="delete-organization-dataset"></portlet>
+		<portlet id="organization-dataset-details"></portlet>
+		<portlet id="marketplace2"></portlet>
+		<portlet id="apps2"></portlet>
+	</category>
+</display>
