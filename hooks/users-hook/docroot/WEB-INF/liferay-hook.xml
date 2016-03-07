@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.1.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_1_0.dtd">
+
+<hook>
+	<service>
+		<service-type>
+			com.liferay.portal.service.UserLocalService
+		</service-type>
+		<service-impl>atc.otn.hooks.ExtUserLocalService</service-impl>
+	</service>
+	<service>
+		<service-type>
+			com.liferay.portal.service.UserService
+		</service-type>
+		<service-impl>atc.otn.hooks.ExtUserService</service-impl>
+	</service>
+</hook>
