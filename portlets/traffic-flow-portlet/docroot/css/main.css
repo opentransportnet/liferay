@@ -1,0 +1,47 @@
+div.ol-control button{
+    background: initial;
+    background-image: none;
+    background-color: #7b98bc;
+    background-color: rgba(0,60,136,.5);
+    text-shadow: none;
+}
+
+div.ng-scope #toolbar button:hover {
+    background-image:none;
+}
+
+div.ol-zoom {
+	bottom: 115px;
+	top: auto;
+}
+
+div.locate {
+    bottom: 160px;
+}
+ol, ul, dl {
+    margin-left: initial;
+}
+
+blockquote, ul, ol, dl {
+    margin: initial;
+}
+
+input#search_address {    
+    background-color: white;
+    padding-left: 10px;
+}
+
+.portlet-borderless-bar {
+    margin-top: 50px;
+}
+
+body {
+div.logo {
+	bottom: 375px;
+	right: 520px;
+}
+header#header-mini {
+	right:520px;
+	top:80px;
+}
+}
