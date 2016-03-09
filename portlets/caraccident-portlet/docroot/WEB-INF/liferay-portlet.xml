@@ -7,9 +7,9 @@
         <portlet-name>caraccident</portlet-name>
         <icon>/icon.png</icon>
         <instanceable>false</instanceable>
-        <footer-portlet-css>/css/main.css</footer-portlet-css>
-        <footer-portal-javascript>/wwwlibs/hslayers-ng/bower_components/requirejs/require.js</footer-portal-javascript>
-        <footer-portlet-javascript>/js/config-ng.js</footer-portlet-javascript>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <css-class-wrapper>caraccidents</css-class-wrapper>
     </portlet>
     <role-mapper>
         <role-name>administrator</role-name>

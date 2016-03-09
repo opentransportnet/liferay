@@ -34,3 +34,14 @@ input#search_address {
 .portlet-borderless-bar {
     margin-top: 50px;
 }
+
+body {
+div.logo {
+	bottom: 375px;
+	right: 520px;
+}
+header#header-mini {
+	right:520px;
+	top:80px;
+}
+}
