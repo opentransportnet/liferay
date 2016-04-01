@@ -1,6 +1,7 @@
 'use strict';
 
-define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'query', 'search', 'permalink', 'measure', 'legend', 'bootstrap', 'geolocation', 'core', 'datasource_selector', 'api', 'angular-gettext', 'translations', 'compositions', 'status_creator', 'ngcookies'],
+define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'query', 'search', 'permalink', 'measure', 'legend', 'bootstrap', 'geolocation', 'core', 'datasource_selector', 'api', 'angular-gettext', 'translations', 'compositions', 'status_creator', 'info', 'ngcookies'],
+
     function(angular, ol, toolbar, layermanager) {
         var module = angular.module('hs', [
             'hs.sidebar',
@@ -8,15 +9,16 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
             'hs.layermanager',
             'hs.map',
             'hs.query',
-            'hs.search', 'hs.permalink',
-            'hs.core',
+            'hs.search', 'hs.permalink', 'hs.measure',
+            'hs.geolocation', 'hs.core',
             'hs.datasource_selector',
             'hs.status_creator',
             'hs.api',
             'hs.ows',
             'gettext',
             'hs.compositions',
-            'ngCookies'
+            'ngCookies',
+            'hs.info'
         ]);
 
         module.directive('hs', ['hs.map.service', 'Core', function(OlMap, Core) {
@@ -44,9 +46,7 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
         module.value('config', {
             default_layers: [
                 new ol.layer.Tile({
-                    source: new ol.source.OSM({
-                        wrapX: false
-                    }),
+                    source: new ol.source.OSM(),
                     title: "Topographic",
                     base: true,
                     visible: true,
