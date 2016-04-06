@@ -34,3 +34,7 @@ input#search_address {
 .portlet-borderless-bar {
     margin-top: 50px;
 }
+
+.ng-scope .alert-danger {
+    background-color: #f9bdbb;
+}
