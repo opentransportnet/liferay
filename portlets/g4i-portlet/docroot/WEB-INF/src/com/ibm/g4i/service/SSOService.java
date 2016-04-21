@@ -24,6 +24,7 @@ import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.model.UserGroup;
 import com.liferay.portal.model.Role;
 import com.liferay.portal.model.User;
+import com.liferay.portal.service.RoleLocalServiceUtil;
 import com.liferay.portal.util.PortalUtil;
 
 @Path("/sso")
@@ -80,7 +81,7 @@ public class SSOService {
 							LOG.info("Token " + key + " is valid.");
 							json = getValidResponse(json,
 									session.getMaxInactiveInterval(),
-									token.getUser(), token.getRoles(),
+									token.getUser(),
 									token.getGroups());
 						}
 					}
@@ -106,7 +107,7 @@ public class SSOService {
 	}
 
 	protected JSONObject getValidResponse(JSONObject json, int leaseInterval,
-			User user, List<Role> userRoles, List<UserGroup> userGroups)
+			User user, List<UserGroup> userGroups)
 			throws SystemException, PortalException {
 		json.put("resultCode", "0");
 		json.put("leaseInterval", leaseInterval);
@@ -121,14 +122,18 @@ public class SSOService {
 		userInfo.put("lastUpdated", user.getModifiedDate().getTime());
 
 		JSONArray roles = JSONFactoryUtil.createJSONArray();
-		for (Role r : userRoles) {
-			if (!PortalUtil.isSystemRole(r.getName())){
-				JSONObject role = JSONFactoryUtil.createJSONObject();
-				role.put("roleName", r.getName().toLowerCase());
-				role.put("roleTitle", r.getTitle(user.getLocale()));
-				roles.put(role);
-			}
-		}
+        List<Role> userRoles = RoleLocalServiceUtil.getRoles(0, RoleLocalServiceUtil.getRolesCount());
+        for (Role r : userRoles) {
+            if (r.getType() == 1 && !PortalUtil.isSystemRole(r.getName())){
+                if (RoleLocalServiceUtil.hasUserRole(user.getUserId(), user.getCompanyId(), r.getName(), true) == true){
+                    JSONObject role = JSONFactoryUtil.createJSONObject();
+                    role.put("roleName", r.getName().toLowerCase());
+                    role.put("roleTitle", r.getTitle(user.getLocale()));
+                    roles.put(role);
+                };
+            }
+        }
+
 		userInfo.put("roles", roles);
 		JSONArray groups = JSONFactoryUtil.createJSONArray();
 		for (UserGroup g : userGroups) {
