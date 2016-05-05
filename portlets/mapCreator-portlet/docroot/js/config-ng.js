@@ -8,10 +8,11 @@ var gitsha = $.ajax({
 }).responseText;
 
 require.config({
+    urlArgs: 'bust=' + gitsha,
     paths: {
-        app: '/mapCreator-portlet/js/app',
-        core: hsl_path + 'components/core/core',
-        ol: hsl_path + 'node_modules/openlayers/dist/ol-debug'
+        ol: hsl_path + 'node_modules/openlayers/dist/ol-debug',
+        app: '/mapViewer-portlet/js/app',
+        core: hsl_path + 'components/core/core'
     },
     shim: {
         d3: {
