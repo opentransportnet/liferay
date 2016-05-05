@@ -9,7 +9,7 @@ var gitsha = $.ajax({
 
 require.config({
     paths: {
-        app: 'app',
+        app: '/mapCreator-portlet/js/app',
         core: hsl_path + 'components/core/core',
         ol: hsl_path + 'node_modules/openlayers/dist/ol-debug'
     },
