@@ -11,7 +11,7 @@ require.config({
     urlArgs: 'bust=' + gitsha,
     paths: {
         ol: hsl_path + 'node_modules/openlayers/dist/ol-debug',
-        app: '/mapViewer-portlet/js/app',
+        app: '/mapCreator-portlet/js/app',
         core: hsl_path + 'components/core/core'
     },
     shim: {

@@ -67,6 +67,9 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                 zoom: OTNzoom,
                 units: "m"
             }),
+            hostname: {
+                default: getHostname()
+            },
             datasources: [{
                 title: "Hub layers",
                 url: "/php/metadata/csw/",
@@ -74,10 +77,22 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                 type: "micka",
                 code_list_url: '/php/metadata/util/codelists.php?_dc=1440156028103&language=eng&page=1&start=0&limit=25&filter=%5B%7B%22property%22%3A%22label%22%7D%5D'
             }],
-            'catalogue_url': caturl,
-            'compositions_catalogue_url': caturl,
+            'catalogue_url': caturl || "/php/metadata/csw",
+            'compositions_catalogue_url': caturl  || "/php/metadata/csw",
             status_manager_url: '/wwwlibs/statusmanager2/index.php'
         });
+
+        function getHostname(){
+            var url = window.location.href
+            var urlArr = url.split("/");
+            var otnDomains = ['opentnet.eu', 'www.opentnet.eu', 'www.opentransportnet.eu', 'opentransportnet.eu', 'otn-production.intrasoft-intl.com'];
+            var domain = urlArr[2];
+            if ($.inArray(domain, otnDomains) > -1) {
+                return urlArr[0] + "//" + domain;
+            } else {
+                return 'http://opentnet.eu';
+            }
+        };
 
         module.controller('Main', ['$scope', 'Core', 'hs.query.service_infopanel', 'hs.compositions.service_parser', 'config', '$cookies',
             function($scope, Core, InfoPanelService, composition_parser, config, $cookies) {
