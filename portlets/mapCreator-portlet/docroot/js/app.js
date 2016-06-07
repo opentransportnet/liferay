@@ -85,7 +85,7 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
         function getHostname(){
             var url = window.location.href
             var urlArr = url.split("/");
-            var otnDomains = ['opentnet.eu', 'www.opentnet.eu', 'www.opentransportnet.eu', 'opentransportnet.eu', 'otn-production.intrasoft-intl.com'];
+            var otnDomains = ['opentnet.eu', 'www.opentnet.eu', 'www.opentransportnet.eu', 'opentransportnet.eu', 'otn-production.intrasoft-intl.com', '138.201.51.26'];
             var domain = urlArr[2];
             if ($.inArray(domain, otnDomains) > -1) {
                 return urlArr[0] + "//" + domain;
