@@ -11,12 +11,22 @@ div.ng-scope #toolbar button:hover {
 }
 
 div.ol-zoom {
-	bottom: 115px;
+	bottom: 165px;
 	top: auto;
 }
 
+div.ol-rotate {
+    bottom: 140px;
+    top: auto;
+}
+
+div.ol-attribution {
+    bottom: 115px;
+    top: auto;
+}
+
 div.locate {
-    bottom: 160px;
+    bottom: 210px;
 }
 ol, ul, dl {
     margin-left: initial;
