@@ -36,6 +36,14 @@
                 name="<portlet:namespace />zoom" value="<%=zoom%>" /></td>
             <td>Number</td>
         </tr>
+
+        <tr>
+            <td>Number of datasources in list</td>
+            <td><input width=3 type="text"
+                name="<portlet:namespace />dsPaging" value="<%=dsPaging%>" /></td>
+            <td>Number</td>
+        </tr>
+
         <tr>
             <td colspan="2"><input type="button"
                 value="<liferay-ui:message key="save" />"

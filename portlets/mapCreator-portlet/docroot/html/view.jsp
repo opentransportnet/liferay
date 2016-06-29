@@ -8,4 +8,5 @@
     var OTNcenterX = parseFloat("<%=centerX%>") || 17.474129;
     var OTNcenterY = parseFloat("<%=centerY%>") || 52.574000;
     var OTNzoom = parseInt("<%=zoom%>") || 5;
+    var OTNdsPaging = parseInt("<%=dsPaging%>") || 30;
 </script>

@@ -66,6 +66,7 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                 zoom: OTNzoom,
                 units: "m"
             }),
+            dsPaging: OTNdsPaging,
             hostname: {
                 default: getHostname()
             },

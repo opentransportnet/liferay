@@ -28,6 +28,7 @@ public class ConfigurationActionImpl implements ConfigurationAction {
         String centerX = ParamUtil.getString(actionRequest, "centerX");
         String centerY = ParamUtil.getString(actionRequest, "centerY");
         String zoom = ParamUtil.getString(actionRequest, "zoom");
+        String dsPaging = ParamUtil.getString(actionRequest, "dsPaging");
 
         String portletResource = ParamUtil.getString(actionRequest,
                 "portletResource");
@@ -38,6 +39,7 @@ public class ConfigurationActionImpl implements ConfigurationAction {
         preferences.setValue("centerX", centerX);
         preferences.setValue("centerY", centerY);
         preferences.setValue("zoom", zoom);
+        preferences.setValue("dsPaging", dsPaging);
 
         preferences.store();
 
