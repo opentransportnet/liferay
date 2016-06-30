@@ -101,7 +101,6 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
                 $scope.Core = Core;
                 Core.sidebarRight = false;
                 Core.singleDatasources = true;
-                Core.embededEnabled = false;
                 hslayers_api.gui.setLanguage($cookies.get('GUEST_LANGUAGE_ID'));
                 $scope.$on('infopanel.updated', function(event) {
                     if (console) console.log('Attributes', InfoPanelService.attributes, 'Groups', InfoPanelService.groups);
