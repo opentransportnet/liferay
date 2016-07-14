@@ -68,7 +68,12 @@ define(['angular', 'ol', 'toolbar', 'layermanager', 'sidebar', 'map', 'ows', 'qu
             }),
             dsPaging: OTNdsPaging,
             hostname: {
-                default: getHostname()
+                "default": {
+                    "title": "Default",
+                    "type": "default",
+                    "editable": false,
+                    "url": getHostname()
+                }
             },
             datasources: [{
                 title: "Hub layers",
